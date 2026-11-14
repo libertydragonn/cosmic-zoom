@@ -1,0 +1,1217 @@
+{
+  "generatedBy": "scripts/fetch-solar-system.mjs",
+  "retrieved": {
+    "jpl-approx_pos.html": "2026-11-14T07:35:54.250Z",
+    "jpl-planets-phys_par.html": "2026-11-14T07:36:05.924Z",
+    "jpl-sats-phys_par.html": "2026-11-14T07:36:06.305Z",
+    "naif-pck00011.tpc": "2026-11-14T07:36:07.709Z",
+    "horizons-sun.txt": "2026-11-14T07:36:07.916Z",
+    "horizons-au-definition.txt": "2026-11-14T07:36:18.291Z",
+    "sbdb-ceres.json": "2026-11-14T07:36:19.266Z"
+  },
+  "constants": {
+    "auKm": 149597870.7,
+    "obliquityDeg": 23.43928,
+    "elementsShortValidYears": [
+      1800,
+      2050
+    ],
+    "elementsLongValidYears": [
+      -3000,
+      3000
+    ]
+  },
+  "sun": {
+    "id": "sun",
+    "en": "Sun",
+    "zh": "太陽",
+    "naifId": 10,
+    "kind": "star",
+    "phys": {
+      "meanRadiusKm": 695700,
+      "massKg": 1.98841e+30,
+      "densityGcm3": 1.408,
+      "rotationPeriodDays": 25.38,
+      "effectiveTempK": 5772,
+      "equatorialGravityMs2": 274,
+      "escapeVelocityKms": 617.7
+    },
+    "gm": 132712440041.93938
+  },
+  "planets": [
+    {
+      "id": "mercury",
+      "en": "Mercury",
+      "zh": "水星",
+      "naifId": 199,
+      "kind": "planet",
+      "subtype": "terrestrial",
+      "parent": "sun",
+      "elementsFor": "Mercury",
+      "elements": {
+        "short": {
+          "a": [
+            0.38709927,
+            3.7e-7
+          ],
+          "e": [
+            0.20563593,
+            0.00001906
+          ],
+          "I": [
+            7.00497902,
+            -0.00594749
+          ],
+          "L": [
+            252.2503235,
+            149472.67411175
+          ],
+          "peri": [
+            77.45779628,
+            0.16047689
+          ],
+          "node": [
+            48.33076593,
+            -0.12534081
+          ]
+        },
+        "long": {
+          "a": [
+            0.38709843,
+            0
+          ],
+          "e": [
+            0.20563661,
+            0.00002123
+          ],
+          "I": [
+            7.00559432,
+            -0.00590158
+          ],
+          "L": [
+            252.25166724,
+            149472.67486623
+          ],
+          "peri": [
+            77.45771895,
+            0.15940013
+          ],
+          "node": [
+            48.33961819,
+            -0.12214182
+          ]
+        }
+      },
+      "phys": {
+        "equatorialRadiusKm": 2440.53,
+        "equatorialRadiusKmSigma": 0.04,
+        "meanRadiusKm": 2439.4,
+        "meanRadiusKmSigma": 0.1,
+        "massKg": 3.3010299999999994e+23,
+        "massKgSigma": 21000000000000000000,
+        "densityGcm3": 5.4289,
+        "densityGcm3Sigma": 0.0007,
+        "rotationPeriodDays": 58.6462,
+        "orbitalPeriodYears": 0.2408467,
+        "v10Mag": -0.6,
+        "v10MagSigma": 0.1,
+        "geometricAlbedo": 0.106,
+        "equatorialGravityMs2": 3.7,
+        "escapeVelocityKms": 4.25
+      },
+      "gm": null,
+      "radiiKm": [
+        2440.53,
+        2440.53,
+        2438.26
+      ],
+      "pole": {
+        "raDeg": 281.0103,
+        "decDeg": 61.4155,
+        "rotationDegPerDay": 6.1385108
+      }
+    },
+    {
+      "id": "venus",
+      "en": "Venus",
+      "zh": "金星",
+      "naifId": 299,
+      "kind": "planet",
+      "subtype": "terrestrial",
+      "parent": "sun",
+      "elementsFor": "Venus",
+      "elements": {
+        "short": {
+          "a": [
+            0.72333566,
+            0.0000039
+          ],
+          "e": [
+            0.00677672,
+            -0.00004107
+          ],
+          "I": [
+            3.39467605,
+            -0.0007889
+          ],
+          "L": [
+            181.9790995,
+            58517.81538729
+          ],
+          "peri": [
+            131.60246718,
+            0.00268329
+          ],
+          "node": [
+            76.67984255,
+            -0.27769418
+          ]
+        },
+        "long": {
+          "a": [
+            0.72332102,
+            -2.6e-7
+          ],
+          "e": [
+            0.00676399,
+            -0.00005107
+          ],
+          "I": [
+            3.39777545,
+            0.00043494
+          ],
+          "L": [
+            181.9797085,
+            58517.8156026
+          ],
+          "peri": [
+            131.76755713,
+            0.05679648
+          ],
+          "node": [
+            76.67261496,
+            -0.27274174
+          ]
+        }
+      },
+      "phys": {
+        "equatorialRadiusKm": 6051.8,
+        "equatorialRadiusKmSigma": 1,
+        "meanRadiusKm": 6051.8,
+        "meanRadiusKmSigma": 1,
+        "massKg": 4.867309999999999e+24,
+        "massKgSigma": 230000000000000000000,
+        "densityGcm3": 5.243,
+        "densityGcm3Sigma": 0.003,
+        "rotationPeriodDays": -243.018,
+        "orbitalPeriodYears": 0.61519726,
+        "v10Mag": -4.47,
+        "v10MagSigma": 0.07,
+        "geometricAlbedo": 0.65,
+        "equatorialGravityMs2": 8.87,
+        "escapeVelocityKms": 10.36
+      },
+      "gm": null,
+      "radiiKm": [
+        6051.8,
+        6051.8,
+        6051.8
+      ],
+      "pole": {
+        "raDeg": 272.76,
+        "decDeg": 67.16,
+        "rotationDegPerDay": -1.4813688
+      }
+    },
+    {
+      "id": "earth",
+      "en": "Earth",
+      "zh": "地球",
+      "naifId": 399,
+      "kind": "planet",
+      "subtype": "terrestrial",
+      "parent": "sun",
+      "elementsFor": "Earth-Moon barycenter",
+      "elements": {
+        "short": {
+          "a": [
+            1.00000261,
+            0.00000562
+          ],
+          "e": [
+            0.01671123,
+            -0.00004392
+          ],
+          "I": [
+            -0.00001531,
+            -0.01294668
+          ],
+          "L": [
+            100.46457166,
+            35999.37244981
+          ],
+          "peri": [
+            102.93768193,
+            0.32327364
+          ],
+          "node": [
+            0,
+            0
+          ]
+        },
+        "long": {
+          "a": [
+            1.00000018,
+            -3e-8
+          ],
+          "e": [
+            0.01673163,
+            -0.00003661
+          ],
+          "I": [
+            -0.00054346,
+            -0.01337178
+          ],
+          "L": [
+            100.46691572,
+            35999.37306329
+          ],
+          "peri": [
+            102.93005885,
+            0.3179526
+          ],
+          "node": [
+            -5.11260389,
+            -0.24123856
+          ]
+        }
+      },
+      "phys": {
+        "equatorialRadiusKm": 6378.1366,
+        "equatorialRadiusKmSigma": 0.0001,
+        "meanRadiusKm": 6371.0084,
+        "meanRadiusKmSigma": 0.0001,
+        "massKg": 5.97217e+24,
+        "massKgSigma": 279999999999999970000,
+        "densityGcm3": 5.5134,
+        "densityGcm3Sigma": 0.0003,
+        "rotationPeriodDays": 0.99726968,
+        "orbitalPeriodYears": 1.0000174,
+        "v10Mag": -3.86,
+        "geometricAlbedo": 0.367,
+        "equatorialGravityMs2": 9.8,
+        "escapeVelocityKms": 11.19
+      },
+      "gm": 398600.436,
+      "radiiKm": [
+        6378.1366,
+        6378.1366,
+        6356.7519
+      ],
+      "pole": {
+        "raDeg": 0,
+        "decDeg": 90,
+        "rotationDegPerDay": 360.9856235
+      }
+    },
+    {
+      "id": "mars",
+      "en": "Mars",
+      "zh": "火星",
+      "naifId": 499,
+      "kind": "planet",
+      "subtype": "terrestrial",
+      "parent": "sun",
+      "elementsFor": "Mars",
+      "elements": {
+        "short": {
+          "a": [
+            1.52371034,
+            0.00001847
+          ],
+          "e": [
+            0.0933941,
+            0.00007882
+          ],
+          "I": [
+            1.84969142,
+            -0.00813131
+          ],
+          "L": [
+            -4.55343205,
+            19140.30268499
+          ],
+          "peri": [
+            -23.94362959,
+            0.44441088
+          ],
+          "node": [
+            49.55953891,
+            -0.29257343
+          ]
+        },
+        "long": {
+          "a": [
+            1.52371243,
+            9.7e-7
+          ],
+          "e": [
+            0.09336511,
+            0.00009149
+          ],
+          "I": [
+            1.85181869,
+            -0.00724757
+          ],
+          "L": [
+            -4.56813164,
+            19140.29934243
+          ],
+          "peri": [
+            -23.91744784,
+            0.45223625
+          ],
+          "node": [
+            49.71320984,
+            -0.26852431
+          ]
+        }
+      },
+      "phys": {
+        "equatorialRadiusKm": 3396.19,
+        "equatorialRadiusKmSigma": 0.1,
+        "meanRadiusKm": 3389.5,
+        "meanRadiusKmSigma": 0.2,
+        "massKg": 6.41691e+23,
+        "massKgSigma": 30000000000000000000,
+        "densityGcm3": 3.934,
+        "densityGcm3Sigma": 0.0007,
+        "rotationPeriodDays": 1.02595676,
+        "orbitalPeriodYears": 1.8808476,
+        "v10Mag": -1.52,
+        "geometricAlbedo": 0.15,
+        "equatorialGravityMs2": 3.71,
+        "escapeVelocityKms": 5.03
+      },
+      "gm": 42828.37362,
+      "radiiKm": [
+        3396.19,
+        3396.19,
+        3376.2
+      ],
+      "pole": {
+        "raDeg": 317.269202,
+        "decDeg": 54.432516,
+        "rotationDegPerDay": 350.891982443297
+      }
+    },
+    {
+      "id": "jupiter",
+      "en": "Jupiter",
+      "zh": "木星",
+      "naifId": 599,
+      "kind": "planet",
+      "subtype": "gasGiant",
+      "parent": "sun",
+      "elementsFor": "Jupiter",
+      "elements": {
+        "short": {
+          "a": [
+            5.202887,
+            -0.00011607
+          ],
+          "e": [
+            0.04838624,
+            -0.00013253
+          ],
+          "I": [
+            1.30439695,
+            -0.00183714
+          ],
+          "L": [
+            34.39644051,
+            3034.74612775
+          ],
+          "peri": [
+            14.72847983,
+            0.21252668
+          ],
+          "node": [
+            100.47390909,
+            0.20469106
+          ]
+        },
+        "long": {
+          "a": [
+            5.20248019,
+            -0.00002864
+          ],
+          "e": [
+            0.0485359,
+            0.00018026
+          ],
+          "I": [
+            1.29861416,
+            -0.00322699
+          ],
+          "L": [
+            34.33479152,
+            3034.90371757
+          ],
+          "peri": [
+            14.27495244,
+            0.18199196
+          ],
+          "node": [
+            100.29282654,
+            0.13024619
+          ],
+          "extra": {
+            "b": -0.00012452,
+            "c": 0.0606406,
+            "s": -0.35635438,
+            "f": 38.35125
+          }
+        }
+      },
+      "phys": {
+        "equatorialRadiusKm": 71492,
+        "equatorialRadiusKmSigma": 4,
+        "meanRadiusKm": 69911,
+        "meanRadiusKmSigma": 6,
+        "massKg": 1.898125e+27,
+        "massKgSigma": 8.8e+22,
+        "densityGcm3": 1.3262,
+        "densityGcm3Sigma": 0.0003,
+        "rotationPeriodDays": 0.41354,
+        "orbitalPeriodYears": 11.862615,
+        "v10Mag": -9.4,
+        "geometricAlbedo": 0.52,
+        "equatorialGravityMs2": 24.79,
+        "escapeVelocityKms": 60.2
+      },
+      "gm": 126686531.9,
+      "radiiKm": [
+        71492,
+        71492,
+        66854
+      ],
+      "pole": {
+        "raDeg": 268.056595,
+        "decDeg": 64.495303,
+        "rotationDegPerDay": 870.536
+      }
+    },
+    {
+      "id": "saturn",
+      "en": "Saturn",
+      "zh": "土星",
+      "naifId": 699,
+      "kind": "planet",
+      "subtype": "gasGiant",
+      "parent": "sun",
+      "elementsFor": "Saturn",
+      "elements": {
+        "short": {
+          "a": [
+            9.53667594,
+            -0.0012506
+          ],
+          "e": [
+            0.05386179,
+            -0.00050991
+          ],
+          "I": [
+            2.48599187,
+            0.00193609
+          ],
+          "L": [
+            49.95424423,
+            1222.49362201
+          ],
+          "peri": [
+            92.59887831,
+            -0.41897216
+          ],
+          "node": [
+            113.66242448,
+            -0.28867794
+          ]
+        },
+        "long": {
+          "a": [
+            9.54149883,
+            -0.00003065
+          ],
+          "e": [
+            0.05550825,
+            -0.00032044
+          ],
+          "I": [
+            2.49424102,
+            0.00451969
+          ],
+          "L": [
+            50.07571329,
+            1222.11494724
+          ],
+          "peri": [
+            92.86136063,
+            0.54179478
+          ],
+          "node": [
+            113.63998702,
+            -0.25015002
+          ],
+          "extra": {
+            "b": 0.00025899,
+            "c": -0.13434469,
+            "s": 0.87320147,
+            "f": 38.35125
+          }
+        }
+      },
+      "phys": {
+        "equatorialRadiusKm": 60268,
+        "equatorialRadiusKmSigma": 4,
+        "meanRadiusKm": 58232,
+        "meanRadiusKmSigma": 6,
+        "massKg": 5.68317e+26,
+        "massKgSigma": 2.6e+22,
+        "densityGcm3": 0.6871,
+        "densityGcm3Sigma": 0.0002,
+        "rotationPeriodDays": 0.44401,
+        "orbitalPeriodYears": 29.447498,
+        "v10Mag": -8.88,
+        "geometricAlbedo": 0.47,
+        "equatorialGravityMs2": 10.44,
+        "escapeVelocityKms": 36.09
+      },
+      "gm": 37931206.23,
+      "radiiKm": [
+        60268,
+        60268,
+        54364
+      ],
+      "pole": {
+        "raDeg": 40.589,
+        "decDeg": 83.537,
+        "rotationDegPerDay": 810.7939024
+      }
+    },
+    {
+      "id": "uranus",
+      "en": "Uranus",
+      "zh": "天王星",
+      "naifId": 799,
+      "kind": "planet",
+      "subtype": "iceGiant",
+      "parent": "sun",
+      "elementsFor": "Uranus",
+      "elements": {
+        "short": {
+          "a": [
+            19.18916464,
+            -0.00196176
+          ],
+          "e": [
+            0.04725744,
+            -0.00004397
+          ],
+          "I": [
+            0.77263783,
+            -0.00242939
+          ],
+          "L": [
+            313.23810451,
+            428.48202785
+          ],
+          "peri": [
+            170.9542763,
+            0.40805281
+          ],
+          "node": [
+            74.01692503,
+            0.04240589
+          ]
+        },
+        "long": {
+          "a": [
+            19.18797948,
+            -0.00020455
+          ],
+          "e": [
+            0.0468574,
+            -0.0000155
+          ],
+          "I": [
+            0.77298127,
+            -0.00180155
+          ],
+          "L": [
+            314.20276625,
+            428.49512595
+          ],
+          "peri": [
+            172.43404441,
+            0.09266985
+          ],
+          "node": [
+            73.96250215,
+            0.05739699
+          ],
+          "extra": {
+            "b": 0.00058331,
+            "c": -0.97731848,
+            "s": 0.17689245,
+            "f": 7.67025
+          }
+        }
+      },
+      "phys": {
+        "equatorialRadiusKm": 25559,
+        "equatorialRadiusKmSigma": 4,
+        "meanRadiusKm": 25362,
+        "meanRadiusKmSigma": 7,
+        "massKg": 8.68099e+25,
+        "massKgSigma": 4e+21,
+        "densityGcm3": 1.27,
+        "densityGcm3Sigma": 0.001,
+        "rotationPeriodDays": -0.71833,
+        "orbitalPeriodYears": 84.016846,
+        "v10Mag": -7.19,
+        "geometricAlbedo": 0.51,
+        "equatorialGravityMs2": 8.87,
+        "escapeVelocityKms": 21.38
+      },
+      "gm": 5793951.3,
+      "radiiKm": [
+        25559,
+        25559,
+        24973
+      ],
+      "pole": {
+        "raDeg": 257.311,
+        "decDeg": -15.175,
+        "rotationDegPerDay": -501.1600928
+      }
+    },
+    {
+      "id": "neptune",
+      "en": "Neptune",
+      "zh": "海王星",
+      "naifId": 899,
+      "kind": "planet",
+      "subtype": "iceGiant",
+      "parent": "sun",
+      "elementsFor": "Neptune",
+      "elements": {
+        "short": {
+          "a": [
+            30.06992276,
+            0.00026291
+          ],
+          "e": [
+            0.00859048,
+            0.00005105
+          ],
+          "I": [
+            1.77004347,
+            0.00035372
+          ],
+          "L": [
+            -55.12002969,
+            218.45945325
+          ],
+          "peri": [
+            44.96476227,
+            -0.32241464
+          ],
+          "node": [
+            131.78422574,
+            -0.00508664
+          ]
+        },
+        "long": {
+          "a": [
+            30.06952752,
+            0.00006447
+          ],
+          "e": [
+            0.00895439,
+            0.00000818
+          ],
+          "I": [
+            1.7700552,
+            0.000224
+          ],
+          "L": [
+            304.22289287,
+            218.46515314
+          ],
+          "peri": [
+            46.68158724,
+            0.01009938
+          ],
+          "node": [
+            131.78635853,
+            -0.00606302
+          ],
+          "extra": {
+            "b": -0.00041348,
+            "c": 0.68346318,
+            "s": -0.10162547,
+            "f": 7.67025
+          }
+        }
+      },
+      "phys": {
+        "equatorialRadiusKm": 24764,
+        "equatorialRadiusKmSigma": 15,
+        "meanRadiusKm": 24622,
+        "meanRadiusKmSigma": 19,
+        "massKg": 1.024092e+26,
+        "massKgSigma": 4.8e+21,
+        "densityGcm3": 1.638,
+        "densityGcm3Sigma": 0.004,
+        "rotationPeriodDays": 0.67125,
+        "orbitalPeriodYears": 164.79132,
+        "v10Mag": -6.87,
+        "geometricAlbedo": 0.41,
+        "equatorialGravityMs2": 11.15,
+        "escapeVelocityKms": 23.56
+      },
+      "gm": 6835099.97,
+      "radiiKm": [
+        24764,
+        24764,
+        24341
+      ],
+      "pole": {
+        "raDeg": 299.36,
+        "decDeg": 43.46,
+        "rotationDegPerDay": 541.1397757
+      }
+    }
+  ],
+  "dwarfPlanets": [
+    {
+      "id": "ceres",
+      "en": "Ceres",
+      "zh": "穀神星",
+      "designation": "1 Ceres (A801 AA)",
+      "spkId": 20000001,
+      "kind": "dwarf",
+      "status": "dwarf",
+      "orbitClass": "Main-belt Asteroid",
+      "parent": "sun",
+      "elements": {
+        "epochJd": 2461200.5,
+        "a": 2.765552595034094,
+        "e": 0.07969229514816586,
+        "i": 10.58802780183462,
+        "node": 80.24862682043221,
+        "argPeri": 73.29421453021587,
+        "meanAnomaly": 274.4193463761342,
+        "meanMotionDegPerDay": 0.21430445064843,
+        "periodDays": 1679.853119758983
+      },
+      "phys": {
+        "equatorialRadiusKm": 482.1,
+        "meanRadiusKm": 469.7,
+        "massKg": 938416000000000000000,
+        "massKgSigma": 13000000000000000,
+        "densityGcm3": 2.162,
+        "densityGcm3Sigma": 0.008,
+        "rotationPeriodDays": 0.37809042,
+        "orbitalPeriodYears": 4.61,
+        "v10Mag": 3.34,
+        "geometricAlbedo": 0.09,
+        "geometricAlbedoSigma": 0.003,
+        "equatorialGravityMs2": 0.27,
+        "escapeVelocityKms": 0.51
+      },
+      "physSource": "JPL SSD planets/phys_par",
+      "absMagH": 3.34,
+      "pole": {
+        "raDeg": 291.418,
+        "decDeg": 66.764,
+        "rotationDegPerDay": 952.1532
+      }
+    },
+    {
+      "id": "pluto",
+      "en": "Pluto",
+      "zh": "冥王星",
+      "designation": "134340 Pluto (1930 BM)",
+      "spkId": 20134340,
+      "kind": "dwarf",
+      "status": "dwarf",
+      "orbitClass": "TransNeptunian Object",
+      "parent": "sun",
+      "elements": {
+        "epochJd": 2457588.5,
+        "a": 39.58862938517124,
+        "e": 0.2518378778576892,
+        "i": 17.14771140999114,
+        "node": 110.2923840543057,
+        "argPeri": 113.7090015158565,
+        "meanAnomaly": 38.68366347318184,
+        "meanMotionDegPerDay": 0.003956838955553025,
+        "periodDays": 90981.71647718345
+      },
+      "phys": {
+        "equatorialRadiusKm": 1188.3,
+        "equatorialRadiusKmSigma": 1.6,
+        "meanRadiusKm": 1188.3,
+        "meanRadiusKmSigma": 1.6,
+        "massKg": 1.30246e+22,
+        "massKgSigma": 6000000000000000000,
+        "densityGcm3": 1.853,
+        "densityGcm3Sigma": 0.004,
+        "rotationPeriodDays": -6.3872,
+        "orbitalPeriodYears": 247.92065,
+        "v10Mag": -1,
+        "geometricAlbedo": 0.3,
+        "equatorialGravityMs2": 0.62,
+        "escapeVelocityKms": 1.21
+      },
+      "physSource": "JPL SSD planets/phys_par",
+      "absMagH": -0.55,
+      "pole": {
+        "raDeg": 132.993,
+        "decDeg": -6.163,
+        "rotationDegPerDay": 56.3625225
+      }
+    },
+    {
+      "id": "haumea",
+      "en": "Haumea",
+      "zh": "妊神星",
+      "designation": "136108 Haumea (2003 EL61)",
+      "spkId": 20136108,
+      "kind": "dwarf",
+      "status": "dwarf",
+      "orbitClass": "TransNeptunian Object",
+      "parent": "sun",
+      "elements": {
+        "epochJd": 2461200.5,
+        "a": 43.06029023650952,
+        "e": 0.1944430148898797,
+        "i": 28.20847393040364,
+        "node": 121.7860561329425,
+        "argPeri": 240.6905472508661,
+        "meanAnomaly": 223.2104118812299,
+        "meanMotionDegPerDay": 0.003488097731816818,
+        "periodDays": 103208.1173403618
+      },
+      "phys": {
+        "equatorialRadiusKm": 870,
+        "meanRadiusKm": 715,
+        "massKg": 4.006e+21,
+        "massKgSigma": 40000000000000000000,
+        "densityGcm3": 2.6,
+        "rotationPeriodDays": 0.1631,
+        "orbitalPeriodYears": 284.81,
+        "v10Mag": 0.2,
+        "geometricAlbedo": 0.72,
+        "equatorialGravityMs2": 0.35,
+        "escapeVelocityKms": 0.78
+      },
+      "physSource": "JPL SSD planets/phys_par",
+      "absMagH": 0.14,
+      "pole": null
+    },
+    {
+      "id": "makemake",
+      "en": "Makemake",
+      "zh": "鳥神星",
+      "designation": "136472 Makemake (2005 FY9)",
+      "spkId": 20136472,
+      "kind": "dwarf",
+      "status": "dwarf",
+      "orbitClass": "TransNeptunian Object",
+      "parent": "sun",
+      "elements": {
+        "epochJd": 2461200.5,
+        "a": 45.57093317300052,
+        "e": 0.1588889953992523,
+        "i": 29.02785603743067,
+        "node": 79.2948338209406,
+        "argPeri": 297.0922733397207,
+        "meanAnomaly": 169.9379962048232,
+        "meanMotionDegPerDay": 0.003203850120050116,
+        "periodDays": 112364.8068762869
+      },
+      "phys": {
+        "equatorialRadiusKm": 717,
+        "equatorialRadiusKmSigma": 7,
+        "meanRadiusKm": 714,
+        "meanRadiusKmSigma": 7,
+        "massKg": 3.1e+21,
+        "densityGcm3": 2.1,
+        "rotationPeriodDays": 0.937,
+        "orbitalPeriodYears": 307.54,
+        "v10Mag": -0.2,
+        "geometricAlbedo": 0.81,
+        "geometricAlbedoSigma": 0.02,
+        "equatorialGravityMs2": 0.4,
+        "escapeVelocityKms": 0.76
+      },
+      "physSource": "JPL SSD planets/phys_par",
+      "absMagH": -0.25,
+      "pole": null
+    },
+    {
+      "id": "eris",
+      "en": "Eris",
+      "zh": "鬩神星",
+      "designation": "136199 Eris (2003 UB313)",
+      "spkId": 20136199,
+      "kind": "dwarf",
+      "status": "dwarf",
+      "orbitClass": "TransNeptunian Object",
+      "parent": "sun",
+      "elements": {
+        "epochJd": 2461200.5,
+        "a": 67.93394687853566,
+        "e": 0.4382385347971672,
+        "i": 43.9258279471791,
+        "node": 36.00477044417249,
+        "argPeri": 150.7949235840312,
+        "meanAnomaly": 211.774434275007,
+        "meanMotionDegPerDay": 0.001760247770619088,
+        "periodDays": 204516.6629430732
+      },
+      "phys": {
+        "equatorialRadiusKm": 1200,
+        "equatorialRadiusKmSigma": 50,
+        "meanRadiusKm": 1200,
+        "meanRadiusKmSigma": 50,
+        "massKg": 1.66e+22,
+        "massKgSigma": 200000000000000000000,
+        "densityGcm3": 2.3,
+        "densityGcm3Sigma": 0.3,
+        "rotationPeriodDays": 1.079,
+        "orbitalPeriodYears": 557.56,
+        "v10Mag": -1.1,
+        "geometricAlbedo": 0.84,
+        "equatorialGravityMs2": 0.77,
+        "escapeVelocityKms": 1.36
+      },
+      "physSource": "JPL SSD planets/phys_par",
+      "absMagH": -1.26,
+      "pole": null
+    },
+    {
+      "id": "orcus",
+      "en": "Orcus",
+      "zh": "亡神星",
+      "designation": "90482 Orcus (2004 DW)",
+      "spkId": 20090482,
+      "kind": "dwarf",
+      "status": "candidate",
+      "orbitClass": "TransNeptunian Object",
+      "parent": "sun",
+      "elements": {
+        "epochJd": 2461200.5,
+        "a": 39.37686537914865,
+        "e": 0.2205240628250881,
+        "i": 20.55681019612,
+        "node": 268.4053519455824,
+        "argPeri": 73.56848606705262,
+        "meanAnomaly": 189.0972913554275,
+        "meanMotionDegPerDay": 0.003988800931399829,
+        "periodDays": 90252.68650688507
+      },
+      "phys": {
+        "meanRadiusKm": null,
+        "massKg": null,
+        "densityGcm3": null,
+        "rotationPeriodDays": 0.5495,
+        "geometricAlbedo": null
+      },
+      "physSource": "JPL SBDB phys_par",
+      "absMagH": 2.13,
+      "pole": null
+    },
+    {
+      "id": "quaoar",
+      "en": "Quaoar",
+      "zh": "創神星",
+      "designation": "50000 Quaoar (2002 LM60)",
+      "spkId": 20050000,
+      "kind": "dwarf",
+      "status": "candidate",
+      "orbitClass": "TransNeptunian Object",
+      "parent": "sun",
+      "elements": {
+        "epochJd": 2461200.5,
+        "a": 43.15617622670811,
+        "e": 0.03520019261837198,
+        "i": 7.991575800732639,
+        "node": 188.9191248092036,
+        "argPeri": 163.209046106457,
+        "meanAnomaly": 292.8487574842713,
+        "meanMotionDegPerDay": 0.003476479214379914,
+        "periodDays": 103553.0425468722
+      },
+      "phys": {
+        "meanRadiusKm": null,
+        "massKg": null,
+        "densityGcm3": null,
+        "rotationPeriodDays": 0.36833333333333335,
+        "geometricAlbedo": null
+      },
+      "physSource": "JPL SBDB phys_par",
+      "absMagH": 2.41,
+      "pole": null
+    },
+    {
+      "id": "gonggong",
+      "en": "Gonggong",
+      "zh": "共工星",
+      "designation": "225088 Gonggong (2007 OR10)",
+      "spkId": 20225088,
+      "kind": "dwarf",
+      "status": "candidate",
+      "orbitClass": "TransNeptunian Object",
+      "parent": "sun",
+      "elements": {
+        "epochJd": 2461200.5,
+        "a": 66.86666567773766,
+        "e": 0.5042510000302973,
+        "i": 30.89906721170288,
+        "node": 336.8383156185827,
+        "argPeri": 206.6232839773693,
+        "meanAnomaly": 111.664541568459,
+        "meanMotionDegPerDay": 0.001802559348482343,
+        "periodDays": 199716.0317096358
+      },
+      "phys": {
+        "meanRadiusKm": null,
+        "massKg": null,
+        "densityGcm3": null,
+        "rotationPeriodDays": 0.9333333333333332,
+        "geometricAlbedo": null
+      },
+      "physSource": "JPL SBDB phys_par",
+      "absMagH": 1.82,
+      "pole": null
+    },
+    {
+      "id": "sedna",
+      "en": "Sedna",
+      "zh": "賽德娜",
+      "designation": "90377 Sedna (2003 VB12)",
+      "spkId": 20090377,
+      "kind": "dwarf",
+      "status": "candidate",
+      "orbitClass": "TransNeptunian Object",
+      "parent": "sun",
+      "elements": {
+        "epochJd": 2461200.5,
+        "a": 543.7195289104732,
+        "e": 0.8598824585187618,
+        "i": 11.92527582847476,
+        "node": 144.5061662673739,
+        "argPeri": 311.0987725939751,
+        "meanAnomaly": 358.5956944005428,
+        "meanMotionDegPerDay": 0.00007773948799642578,
+        "periodDays": 4630851.183590915
+      },
+      "phys": {
+        "meanRadiusKm": null,
+        "massKg": null,
+        "densityGcm3": null,
+        "rotationPeriodDays": 0.42804166666666665,
+        "geometricAlbedo": null
+      },
+      "physSource": "JPL SBDB phys_par",
+      "absMagH": 1.5,
+      "pole": null
+    }
+  ],
+  "missing": [
+    {
+      "body": "Orcus",
+      "field": "meanRadiusKm",
+      "reason": "SBDB 無直徑資料"
+    },
+    {
+      "body": "Orcus",
+      "field": "massKg",
+      "reason": "SBDB 無 GM／質量資料"
+    },
+    {
+      "body": "Orcus",
+      "field": "geometricAlbedo",
+      "reason": "SBDB 無反照率"
+    },
+    {
+      "body": "Orcus",
+      "field": "densityGcm3",
+      "reason": "SBDB 無密度"
+    },
+    {
+      "body": "Quaoar",
+      "field": "meanRadiusKm",
+      "reason": "SBDB 無直徑資料"
+    },
+    {
+      "body": "Quaoar",
+      "field": "massKg",
+      "reason": "SBDB 無 GM／質量資料"
+    },
+    {
+      "body": "Quaoar",
+      "field": "geometricAlbedo",
+      "reason": "SBDB 無反照率"
+    },
+    {
+      "body": "Quaoar",
+      "field": "densityGcm3",
+      "reason": "SBDB 無密度"
+    },
+    {
+      "body": "Gonggong",
+      "field": "meanRadiusKm",
+      "reason": "SBDB 無直徑資料"
+    },
+    {
+      "body": "Gonggong",
+      "field": "massKg",
+      "reason": "SBDB 無 GM／質量資料"
+    },
+    {
+      "body": "Gonggong",
+      "field": "geometricAlbedo",
+      "reason": "SBDB 無反照率"
+    },
+    {
+      "body": "Gonggong",
+      "field": "densityGcm3",
+      "reason": "SBDB 無密度"
+    },
+    {
+      "body": "Sedna",
+      "field": "meanRadiusKm",
+      "reason": "SBDB 無直徑資料"
+    },
+    {
+      "body": "Sedna",
+      "field": "massKg",
+      "reason": "SBDB 無 GM／質量資料"
+    },
+    {
+      "body": "Sedna",
+      "field": "geometricAlbedo",
+      "reason": "SBDB 無反照率"
+    },
+    {
+      "body": "Sedna",
+      "field": "densityGcm3",
+      "reason": "SBDB 無密度"
+    }
+  ]
+}

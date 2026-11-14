@@ -1,0 +1,66 @@
+{
+  "source": "JPL Small-Body Database Query API (https://ssd-api.jpl.nasa.gov/sbdb_query.api)",
+  "retrievedAt": {
+    "mainbelt": "2026-11-14T08:02:13.700Z",
+    "tno": "2026-11-14T08:02:14.076Z"
+  },
+  "refEpochJd": 2461200.5,
+  "layout": [
+    "a (au)",
+    "e",
+    "i (deg)",
+    "node (deg)",
+    "argPeri (deg)",
+    "meanAnomaly@refEpoch (deg)",
+    "meanMotion (deg/day)"
+  ],
+  "mainbelt": {
+    "file": "mainbelt.bin",
+    "sbdbClasses": [
+      "IMB",
+      "MBA",
+      "OMB"
+    ],
+    "totalInSbdb": 1480767,
+    "note": "SBDB 中此類共 1480767 顆，這裡取編號最前面的 12000 顆",
+    "skipped": 0,
+    "count": 12000,
+    "aMinAU": 1.817528303299113,
+    "aP05AU": 2.2004133324146,
+    "aMedianAU": 2.610037460953925,
+    "aP95AU": 3.193813908521101,
+    "aMaxAU": 4.269638832272351
+  },
+  "tno": {
+    "file": "tno.bin",
+    "sbdbClasses": [
+      "TNO"
+    ],
+    "totalInSbdb": 8340,
+    "skipped": 8,
+    "kuiperOuterAU": 50,
+    "kuiperCount": 6090,
+    "count": 8332,
+    "aMinAU": 30.10696018804127,
+    "aP05AU": 37.7924059907389,
+    "aMedianAU": 44.42462435590559,
+    "aP95AU": 101.9540216,
+    "aMaxAU": 2686.855989531003,
+    "kuiper": {
+      "count": 6090,
+      "aMinAU": 30.10696018804127,
+      "aP05AU": 36.54607452286393,
+      "aMedianAU": 43.41841550459461,
+      "aP95AU": 47.8785363,
+      "aMaxAU": 49.9834132
+    },
+    "scattered": {
+      "count": 2242,
+      "aMinAU": 50.0073447,
+      "aP05AU": 51.2311148387554,
+      "aMedianAU": 66.0294935,
+      "aP95AU": 217.8130279625132,
+      "aMaxAU": 2686.855989531003
+    }
+  }
+}

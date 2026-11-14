@@ -1,0 +1,19 @@
+# Netlify 部署設定（純靜態 SPA）
+[build]
+  command = "npm run build"
+  publish = "build/client"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+# SPA fallback：所有路徑都回傳 index.html，由前端路由處理
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# 資料檔與建置產物可長期快取（檔名含雜湊的 assets）
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

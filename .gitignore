@@ -1,0 +1,10 @@
+.DS_Store
+.env
+/node_modules/
+
+# React Router
+/.react-router/
+/build/
+
+# 資料擷取腳本的原始下載快取（可用 npm run data 重新取得）
+/data/raw/

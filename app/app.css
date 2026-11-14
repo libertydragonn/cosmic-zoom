@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", "Heiti TC", ui-sans-serif, system-ui, sans-serif;
+  --color-space: #02030a;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--color-space);
+  color: #e6ecf8;
+  color-scheme: dark;
+  overflow: hidden;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-xl border border-white/10 bg-slate-950/70 shadow-lg shadow-black/40 backdrop-blur-md;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs whitespace-nowrap text-slate-200 transition-colors select-none;
+  }
+  .btn:hover:not(:disabled) {
+    @apply border-sky-300/40 bg-sky-400/15 text-white;
+  }
+  .btn:focus-visible {
+    @apply outline-2 outline-offset-1 outline-sky-300;
+  }
+  .btn:disabled {
+    @apply cursor-not-allowed opacity-35;
+  }
+  .btn-primary {
+    @apply border-sky-300/40 bg-sky-400/20 text-sky-50;
+  }
+  .btn-on {
+    @apply border-sky-300/60 bg-sky-400/25 text-white;
+  }
+}
+
+/* ---------- 3D 標籤（由 app/scene/labels.ts 直接操作 DOM） ---------- */
+.lbl {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 18px;
+  line-height: 18px;
+  white-space: nowrap;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.22s ease;
+  pointer-events: auto;
+  cursor: pointer;
+  will-change: transform;
+  text-shadow:
+    0 0 3px #000,
+    0 0 6px #000,
+    0 1px 2px #000;
+}
+.lbl .zh {
+  color: #e9effc;
+}
+.lbl .en {
+  margin-left: 5px;
+  font-size: 10.5px;
+  color: #8ea2c6;
+  letter-spacing: 0.02em;
+}
+.lbl:hover .zh,
+.lbl:hover .en {
+  color: #fff;
+}
+.lbl-sun .zh {
+  color: #ffe9a8;
+  font-size: 13px;
+  font-weight: 600;
+}
+.lbl-planet .zh {
+  font-size: 13px;
+  font-weight: 500;
+}
+.lbl-dwarf .zh {
+  color: #d9c8b4;
+}
+.lbl-moon {
+  font-size: 11px;
+}
+.lbl-moon .zh {
+  color: #c4cad6;
+}
+.lbl-star .zh {
+  color: #cfe0ff;
+  font-size: 11.5px;
+}
+.lbl-region .zh {
+  color: #9fd4e8;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+}
+.lbl-region .en {
+  color: #6b9db0;
+}
+.lbl-galactic .zh {
+  color: #f3d9ff;
+  letter-spacing: 0.12em;
+  font-size: 12.5px;
+}
+
+.select-ring {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(125, 211, 252, 0.9);
+  box-shadow:
+    0 0 10px rgba(56, 189, 248, 0.55),
+    inset 0 0 6px rgba(56, 189, 248, 0.25);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+/* 捲軸 */
+.thin-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.35) transparent;
+}
+
+.lbl-sunmark .zh {
+  color: #ffe9a8;
+  font-weight: 600;
+  font-size: 12.5px;
+}
+.lbl-sunmark::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  border: 1.5px solid #ffe08a;
+  box-shadow: 0 0 6px #ffd35a;
+}
