@@ -49,17 +49,29 @@ function useHostBadge(): { w: number; h: number } {
   useEffect(() => {
     let watched: Element | null = null;
     const sizeWatcher = new ResizeObserver(() => measure());
+    // 裁切範圍（clip-path）由徽章腳本在插入後才設定
+    const styleWatcher = new MutationObserver(() => measure());
     function measure() {
       const el = document.getElementById("nl-badge-frame");
       if (el !== watched) {
         if (watched) sizeWatcher.unobserve(watched);
-        if (el) sizeWatcher.observe(el);
+        styleWatcher.disconnect();
+        if (el) {
+          sizeWatcher.observe(el);
+          styleWatcher.observe(el, { attributes: true, attributeFilter: ["style"] });
+        }
         watched = el;
       }
       const r = el?.getBoundingClientRect();
       const atCorner = !!r && r.height > 0 && r.bottom >= window.innerHeight - 4 && r.right >= window.innerWidth - 4;
-      const w = atCorner ? Math.ceil(r.width) : 0;
-      const h = atCorner ? Math.ceil(r.height) : 0;
+      // iframe 外圍是透明的，真正看得到（也點得到）的是 clip-path 裁出的膠囊：
+      // style="clip-path: path('M 3 3 H 183 V 50 H 3 Z')"。以膠囊的左上角計算要讓開的範圍，
+      // 否則 iOS 上 iframe 略寬時，時間面板會被擠到徽章上方。
+      const clip = /M\s*([\d.]+)[\s,]+([\d.]+)/.exec((el as HTMLElement | null)?.style.clipPath ?? "");
+      const left = r ? r.left + (clip ? Number(clip[1]) : 0) : 0;
+      const top = r ? r.top + (clip ? Number(clip[2]) : 0) : 0;
+      const w = atCorner ? Math.ceil(window.innerWidth - left) : 0;
+      const h = atCorner ? Math.ceil(window.innerHeight - top) : 0;
       setSize((s) => (s.w === w && s.h === h ? s : { w, h }));
     }
     measure();
@@ -70,6 +82,7 @@ function useHostBadge(): { w: number; h: number } {
     return () => {
       bodyWatcher.disconnect();
       sizeWatcher.disconnect();
+      styleWatcher.disconnect();
       window.removeEventListener("resize", measure);
     };
   }, []);
@@ -152,7 +165,7 @@ export default function Explorer() {
         <div className="pointer-events-auto">
           <ScaleBar />
         </div>
-        <div className="pointer-events-none flex items-end max-sm:order-last max-sm:w-full max-sm:flex-wrap max-sm:gap-2">
+        <div className="pointer-events-none flex items-end max-sm:order-last max-sm:w-full max-sm:flex-wrap max-sm:gap-x-1 max-sm:gap-y-2">
           <div className="pointer-events-auto">
             <TimeControls />
           </div>

@@ -56,7 +56,7 @@ export function TimeControls() {
   const textBtn = "max-sm:h-7 max-sm:px-1.5";
 
   return (
-    <div className="panel flex flex-col items-center gap-1 px-1.5 py-1.5 sm:gap-1.5 sm:px-3 sm:py-2">
+    <div className="panel flex flex-col items-center gap-1 px-1 py-1.5 sm:gap-1.5 sm:px-3 sm:py-2">
       <div className="tabular-nums text-[12px] text-slate-100 sm:text-[13px]" aria-live="off">
         <span className="hidden sm:inline">{date}</span>
         <span className="sm:hidden">{dateShort}</span>
