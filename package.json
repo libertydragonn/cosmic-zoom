@@ -8,7 +8,8 @@
     "typecheck": "react-router typegen && tsc",
     "data": "node scripts/fetch-solar-system.mjs && node scripts/fetch-moons.mjs && node scripts/fetch-smallbodies.mjs && node scripts/fetch-stars.mjs && node scripts/report-gaps.mjs",
     "data:refresh": "node scripts/fetch-solar-system.mjs --force && node scripts/fetch-moons.mjs --force && node scripts/fetch-smallbodies.mjs --force && node scripts/fetch-stars.mjs --force && node scripts/report-gaps.mjs",
-    "validate": "node scripts/validate-orbits.mjs --moons"
+    "validate": "node scripts/validate-orbits.mjs --moons",
+    "preview": "node scripts/preview.mjs build/client 4173"
   },
   "dependencies": {
     "@react-router/node": "^8.5.1",

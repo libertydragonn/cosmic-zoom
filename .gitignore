@@ -8,3 +8,6 @@
 
 # 資料擷取腳本的原始下載快取（可用 npm run data 重新取得）
 /data/raw/
+
+# Netlify 本機狀態
+/.netlify/

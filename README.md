@@ -3,6 +3,8 @@
 可連續縮放的 3D 天體地圖：從單一衛星、行星系、太陽系、鄰近恆星，一路縮放到整個銀河系。
 純前端 SPA，建置結果是靜態檔案。
 
+線上版：https://cosmic-zoom.netlify.app
+
 ## 快速開始
 
 需要 Node.js 22.22 以上（開發時使用 24.20）。
@@ -11,6 +13,7 @@
 npm install
 npm run dev        # 開發伺服器，預設 http://localhost:5173
 npm run build      # 產生靜態檔案到 build/client
+npm run preview    # 在本機預覽建置結果，http://localhost:4173
 npm run typecheck  # 型別檢查
 ```
 
