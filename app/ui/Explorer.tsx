@@ -1,3 +1,4 @@
+import { type CSSProperties, useEffect, useState } from "react";
 import "~/lib/regions";
 import Universe from "~/scene/Universe";
 import { engine } from "~/lib/engine";
@@ -39,11 +40,49 @@ function Notices() {
   );
 }
 
+/**
+ * 代管平台貼在頁面右下角的徽章高度（Netlify 免費方案的「Powered by Netlify」，
+ * 元素為 #nl-badge-frame）；沒有徽章時為 0。用來把下方的控制項往上讓開。
+ */
+function useHostBadgeHeight(): number {
+  const [height, setHeight] = useState(0);
+  useEffect(() => {
+    let watched: Element | null = null;
+    const sizeWatcher = new ResizeObserver(() => measure());
+    function measure() {
+      const el = document.getElementById("nl-badge-frame");
+      if (el !== watched) {
+        if (watched) sizeWatcher.unobserve(watched);
+        if (el) sizeWatcher.observe(el);
+        watched = el;
+      }
+      const r = el?.getBoundingClientRect();
+      const atCorner = !!r && r.height > 0 && r.bottom >= window.innerHeight - 4 && r.right >= window.innerWidth - 4;
+      setHeight(atCorner ? Math.ceil(r.height) : 0);
+    }
+    measure();
+    // 徽章是頁面載入後才由外部腳本插入 <body> 的
+    const bodyWatcher = new MutationObserver(measure);
+    bodyWatcher.observe(document.body, { childList: true });
+    window.addEventListener("resize", measure);
+    return () => {
+      bodyWatcher.disconnect();
+      sizeWatcher.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
+  return height;
+}
+
 export default function Explorer() {
+  const badgeHeight = useHostBadgeHeight();
   const sidebarOpen = useUI((s) => s.sidebarOpen);
   const setSidebarOpen = useUI((s) => s.setSidebarOpen);
   return (
-    <main className="relative h-dvh w-full overflow-hidden bg-space">
+    <main
+      className="relative h-dvh w-full overflow-hidden bg-space"
+      style={{ "--host-badge-h": `${badgeHeight}px` } as CSSProperties}
+    >
       <Universe />
 
       {/* 上方：導覽按鈕、標題、搜尋 */}
@@ -71,24 +110,25 @@ export default function Explorer() {
       </div>
 
       {/* 左側：階層導覽 */}
-      <div className="pointer-events-none absolute top-14 bottom-28 left-3 z-20 flex max-sm:bottom-44">
+      <div className="pointer-events-none absolute top-14 bottom-28 left-3 z-20 flex max-md:bottom-[calc(7rem+var(--host-badge-h))] max-sm:bottom-[calc(11rem+var(--host-badge-h))]">
         <Sidebar />
       </div>
 
       {/* 右側（手機為下方）：資訊面板 */}
-      <div className="pointer-events-none absolute z-10 flex items-end max-sm:inset-x-3 max-sm:bottom-44 max-sm:h-[42dvh] sm:top-14 sm:right-3 sm:bottom-28 sm:items-start">
+      <div className="pointer-events-none absolute z-10 flex items-end max-sm:inset-x-3 max-sm:bottom-[calc(11rem+var(--host-badge-h))] max-sm:h-[42dvh] sm:top-14 sm:right-3 sm:bottom-[calc(7rem+var(--host-badge-h))] sm:items-start">
         <InfoPanel />
       </div>
 
-      {/* 下方：比例尺、時間、顯示模式 */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex flex-wrap items-end justify-between gap-2 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+      {/* 下方：比例尺、時間、顯示模式。右下角有代管平台徽章時讓開：
+          窄螢幕整列上移，寬螢幕只把右側那組上移 */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex flex-wrap items-end justify-between gap-2 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] max-md:mb-[var(--host-badge-h)]">
         <div className="pointer-events-auto">
           <ScaleBar />
         </div>
         <div className="pointer-events-auto max-sm:order-last max-sm:flex max-sm:w-full max-sm:justify-center">
           <TimeControls />
         </div>
-        <div className="pointer-events-auto flex items-end gap-2">
+        <div className="pointer-events-auto flex items-end gap-2 md:mb-[var(--host-badge-h)]">
           <ModeToggle />
           <div className="hidden sm:block">
             <ZoomButtons />

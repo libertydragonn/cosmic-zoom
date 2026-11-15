@@ -5,6 +5,11 @@
   --color-space: #02030a;
 }
 
+:root {
+  /* 代管平台右下角徽章的高度，由 Explorer 在執行時設定 */
+  --host-badge-h: 0px;
+}
+
 html,
 body {
   height: 100%;
