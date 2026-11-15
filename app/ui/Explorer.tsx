@@ -1,4 +1,4 @@
-import { type CSSProperties, useEffect, useState } from "react";
+import { type CSSProperties, type RefObject, useEffect, useRef, useState } from "react";
 import "~/lib/regions";
 import Universe from "~/scene/Universe";
 import { engine } from "~/lib/engine";
@@ -41,11 +41,11 @@ function Notices() {
 }
 
 /**
- * 代管平台貼在頁面右下角的徽章高度（Netlify 免費方案的「Powered by Netlify」，
- * 元素為 #nl-badge-frame）；沒有徽章時為 0。用來把下方的控制項往上讓開。
+ * 代管平台貼在頁面右下角的徽章尺寸（Netlify 免費方案的「Powered by Netlify」，
+ * 元素為 #nl-badge-frame）；沒有徽章時為 0。用來讓下方的控制項避開它。
  */
-function useHostBadgeHeight(): number {
-  const [height, setHeight] = useState(0);
+function useHostBadge(): { w: number; h: number } {
+  const [size, setSize] = useState({ w: 0, h: 0 });
   useEffect(() => {
     let watched: Element | null = null;
     const sizeWatcher = new ResizeObserver(() => measure());
@@ -58,7 +58,9 @@ function useHostBadgeHeight(): number {
       }
       const r = el?.getBoundingClientRect();
       const atCorner = !!r && r.height > 0 && r.bottom >= window.innerHeight - 4 && r.right >= window.innerWidth - 4;
-      setHeight(atCorner ? Math.ceil(r.height) : 0);
+      const w = atCorner ? Math.ceil(r.width) : 0;
+      const h = atCorner ? Math.ceil(r.height) : 0;
+      setSize((s) => (s.w === w && s.h === h ? s : { w, h }));
     }
     measure();
     // 徽章是頁面載入後才由外部腳本插入 <body> 的
@@ -71,17 +73,38 @@ function useHostBadgeHeight(): number {
       window.removeEventListener("resize", measure);
     };
   }, []);
+  return size;
+}
+
+/** 元素目前的高度（像素），尺寸改變時更新。 */
+function useElementHeight(ref: RefObject<HTMLElement | null>): number {
+  const [height, setHeight] = useState(0);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new ResizeObserver(() => setHeight(Math.ceil(el.getBoundingClientRect().height)));
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [ref]);
   return height;
 }
 
 export default function Explorer() {
-  const badgeHeight = useHostBadgeHeight();
+  const badge = useHostBadge();
+  const hudRef = useRef<HTMLDivElement>(null);
+  const hudHeight = useElementHeight(hudRef);
   const sidebarOpen = useUI((s) => s.sidebarOpen);
   const setSidebarOpen = useUI((s) => s.setSidebarOpen);
   return (
     <main
       className="relative h-dvh w-full overflow-hidden bg-space"
-      style={{ "--host-badge-h": `${badgeHeight}px` } as CSSProperties}
+      style={
+        {
+          "--host-badge-w": `${badge.w}px`,
+          "--host-badge-h": `${badge.h}px`,
+          "--hud-h": `${hudHeight}px`,
+        } as CSSProperties
+      }
     >
       <Universe />
 
@@ -110,23 +133,34 @@ export default function Explorer() {
       </div>
 
       {/* 左側：階層導覽 */}
-      <div className="pointer-events-none absolute top-14 bottom-28 left-3 z-20 flex max-md:bottom-[calc(7rem+var(--host-badge-h))] max-sm:bottom-[calc(11rem+var(--host-badge-h))]">
+      <div className="pointer-events-none absolute top-14 bottom-28 left-3 z-20 flex max-md:bottom-[calc(7rem+var(--host-badge-h))] max-sm:bottom-[calc(var(--hud-h)+0.25rem)]">
         <Sidebar />
       </div>
 
       {/* 右側（手機為下方）：資訊面板 */}
-      <div className="pointer-events-none absolute z-10 flex items-end max-sm:inset-x-3 max-sm:bottom-[calc(11rem+var(--host-badge-h))] max-sm:h-[42dvh] sm:top-14 sm:right-3 sm:bottom-[calc(7rem+var(--host-badge-h))] sm:items-start">
+      <div className="pointer-events-none absolute z-10 flex items-end max-sm:inset-x-3 max-sm:bottom-[calc(var(--hud-h)+0.25rem)] max-sm:h-[42dvh] sm:top-14 sm:right-3 sm:bottom-[calc(7rem+var(--host-badge-h))] sm:items-start">
         <InfoPanel />
       </div>
 
       {/* 下方：比例尺、時間、顯示模式。右下角有代管平台徽章時讓開：
-          窄螢幕整列上移，寬螢幕只把右側那組上移 */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex flex-wrap items-end justify-between gap-2 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] max-md:mb-[var(--host-badge-h)]">
+          手機版時間控制在左下角、與徽章同一列，比例尺與顯示模式在其上方；
+          平板寬度整列上移；桌面只把右側那組上移 */}
+      <div
+        ref={hudRef}
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-10 flex flex-wrap items-end justify-between gap-2 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:max-md:mb-[var(--host-badge-h)]"
+      >
         <div className="pointer-events-auto">
           <ScaleBar />
         </div>
-        <div className="pointer-events-auto max-sm:order-last max-sm:flex max-sm:w-full max-sm:justify-center">
-          <TimeControls />
+        <div className="pointer-events-none flex items-end max-sm:order-last max-sm:w-full max-sm:flex-wrap max-sm:gap-2">
+          <div className="pointer-events-auto">
+            <TimeControls />
+          </div>
+          {/* 手機版替徽章保留位置；放不下時會換到下一行，時間控制就停在徽章上方 */}
+          <div
+            aria-hidden
+            className="ml-auto h-[calc(var(--host-badge-h)-0.75rem)] w-[calc(var(--host-badge-w)-0.75rem)] shrink-0 sm:hidden"
+          />
         </div>
         <div className="pointer-events-auto flex items-end gap-2 md:mb-[var(--host-badge-h)]">
           <ModeToggle />

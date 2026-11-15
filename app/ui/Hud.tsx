@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { getEntity, planetElementsOutOfRange } from "~/lib/bodies";
 import { engine } from "~/lib/engine";
-import { formatDistance, formatJd, scaleBar } from "~/lib/format";
+import { formatDistance, formatJd, formatJdShort, scaleBar } from "~/lib/format";
 import { SPEEDS, useUI } from "~/lib/store";
 
 /** 以固定頻率讀取引擎狀態（引擎每幀變動，不直接驅動 React）。 */
@@ -45,43 +45,59 @@ export function TimeControls() {
   const reverse = useUI((s) => s.reverse);
   const { togglePause, setSpeedIndex, toggleReverse, resetTime } = useUI.getState();
   const withTime = speedIndex <= 2;
-  const info = useEngineSample(() => `${formatJd(engine.jd, withTime)}|${planetElementsOutOfRange(engine.jd) ? 1 : 0}`, 100);
-  const [date, outOfRange] = info.split("|");
+  const info = useEngineSample(
+    () =>
+      `${formatJd(engine.jd, withTime)}|${formatJdShort(engine.jd, withTime)}|${planetElementsOutOfRange(engine.jd) ? 1 : 0}`,
+    100,
+  );
+  const [date, dateShort, outOfRange] = info.split("|");
+  // 手機版按鈕縮小，讓整個面板在 390 px 寬的手機上也放得進徽章左側
+  const iconBtn = "max-sm:h-7 max-sm:w-6 max-sm:px-0";
+  const textBtn = "max-sm:h-7 max-sm:px-1.5";
 
   return (
-    <div className="panel flex flex-col items-center gap-1.5 px-3 py-2">
-      <div className="tabular-nums text-[13px] text-slate-100" aria-live="off">
-        {date}
+    <div className="panel flex flex-col items-center gap-1 px-1.5 py-1.5 sm:gap-1.5 sm:px-3 sm:py-2">
+      <div className="tabular-nums text-[12px] text-slate-100 sm:text-[13px]" aria-live="off">
+        <span className="hidden sm:inline">{date}</span>
+        <span className="sm:hidden">{dateShort}</span>
       </div>
       {outOfRange === "1" && (
-        <div className="max-w-64 text-center text-[11px] leading-tight text-amber-300">
-          已超出 JPL 行星近似根數的適用範圍（西元前 3000 年至西元 3000 年），位置僅供參考
+        <div className="max-w-48 text-center text-[11px] leading-tight text-amber-300 sm:max-w-64">
+          <span className="hidden sm:inline">已超出 JPL 行星近似根數的適用範圍（西元前 3000 年至西元 3000 年），位置僅供參考</span>
+          <span className="sm:hidden">已超出 JPL 行星根數的適用範圍，位置僅供參考</span>
         </div>
       )}
-      <div className="flex items-center gap-1">
-        <button className="btn" onClick={toggleReverse} aria-pressed={reverse} title="倒轉時間">
-          {reverse ? "◀ 倒轉" : "▶ 順行"}
+      <div className="flex items-center gap-0.5 sm:gap-1">
+        <button
+          className={`btn ${iconBtn} sm:px-2.5`}
+          onClick={toggleReverse}
+          aria-pressed={reverse}
+          aria-label={reverse ? "時間方向：倒轉" : "時間方向：順行"}
+          title={reverse ? "目前倒轉，點一下改為順行" : "目前順行，點一下改為倒轉"}
+        >
+          <span aria-hidden>{reverse ? "◀" : "▶"}</span>
+          <span className="max-sm:hidden">&nbsp;{reverse ? "倒轉" : "順行"}</span>
         </button>
-        <button className="btn" onClick={() => setSpeedIndex(speedIndex - 1)} disabled={speedIndex === 0} aria-label="減速">
+        <button className={`btn ${iconBtn}`} onClick={() => setSpeedIndex(speedIndex - 1)} disabled={speedIndex === 0} aria-label="減速">
           −
         </button>
-        <button className="btn btn-primary w-16" onClick={togglePause} aria-pressed={paused}>
+        <button className={`btn btn-primary sm:w-16 ${textBtn}`} onClick={togglePause} aria-pressed={paused}>
           {paused ? "繼續" : "暫停"}
         </button>
         <button
-          className="btn"
+          className={`btn ${iconBtn}`}
           onClick={() => setSpeedIndex(speedIndex + 1)}
           disabled={speedIndex === SPEEDS.length - 1}
           aria-label="加速"
         >
           +
         </button>
-        <button className="btn" onClick={resetTime} title="回到現在">
+        <button className={`btn ${textBtn}`} onClick={resetTime} title="回到現在">
           現在
         </button>
       </div>
       <div className="text-[11px] text-slate-400">
-        時間速度：<span className="text-slate-200">{paused ? "已暫停" : SPEEDS[speedIndex].label}</span>
+        <span className="max-sm:hidden">時間</span>速度：<span className="text-slate-200">{paused ? "已暫停" : SPEEDS[speedIndex].label}</span>
       </div>
     </div>
   );

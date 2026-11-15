@@ -57,6 +57,15 @@ export function formatJd(jd: number, withTime: boolean): string {
   return withTime ? `${date} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}` : date;
 }
 
+/** 手機版用的精簡日期：2026/11/15 13:06:44；西元前以「前」標示。 */
+export function formatJdShort(jd: number, withTime: boolean): string {
+  const d = dateFromJd(jd);
+  if (Number.isNaN(d.getTime())) return `JD ${jd.toFixed(1)}`;
+  const y = d.getFullYear();
+  const date = `${y > 0 ? y : `前${1 - y}`}/${pad(d.getMonth() + 1)}/${pad(d.getDate())}`;
+  return withTime ? `${date} ${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}` : date;
+}
+
 export function formatMass(kg: number): string {
   const e = Math.floor(Math.log10(kg));
   const m = kg / 10 ** e;
