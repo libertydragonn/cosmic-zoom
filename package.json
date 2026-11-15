@@ -6,9 +6,9 @@
     "dev": "react-router dev",
     "build": "react-router build",
     "typecheck": "react-router typegen && tsc",
-    "data": "node scripts/fetch-solar-system.mjs && node scripts/fetch-moons.mjs && node scripts/fetch-smallbodies.mjs && node scripts/fetch-stars.mjs && node scripts/report-gaps.mjs",
-    "data:refresh": "node scripts/fetch-solar-system.mjs --force && node scripts/fetch-moons.mjs --force && node scripts/fetch-smallbodies.mjs --force && node scripts/fetch-stars.mjs --force && node scripts/report-gaps.mjs",
-    "validate": "node scripts/validate-orbits.mjs --moons",
+    "data": "node scripts/fetch-solar-system.mjs && node scripts/fetch-moons.mjs && node scripts/fetch-smallbodies.mjs && node scripts/fetch-stars.mjs && node scripts/fetch-textures.mjs && node scripts/report-gaps.mjs",
+    "data:refresh": "node scripts/fetch-solar-system.mjs --force && node scripts/fetch-moons.mjs --force && node scripts/fetch-smallbodies.mjs --force && node scripts/fetch-stars.mjs --force && node scripts/fetch-textures.mjs --force && node scripts/report-gaps.mjs",
+    "validate": "node scripts/validate-orbits.mjs --moons && node scripts/validate-rotation.mjs",
     "preview": "node scripts/preview.mjs build/client 4173"
   },
   "dependencies": {
@@ -31,6 +31,7 @@
     "@types/three": "^0.187.0",
     "cheerio": "^1.2.0",
     "opencc-js": "^1.4.2",
+    "sharp": "^0.35.5",
     "tailwindcss": "^4.3.5",
     "typescript": "^7.0.2",
     "vite": "^8.3.8"

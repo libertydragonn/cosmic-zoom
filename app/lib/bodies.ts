@@ -94,6 +94,8 @@ const BODY_COLORS: Record<string, string> = {
   quaoar: "#c49a7e",
   gonggong: "#c9806a",
   sedna: "#cf6f55",
+  // 土衛六在可見光下被橘色霧霾覆蓋，沒有可見光表面圖
+  "saturn-titan": "#d9a45e",
 };
 export const MOON_COLOR = "#b4b2ad";
 

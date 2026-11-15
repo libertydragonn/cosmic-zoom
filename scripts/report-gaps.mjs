@@ -85,6 +85,25 @@ out(`- 因 HYG 中距離不明而未收錄的肉眼可見恆星：${stars.exclud
 out(`- 有專名但在 Wikidata 查無中文標籤、只顯示英文名的恆星（${stars.properNamesWithoutZh.length} 顆）：${stars.properNamesWithoutZh.join("、")}`);
 out();
 
+const textures = await readJson(join(APP_DATA, "textures.json"));
+// 天體代號 → 中文名
+const zhName = {};
+for (const b of [...solar.planets, ...solar.dwarfPlanets]) zhName[b.id] = b.zh;
+for (const sys of readdirSync(join(PUBLIC_DATA, "moons"))) {
+  for (const m of (await readJson(join(PUBLIC_DATA, "moons", sys))).moons) zhName[m.id] = m.zh ?? m.en;
+}
+const zh = (id) => zhName[id] ?? id;
+out("## 表面影像");
+out();
+out(`有真實表面影像的天體（${Object.keys(textures.bodies).length} 個）：${Object.keys(textures.bodies).map(zh).join("、")}。來源與處理方式見 \`app/data/textures.json\`。`);
+out();
+for (const m of textures.missing) out(`- **${zh(m.body)}**：${m.reason}`);
+out("- 土衛一至土衛五、土衛八（Cassini 2014 彩色地圖）：官方說明為增強色，已將飽和度降為 40%，不是校正過的真彩色。");
+out("- 太陽：以臨邊昏暗近似呈現，不是觀測影像。");
+out("- 土星環：透明度與明暗由 Voyager 2 掩星的法向光學深度以單次散射近似計算；顏色與整體亮度是顯示用設定。沒有畫出行星與環互相投下的陰影。");
+out("- 巨行星的雲帶與大氣特徵會隨時間漂移，Hubble OPAL 地圖只代表觀測當時的樣貌。");
+out();
+
 out("## 銀河系");
 out();
 out("旋臂、核球、銀暈皆為程序化生成的示意模型，參數為美術設定（見 `app/lib/galaxy.ts`），不是觀測資料。太陽到銀心的距離採用專案需求指定的約 2.6 萬光年；太陽相對銀河盤面的高度未取得資料，設為 0。");

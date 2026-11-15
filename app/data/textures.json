@@ -1,0 +1,376 @@
+{
+  "generatedBy": "scripts/fetch-textures.mjs",
+  "convention": "等距圓柱投影；u=0 為東經 −180°、向右遞增；v 上緣為北緯 90°；北極為 IAU 定義的北極",
+  "bodies": {
+    "mercury": {
+      "naifId": 199,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology 行星地圖服務：Messenger Global Mosaic May2016",
+      "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/mercury/mercury_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=MESSENGER&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=4096&height=2048&format=image/png&transparent=TRUE",
+      "unimagedFraction": 0,
+      "file": "textures/mercury.jpg",
+      "width": 2048,
+      "height": 1024,
+      "hi": {
+        "file": "textures/mercury-hi.jpg",
+        "width": 4096,
+        "height": 2048
+      }
+    },
+    "earth": {
+      "naifId": 399,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology 行星地圖服務：MODIS",
+      "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/earth/earth_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=MODIS&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=4096&height=2048&format=image/png&transparent=TRUE",
+      "unimagedFraction": 0,
+      "file": "textures/earth.jpg",
+      "width": 2048,
+      "height": 1024,
+      "hi": {
+        "file": "textures/earth-hi.jpg",
+        "width": 4096,
+        "height": 2048
+      }
+    },
+    "mars": {
+      "naifId": 499,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology 行星地圖服務：MDIM 2.1 Colorized Global Mosaic",
+      "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/mars/mars_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=MDIM21_color&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=4096&height=2048&format=image/png&transparent=TRUE",
+      "unimagedFraction": 0,
+      "file": "textures/mars.jpg",
+      "width": 2048,
+      "height": 1024,
+      "hi": {
+        "file": "textures/mars-hi.jpg",
+        "width": 4096,
+        "height": 2048
+      }
+    },
+    "earth-moon": {
+      "naifId": 301,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology 行星地圖服務：LRO WAC Global Mosaic",
+      "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/earth/moon_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=LROC_WAC&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=4096&height=2048&format=image/png&transparent=TRUE",
+      "unimagedFraction": 0,
+      "file": "textures/earth-moon.jpg",
+      "width": 2048,
+      "height": 1024,
+      "hi": {
+        "file": "textures/earth-moon-hi.jpg",
+        "width": 4096,
+        "height": 2048
+      }
+    },
+    "jupiter-io": {
+      "naifId": 501,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology 行星地圖服務：Io Merged Color Global Mosaic",
+      "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/io_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=SSI_VGR_color&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+      "unimagedFraction": 0,
+      "file": "textures/jupiter-io.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "jupiter-europa": {
+      "naifId": 502,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology 行星地圖服務：Europa Global Mosaic",
+      "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/europa_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=GALILEO_VOYAGER&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+      "unimagedFraction": 0,
+      "file": "textures/jupiter-europa.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "jupiter-ganymede": {
+      "naifId": 503,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology 行星地圖服務：Ganymede Global Mosaic",
+      "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/ganymede_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=GALILEO_VOYAGER&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+      "unimagedFraction": 0,
+      "file": "textures/jupiter-ganymede.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "jupiter-callisto": {
+      "naifId": 504,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology 行星地圖服務：Callisto Global Mosaic",
+      "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/callisto_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=GALILEO_VOYAGER&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+      "unimagedFraction": 0,
+      "file": "textures/jupiter-callisto.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "saturn-phoebe": {
+      "naifId": 609,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology 行星地圖服務：Phoebe Global Mosaic",
+      "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/saturn/phoebe_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=CASSINI&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=1024&height=512&format=image/png&transparent=TRUE",
+      "unimagedFraction": 0,
+      "file": "textures/saturn-phoebe.jpg",
+      "width": 1024,
+      "height": 512
+    },
+    "neptune-triton": {
+      "naifId": 801,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology 行星地圖服務：Triton Voyager2 Color Mosaic Global Mosaic",
+      "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/neptune/triton_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=TRITON_VOYAGER2&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+      "unimagedFraction": 0.386,
+      "file": "textures/neptune-triton.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "pluto": {
+      "naifId": 999,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology 行星地圖服務：New Horizons Pluto Mosaic",
+      "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/pluto/pluto_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=NEWHORIZONS_PLUTO_MOSAIC&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+      "unimagedFraction": 0.319,
+      "file": "textures/pluto.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "pluto-charon": {
+      "naifId": 901,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology 行星地圖服務：New Horizons Charon Mosaic",
+      "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/pluto/charon_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=NEWHORIZONS_CHARON_MOSAIC&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+      "unimagedFraction": 0.34,
+      "file": "textures/pluto-charon.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "saturn-mimas": {
+      "naifId": 601,
+      "lat": "planetocentric",
+      "source": "NASA/JPL-Caltech/Space Science Institute：Color Maps of Mimas - 2014（PIA18437）",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18437/PIA18437.jpg",
+      "note": "官方說明顏色為增強色（延伸到紫外與紅外），已將飽和度降為 40%；左緣為東經 0°，經與 USGS 鑲嵌圖的地形比對確認（最佳位移 177°，預期 180°）",
+      "alignment": {
+        "measuredShiftDeg": 177,
+        "corr": 0.174,
+        "runnerUp": 0.067
+      },
+      "file": "textures/saturn-mimas.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "saturn-enceladus": {
+      "naifId": 602,
+      "lat": "planetocentric",
+      "source": "NASA/JPL-Caltech/Space Science Institute：Color Maps of Enceladus - 2014（PIA18435）",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18435/PIA18435.jpg",
+      "note": "官方說明顏色為增強色（延伸到紫外與紅外），已將飽和度降為 40%；左緣為東經 0°，經與 USGS 鑲嵌圖的地形比對確認（最佳位移 180°，預期 180°）",
+      "alignment": {
+        "measuredShiftDeg": 180,
+        "corr": 0.376,
+        "runnerUp": 0.156
+      },
+      "file": "textures/saturn-enceladus.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "saturn-tethys": {
+      "naifId": 603,
+      "lat": "planetocentric",
+      "source": "NASA/JPL-Caltech/Space Science Institute：Color Maps of Tethys - 2014（PIA18439）",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18439/PIA18439.jpg",
+      "note": "官方說明顏色為增強色（延伸到紫外與紅外），已將飽和度降為 40%；左緣為東經 0°，經與 USGS 鑲嵌圖的地形比對確認（最佳位移 180°，預期 180°）",
+      "alignment": {
+        "measuredShiftDeg": 180,
+        "corr": 0.241,
+        "runnerUp": 0.084
+      },
+      "file": "textures/saturn-tethys.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "saturn-dione": {
+      "naifId": 604,
+      "lat": "planetocentric",
+      "source": "NASA/JPL-Caltech/Space Science Institute：Color Maps of Dione - 2014（PIA18434）",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18434/PIA18434.jpg",
+      "note": "官方說明顏色為增強色（延伸到紫外與紅外），已將飽和度降為 40%；左緣為東經 0°，經與 USGS 鑲嵌圖的地形比對確認（最佳位移 180°，預期 180°）",
+      "alignment": {
+        "measuredShiftDeg": 180,
+        "corr": 0.599,
+        "runnerUp": 0.098
+      },
+      "file": "textures/saturn-dione.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "saturn-rhea": {
+      "naifId": 605,
+      "lat": "planetocentric",
+      "source": "NASA/JPL-Caltech/Space Science Institute：Color Maps of Rhea - 2014（PIA18438）",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18438/PIA18438.jpg",
+      "note": "官方說明顏色為增強色（延伸到紫外與紅外），已將飽和度降為 40%；左緣為東經 0°，經與 USGS 鑲嵌圖的地形比對確認（最佳位移 180°，預期 180°）",
+      "alignment": {
+        "measuredShiftDeg": 180,
+        "corr": 0.316,
+        "runnerUp": 0.059
+      },
+      "file": "textures/saturn-rhea.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "saturn-iapetus": {
+      "naifId": 608,
+      "lat": "planetocentric",
+      "source": "NASA/JPL-Caltech/Space Science Institute：Color Maps of Iapetus - 2014（PIA18436）",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18436/PIA18436.jpg",
+      "note": "官方說明顏色為增強色（延伸到紫外與紅外），已將飽和度降為 40%；左緣為東經 0°，經與 USGS 鑲嵌圖的地形比對確認（最佳位移 179°，預期 180°）",
+      "alignment": {
+        "measuredShiftDeg": 179,
+        "corr": 0.394,
+        "runnerUp": 0.095
+      },
+      "file": "textures/saturn-iapetus.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "ceres": {
+      "naifId": 2000001,
+      "lat": "planetocentric",
+      "source": "USGS Astrogeology：Ceres Dawn FC Global Mosaic 400m（DLR 製作，2015-10）",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Ceres_Dawn_FC_DLR_global_20ppd_Oct2015.tif",
+      "file": "textures/ceres.jpg",
+      "width": 2048,
+      "height": 1024
+    },
+    "jupiter": {
+      "naifId": 599,
+      "lat": "planetographic",
+      "source": "Hubble OPAL 全球地圖 jupiter-2025a（NASA, ESA, A.A. Simon, M.H. Wong；CC BY 4.0）",
+      "observed": "2025-12-11 07:24 至 2025-12-11 15:14 UTC",
+      "url": "https://archive.stsci.edu/hlsps/opal/cycle32/jupiter/hlsp_opal_hst_wfc3-uvis_jupiter-2025a_f631n|f502n|f395n_v1_globalmap.fits",
+      "longitudeConvention": "README：(left edge = 0 System III W. longitude, decreasing to the right)",
+      "note": "顏色由 F631N／F502N／F395N 三個濾鏡的反射率（I/F）分別當作紅／綠／藍，以同一增益映射，是近似真彩色。雲帶會隨時間漂移，貼圖只代表觀測當時的樣貌。",
+      "unimagedFraction": 0.072,
+      "acknowledgment": "This work used data acquired from the NASA/ESA HST Space Telescope, associated with OPAL program (PI: Simon, GO13937), and archived by the Space Telescope Science Institute, which is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5-26555. All maps are available at http://dx.doi.org/10.17909/T9G593.",
+      "file": "textures/jupiter.jpg",
+      "width": 2048,
+      "height": 1024,
+      "hi": {
+        "file": "textures/jupiter-hi.jpg",
+        "width": 3600,
+        "height": 1800
+      }
+    },
+    "saturn": {
+      "naifId": 699,
+      "lat": "planetographic",
+      "source": "Hubble OPAL 全球地圖 saturn-2026a（NASA, ESA, A.A. Simon, M.H. Wong；CC BY 4.0）",
+      "observed": "2026-09-14 09:19 至 2026-09-14 17:08 UTC",
+      "url": "https://archive.stsci.edu/hlsps/opal/cycle33/saturn/hlsp_opal_hst_wfc3-uvis_saturn-2026a_f631n|f502n|f395n_v1_globalmap.fits",
+      "longitudeConvention": "README：(left edge = 360 System III W. longitude, decreasing to the right)",
+      "note": "顏色由 F631N／F502N／F395N 三個濾鏡的反射率（I/F）分別當作紅／綠／藍，以同一增益映射，是近似真彩色。雲帶會隨時間漂移，貼圖只代表觀測當時的樣貌。",
+      "unimagedFraction": 0.166,
+      "acknowledgment": "This work used data acquired from the NASA/ESA HST Space Telescope, associated with OPAL program (PI: Simon, GO13937), and archived by the Space Telescope Science Institute, which is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5-26555. All maps are available at http://dx.doi.org/10.17909/T9G593.",
+      "file": "textures/saturn.jpg",
+      "width": 1800,
+      "height": 900
+    },
+    "uranus": {
+      "naifId": 799,
+      "lat": "planetographic",
+      "source": "Hubble OPAL 全球地圖 uranus-2025a（NASA, ESA, A.A. Simon, M.H. Wong；CC BY 4.0）",
+      "observed": "2025-10-23 07:29 至 2025-10-23 18:30 UTC",
+      "url": "https://archive.stsci.edu/hlsps/opal/cycle33/uranus/hlsp_opal_hst_wfc3-uvis_uranus-2025a_f657n|f547m|f467m_v1_globalmap.fits",
+      "longitudeConvention": "README：(right edge = 0 deg E. longitude, increasing to the left)",
+      "note": "顏色由 F657N／F547M／F467M 三個濾鏡的反射率（I/F）分別當作紅／綠／藍，以同一增益映射，是近似真彩色。雲帶會隨時間漂移，貼圖只代表觀測當時的樣貌。",
+      "unimagedFraction": 0.53,
+      "acknowledgment": "This work used data acquired from the NASA/ESA HST Space Telescope, associated with OPAL program (PI: Simon, GO13937), and archived by the Space Telescope Science Institute, which is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5-26555. All maps are available at http://dx.doi.org/10.17909/T9G593.",
+      "file": "textures/uranus.jpg",
+      "width": 721,
+      "height": 361
+    },
+    "neptune": {
+      "naifId": 899,
+      "lat": "planetographic",
+      "source": "Hubble OPAL 全球地圖 neptune-2026a（NASA, ESA, A.A. Simon, M.H. Wong；CC BY 4.0）",
+      "observed": "2026-08-31 04:08 至 2026-08-31 18:14 UTC",
+      "url": "https://archive.stsci.edu/hlsps/opal/cycle33/neptune/hlsp_opal_hst_wfc3-uvis_neptune-2026a_f657n|f547m|f467m_v1_globalmap.fits",
+      "longitudeConvention": "README：(left edge = 360 deg W. longitude, decreasing to the right)",
+      "note": "顏色由 F657N／F547M／F467M 三個濾鏡的反射率（I/F）分別當作紅／綠／藍，以同一增益映射，是近似真彩色。雲帶會隨時間漂移，貼圖只代表觀測當時的樣貌。",
+      "unimagedFraction": 0.243,
+      "acknowledgment": "This work used data acquired from the NASA/ESA HST Space Telescope, associated with OPAL program (PI: Simon, GO13937), and archived by the Space Telescope Science Institute, which is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5-26555. All maps are available at http://dx.doi.org/10.17909/T9G593.",
+      "file": "textures/neptune.jpg",
+      "width": 721,
+      "height": 361
+    }
+  },
+  "saturnRing": {
+    "file": "textures/saturn-ring.png",
+    "innerKm": 72000,
+    "outerKm": 142500,
+    "source": "PDS Rings Node：Voyager 2 PPS δ Sco 掩星剖面 VG_2801 KM010/PS1P01（1981-08-26，10 km 解析度）",
+    "url": "https://pds-rings.seti.org/holdings/volumes/VG_28xx/VG_2801/EASYDATA/KM010/PS1P01.TAB",
+    "note": "Alpha 通道＝法向不透明度 1 − exp(−τ)；τ 無法約束的樣本略過。畫面上的透明度與明暗由 τ 以單次散射近似計算，顏色與整體亮度為顯示用設定。",
+    "unconstrainedSamples": 0
+  },
+  "missing": [
+    {
+      "body": "neptune-triton",
+      "field": "texture",
+      "reason": "約 39% 表面未被探測器拍攝，以已成像區域的平均色填補"
+    },
+    {
+      "body": "pluto",
+      "field": "texture",
+      "reason": "約 32% 表面未被探測器拍攝，以已成像區域的平均色填補"
+    },
+    {
+      "body": "pluto-charon",
+      "field": "texture",
+      "reason": "約 34% 表面未被探測器拍攝，以已成像區域的平均色填補"
+    },
+    {
+      "body": "jupiter",
+      "field": "texture",
+      "reason": "Hubble 觀測時約 7% 的表面看不到（極區、背光面或被環遮住），以相鄰緯度內插或延伸最接近緯度帶的平均色填補"
+    },
+    {
+      "body": "saturn",
+      "field": "texture",
+      "reason": "Hubble 觀測時約 17% 的表面看不到（極區、背光面或被環遮住），以相鄰緯度內插或延伸最接近緯度帶的平均色填補"
+    },
+    {
+      "body": "uranus",
+      "field": "texture",
+      "reason": "Hubble 觀測時約 53% 的表面看不到（極區、背光面或被環遮住），以相鄰緯度內插或延伸最接近緯度帶的平均色填補"
+    },
+    {
+      "body": "neptune",
+      "field": "texture",
+      "reason": "Hubble 觀測時約 24% 的表面看不到（極區、背光面或被環遮住），以相鄰緯度內插或延伸最接近緯度帶的平均色填補"
+    },
+    {
+      "body": "金星",
+      "reason": "可見光下只看得到雲頂，沒有全球雲頂地圖；Magellan 雷達圖是地表，不是肉眼所見，因此維持雲層的單色"
+    },
+    {
+      "body": "土衛六",
+      "reason": "可見光下被橘色霧霾覆蓋；Cassini 的地表圖是近紅外影像，不是肉眼所見，因此維持單色"
+    },
+    {
+      "body": "天衛一至天衛五",
+      "reason": "Voyager 2 只拍到約南半球；找不到可確認經度方向的全球投影鑲嵌圖"
+    },
+    {
+      "body": "火衛一、火衛二",
+      "reason": "形狀很不規則，貼在球體上會失真；USGS 的火衛一資料是暈渲地形圖而非影像"
+    },
+    {
+      "body": "其他衛星與矮行星",
+      "reason": "沒有探測器近距離成像，無全球地圖"
+    },
+    {
+      "body": "太陽以外的恆星",
+      "reason": "除少數超巨星的干涉儀模糊影像外，沒有恆星表面圖；以有效溫度對應的顏色顯示"
+    }
+  ]
+}

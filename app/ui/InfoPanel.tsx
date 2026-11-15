@@ -11,6 +11,31 @@ import { type MoonRecord, moonSystems } from "~/lib/moons";
 import type { Region } from "~/lib/regions";
 import type { StarEntity } from "~/lib/stars";
 import { useUI } from "~/lib/store";
+import { saturnRing, textureInfo } from "~/scene/surfaces";
+
+/** 表面外觀的來源說明（貼圖、環、或為何沒有貼圖）。 */
+function SurfaceSource({ entity }: { entity: Entity }) {
+  const tex = textureInfo(entity.id);
+  const lines: string[] = [];
+  if (tex) {
+    lines.push(`表面影像：${tex.source}${tex.observed ? `，觀測於 ${tex.observed}` : ""}。`);
+    if (tex.note) lines.push(tex.note);
+    if (tex.unimagedFraction && tex.unimagedFraction > 0.005)
+      lines.push(`約 ${Math.round(tex.unimagedFraction * 100)}% 的表面沒有拍到，該區域是以相鄰區域推估的顏色填補，不是觀測影像。`);
+    lines.push("自轉軸與本初子午線：IAU 自轉模型（NAIF pck00011）。");
+  } else if (entity.id === "sun") {
+    lines.push("表面外觀：以臨邊昏暗近似呈現，不是觀測影像。");
+  } else if (entity.id === "venus") {
+    lines.push("表面外觀：可見光下只看得到雲頂，沒有全球雲頂地圖，因此以單色顯示。");
+  } else if (entity.id === "saturn-titan") {
+    lines.push("表面外觀：可見光下被橘色霧霾覆蓋，以單色顯示。");
+  } else if (entity.kind === "planet" || entity.kind === "dwarf" || entity.kind === "moon") {
+    lines.push("表面外觀：沒有可用的全球表面影像，以單色顯示。");
+  }
+  if (entity.id === "saturn" && saturnRing) lines.push(`環：${saturnRing.source}；透明度與明暗由法向光學深度以單次散射近似計算，顏色為顯示用設定。`);
+  if (!lines.length) return null;
+  return <p className="text-[11px] leading-snug text-slate-500">{lines.join(" ")}</p>;
+}
 
 type Row = [label: string, value: string | null, note?: string];
 
@@ -268,6 +293,7 @@ export function InfoPanel() {
         {entity.kind === "region" && <RegionStats id={entity.id} />}
         {info.warn && <p className="text-[11px] leading-snug text-amber-300/90">{info.warn}</p>}
         <p className="text-[11px] leading-snug text-slate-500">資料來源：{info.source}</p>
+        <SurfaceSource entity={entity} />
       </div>
       <footer className="flex gap-2 border-t border-white/10 px-4 py-2.5">
         <button className="btn btn-primary flex-1 py-1.5" onClick={() => flyTo(entity.id)}>

@@ -187,7 +187,9 @@ export function Sidebar() {
         </Node>
       </ul>
       <p className="border-t border-white/10 px-3 py-2 text-[11px] leading-snug text-slate-500">
-        資料來源：NASA/JPL（Solar System Dynamics、Horizons、Small-Body Database）、HYG Database v4.4（CC BY-SA 4.0）、Wikidata。奧爾特雲與銀河系結構為示意模型。
+        資料來源：NASA/JPL（Solar System Dynamics、Horizons、Small-Body Database）、HYG Database v4.4（CC BY-SA 4.0）、Wikidata。表面影像：USGS
+        Astrogeology、NASA/JPL-Caltech/Space Science Institute（Cassini）、Hubble OPAL（NASA, ESA, A.A. Simon, M.H. Wong；CC BY 4.0）、PDS Rings Node（Voyager 2
+        土星環剖面）；自轉模型：IAU／NAIF。奧爾特雲與銀河系結構為示意模型。
       </p>
     </nav>
   );

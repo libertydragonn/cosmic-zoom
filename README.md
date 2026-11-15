@@ -89,6 +89,12 @@ React Router 8（framework 模式，`ssr: false`）、TypeScript 7、three.js 0.
 | 小行星帶、柯伊伯帶、離散盤 | JPL SBDB Query API<br>https://ssd-api.jpl.nasa.gov/sbdb_query.api | `fetch-smallbodies.mjs` |
 | 鄰近恆星 | HYG Database v4.4（astronexus），**CC BY-SA 4.0**<br>https://codeberg.org/astronexus/hyg | `fetch-stars.mjs` |
 | 恆星中文名 | Wikidata（CC0），以 Hipparcos 編號比對條目 | `fetch-stars.mjs` |
+| 水星、地球、火星、月球、木衛一至四、土衛九、海衛一、冥王星、凱倫的表面影像 | USGS Astrogeology 行星地圖服務（WMS）：MESSENGER、MODIS、Viking MDIM 2.1 彩色、LRO WAC、Galileo/Voyager、Cassini、Voyager 2、New Horizons 全球鑲嵌圖<br>https://planetarymaps.usgs.gov/ | `fetch-textures.mjs` |
+| 土衛一至土衛五、土衛八的表面影像 | NASA/JPL-Caltech/Space Science Institute，Cassini 2014 全球彩色地圖（PIA18434–PIA18439）<br>https://photojournal.jpl.nasa.gov/ | `fetch-textures.mjs` |
+| 穀神星表面影像 | USGS，Ceres Dawn FC Global Mosaic 400m（DLR 製作） | `fetch-textures.mjs` |
+| 木星、土星、天王星、海王星表面影像 | Hubble OPAL 計畫全球地圖（STScI MAST，DOI 10.17909/T9G593）<br>https://archive.stsci.edu/hlsp/opal | `fetch-textures.mjs` |
+| 土星環的透明度 | PDS Rings Node，Voyager 2 PPS δ Sco 掩星剖面（VG_2801，10 km 解析度） | `fetch-textures.mjs` |
+| 自轉軸、本初子午線（含週期項） | IAU WGCCRE 自轉模型，經 NAIF `pck00011.tpc` | `fetch-textures.mjs` |
 
 無法取得的資料列在 [DATA_GAPS.md](DATA_GAPS.md)，介面上顯示為「無資料」。
 
@@ -96,6 +102,8 @@ React Router 8（framework 模式，`ssr: false`）、TypeScript 7、three.js 0.
 
 - NASA/JPL 的資料為公開資料。
 - `public/data/stars/` 內的檔案衍生自 HYG Database，依 **CC BY-SA 4.0** 釋出；再散布時需標示出處並以相同條款分享。
+- `public/textures/` 內的表面影像衍生自 NASA、USGS、Hubble 的公開影像。巨行星貼圖衍生自 Hubble OPAL 地圖，依 **CC BY 4.0** 釋出（標示：NASA, ESA, A.A. Simon, M.H. Wong）；OPAL 要求的致謝：
+  *This work used data acquired from the NASA/ESA HST Space Telescope, associated with OPAL program (PI: Simon, GO13937), and archived by the Space Telescope Science Institute, which is operated by the Association of Universities for Research in Astronomy, Inc., under NASA contract NAS 5-26555. All maps are available at http://dx.doi.org/10.17909/T9G593.*
 
 ### 資料處理說明
 
@@ -121,6 +129,17 @@ React Router 8（framework 模式，`ssr: false`）、TypeScript 7、three.js 0.
 
 **中文名稱**：太陽、行星、矮行星用通用譯名。衛星依中文天文學慣例由「行星字頭 + IAU 編號」組成（Jupiter I → 木衛一），編號取自 JPL 發現資料表。恆星中文名取自 Wikidata 並以 OpenCC 統一轉為繁體，查不到的只顯示英文名。
 
+**表面影像**：全部轉成同一種等距圓柱投影（左緣為東經 −180°、向右遞增、北極在上），手機載入 2048 像素寬的版本，桌面拉近時才另外載入 4096 像素版。天體在畫面上的半徑大於 8 像素時才下載貼圖；同時保留的貼圖手機最多 8 張、桌面 14 張，超過時釋放最久沒用到的，之後需要再重新下載。
+
+- 經度方向逐一確認：USGS 的地圖以火星的奧林帕斯山與希臘平原、月海、地球大陸、木衛一的 Pele 火山確認為東經向右；Hubble OPAL 依各自 README 的說明處理（天王星的圖是東經向左，已左右翻轉）；Cassini 2014 彩色地圖用地形梯度與 USGS 鑲嵌圖自動比對，確認左緣為東經 0°（不符合時腳本會中止）；穀神星由 GeoTIFF 的座標標籤判定。
+- 巨行星的 Hubble 地圖採行星面緯度（planetographic），依扁率修正到橢球上；其他天體採行星中心緯度。
+- 巨行星的顏色不用 OPAL 的 TIFF 預覽（各濾鏡亮度任意縮放，會偏色），而是取三個濾鏡的 FITS 科學資料，乘上 README 表列的係數換算成反射率 I/F，長波到短波分別當作紅、綠、藍，以同一個增益映射。這是近似真彩色（濾鏡中心波長不等於人眼的三原色）。FITS 的上下方向以和 TIFF 預覽的相關性確認。
+- 冥王星、凱倫、海衛一有一部分表面從未被拍到，該區域以已成像區域的平均色填補。巨行星的 Hubble 地圖在極區、背光的半球（天王星目前的南半球）與被土星環擋住的帶狀區沒有資料，這些地方以相鄰緯度內插或延伸最接近緯度帶的平均色填補，並裁掉臨邊附近的彩色條紋。各天體的填補比例記在 `app/data/textures.json`，資訊面板也會註明。
+- Cassini 2014 彩色地圖的顏色官方說明為增強色（含紫外與紅外），這裡把飽和度降到 40%，比較接近肉眼所見，但不是校正過的真彩色。
+- 沒有貼圖的天體：金星（可見光下只有雲頂）、土衛六（橘色霧霾）、天王星的衛星（只拍到南半球，找不到可確認經度方向的全球圖）、火衛一與火衛二（形狀太不規則）、其他沒有近距離成像的天體，以及太陽以外的所有恆星（沒有恆星表面圖）。太陽以臨邊昏暗近似呈現。
+
+**自轉**：每個有貼圖的天體依 IAU 自轉模型（北極赤經赤緯、本初子午線角，含月球與木星、土星、海王星系統的週期項）即時計算方向，所以月球永遠以正面朝向地球、土星環位於土星赤道面。
+
 **常數**：天文單位取自 Horizons 輸出；黃赤交角取自 JPL approx_pos 頁；光年與秒差距由 IAU 定義計算（`app/lib/constants.ts`）。
 
 ### 軌道驗證
@@ -133,13 +152,16 @@ React Router 8（framework 模式，`ssr: false`）、TypeScript 7、three.js 0.
 
 `node scripts/validate-moons.mjs [衛星英文名…]` 可另外檢查軌道面法向量與面內相位。
 
+`npm run validate` 也會跑 `scripts/validate-rotation.mjs`：用專案的自轉模型算出「從地心看到的星下點經緯度」，與 Horizons 的 ObsSub-LON／ObsSub-LAT 比對。2000、2026、2045 年三個時刻、13 個天體（水星、月球、火星、木星、木衛一、木衛四、土星、土衛八、天王星、海王星、海衛一、冥王星、凱倫）的最大差異為 0.02°。
+
 ## 部署（Netlify）
 
 `netlify.toml` 已設定好：build 指令 `npm run build`、發布目錄 `build/client`、SPA fallback 重導向（所有路徑回傳 `index.html`）。在 Netlify 連結此專案即可，不需額外設定。
 
 ## 已知限制
 
-- 天體是純色球體，沒有表面貼圖；土星沒有畫出行星環。
+- 沒有畫出陰影（行星與環互相投下的影子、衛星投在行星上的影子）。土星環的透明度與明暗由掩星光學深度以單次散射近似計算，顏色與整體亮度是顯示用設定。
+- 巨行星的雲帶會隨時間漂移，貼圖只代表 Hubble 觀測當時的樣貌。
 - 位置是由軌道根數推算的近似值，不是星曆級精度；時間以 UTC 當作 TDB 使用（兩者相差約一分鐘）。
 - 效能只在開發機與瀏覽器的手機尺寸模擬下測過，沒有在實體手機上驗證。
 - 恆星是以 float32 存放的點，所以飛往恆星時最近只能拉到約 0.02 光年。

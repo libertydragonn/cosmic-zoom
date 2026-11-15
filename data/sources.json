@@ -2488,5 +2488,635 @@
     "retrievedAt": "2026-11-14T12:22:49.733Z",
     "bytes": 11719,
     "sha256": "a72af07546c1b0b994a346961340a98d5f8a77be7ee1290023d8c353d21757fe"
+  },
+  "textures/mercury-MESSENGER-4096.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/mercury/mercury_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=MESSENGER&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=4096&height=2048&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:57:47.617Z",
+    "bytes": 9055815,
+    "sha256": "157d030c1ca7287e4304521d4657acb5bfde76d53a2eb612b43002b5fb8a77a7"
+  },
+  "textures/wms-mercury-mercury-capabilities.xml": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/mercury/mercury_simp_cyl.map&service=WMS&request=GetCapabilities&version=1.1.1",
+    "retrievedAt": "2026-11-15T07:57:48.263Z",
+    "bytes": 14721,
+    "sha256": "a751a510c9748b00c197dd583cb01c847cc219fe8a26cd452ba14f44de7ddfa7"
+  },
+  "textures/earth-MODIS-4096.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/earth/earth_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=MODIS&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=4096&height=2048&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:57:51.142Z",
+    "bytes": 2992081,
+    "sha256": "6b1c4bda70c60a8fbb91e09875a1be2857cbd91cd45281dc3cd3fb645a934b85"
+  },
+  "textures/wms-earth-earth-capabilities.xml": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/earth/earth_simp_cyl.map&service=WMS&request=GetCapabilities&version=1.1.1",
+    "retrievedAt": "2026-11-15T07:57:51.835Z",
+    "bytes": 5750,
+    "sha256": "070511516c53e67d21c4611d1386a579122eace4edd0eeb6d07be28c08427e6e"
+  },
+  "textures/mars-MDIM21_color-4096.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/mars/mars_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=MDIM21_color&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=4096&height=2048&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:57:55.047Z",
+    "bytes": 15721056,
+    "sha256": "e962aaaf6ed4492ac8b1ee47c970cf612985b8f1f103e12d64f55a1a12f6ba90"
+  },
+  "textures/wms-mars-mars-capabilities.xml": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/mars/mars_simp_cyl.map&service=WMS&request=GetCapabilities&version=1.1.1",
+    "retrievedAt": "2026-11-15T07:57:55.710Z",
+    "bytes": 20698,
+    "sha256": "3e264895738f304488a4f348421080a868365277147211026cdc624094258c41"
+  },
+  "textures/earth-moon-LROC_WAC-4096.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/earth/moon_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=LROC_WAC&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=4096&height=2048&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:57:59.822Z",
+    "bytes": 9372300,
+    "sha256": "5f9fef4cd06d980d734d69a2847f7db00d1fca4b550b3b6b0f34503ded31278e"
+  },
+  "textures/wms-earth-moon-capabilities.xml": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/earth/moon_simp_cyl.map&service=WMS&request=GetCapabilities&version=1.1.1",
+    "retrievedAt": "2026-11-15T07:58:00.589Z",
+    "bytes": 18184,
+    "sha256": "a379aa962be10c4097100377e28329ff986cb8c0c2e22b8895dde5fadc911ebd"
+  },
+  "textures/jupiter-io-SSI_VGR_color-2048.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/io_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=SSI_VGR_color&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:58:03.021Z",
+    "bytes": 1789949,
+    "sha256": "8694fef47a4d7dbdf619732d5841bc29f68113b07c5652474dcf60797e5a4bb1"
+  },
+  "textures/wms-jupiter-io-capabilities.xml": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/io_simp_cyl.map&service=WMS&request=GetCapabilities&version=1.1.1",
+    "retrievedAt": "2026-11-15T07:58:03.580Z",
+    "bytes": 8231,
+    "sha256": "5169fb5e7e6750469ab5639ca0dd70bb7a5ec17c9b43ea5bca676fd16e7a7909"
+  },
+  "textures/jupiter-europa-GALILEO_VOYAGER-2048.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/europa_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=GALILEO_VOYAGER&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:58:04.807Z",
+    "bytes": 1947620,
+    "sha256": "9dd3f85849b64c5a242eea80477e58615d033bf63ca68f03bb01b16eb0ab408d"
+  },
+  "textures/wms-jupiter-europa-capabilities.xml": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/europa_simp_cyl.map&service=WMS&request=GetCapabilities&version=1.1.1",
+    "retrievedAt": "2026-11-15T07:58:05.480Z",
+    "bytes": 6425,
+    "sha256": "31ef39932ea82df444f3a42e69842b438ce51f0226ff4298655d970a37607247"
+  },
+  "textures/jupiter-ganymede-GALILEO_VOYAGER-2048.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/ganymede_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=GALILEO_VOYAGER&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:58:06.933Z",
+    "bytes": 1804845,
+    "sha256": "d86a8e6f434a18378221a3691970b71c9efd11315c945d4c4a004612a83f20f6"
+  },
+  "textures/wms-jupiter-ganymede-capabilities.xml": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/ganymede_simp_cyl.map&service=WMS&request=GetCapabilities&version=1.1.1",
+    "retrievedAt": "2026-11-15T07:58:07.585Z",
+    "bytes": 6461,
+    "sha256": "c09da4eefa9575c68eda96a01fbe2be5df4454a5247bbb6b547a0897f6e5805a"
+  },
+  "textures/jupiter-callisto-GALILEO_VOYAGER-2048.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/callisto_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=GALILEO_VOYAGER&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:58:09.448Z",
+    "bytes": 1641151,
+    "sha256": "c442f9d19b1001ce6b973d59bce42216cf0b02f729495c505f4c7092a6120a11"
+  },
+  "textures/wms-jupiter-callisto-capabilities.xml": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/jupiter/callisto_simp_cyl.map&service=WMS&request=GetCapabilities&version=1.1.1",
+    "retrievedAt": "2026-11-15T07:58:10.654Z",
+    "bytes": 6519,
+    "sha256": "32c6dd00a6c2ef258ea91cf2ba6e6278459ce0db700587eb12ce79912389e9e7"
+  },
+  "textures/saturn-phoebe-CASSINI-1024.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/saturn/phoebe_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=CASSINI&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=1024&height=512&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:58:11.756Z",
+    "bytes": 387394,
+    "sha256": "234c5a79a71a36489c3dfecddde2b9dcc2b225763421d60d45079194e6249724"
+  },
+  "textures/wms-saturn-phoebe-capabilities.xml": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/saturn/phoebe_simp_cyl.map&service=WMS&request=GetCapabilities&version=1.1.1",
+    "retrievedAt": "2026-11-15T07:58:12.378Z",
+    "bytes": 6849,
+    "sha256": "b0d07742ec9d1833244915512ba01f45b0b6589f37ace861fd138c152ebea09b"
+  },
+  "textures/neptune-triton-TRITON_VOYAGER2-2048.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/neptune/triton_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=TRITON_VOYAGER2&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:58:13.822Z",
+    "bytes": 2262905,
+    "sha256": "3ab1f53e5c9eca4f0a3b937cd29c8672c5ea91479f3dd21dedbdb1c3fb7b2464"
+  },
+  "textures/wms-neptune-triton-capabilities.xml": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/neptune/triton_simp_cyl.map&service=WMS&request=GetCapabilities&version=1.1.1",
+    "retrievedAt": "2026-11-15T07:58:14.374Z",
+    "bytes": 6610,
+    "sha256": "f12f8fad37ad24bc07e78538ae59558189c5b506fae76597e6d6b64f930ce731"
+  },
+  "textures/pluto-NEWHORIZONS_PLUTO_MOSAIC-2048.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/pluto/pluto_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=NEWHORIZONS_PLUTO_MOSAIC&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:58:15.735Z",
+    "bytes": 1362185,
+    "sha256": "6e707504f6cae5c0be43ab96d52416175aaff259f6cbe52b8c8b86e2106f9f28"
+  },
+  "textures/wms-pluto-pluto-capabilities.xml": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/pluto/pluto_simp_cyl.map&service=WMS&request=GetCapabilities&version=1.1.1",
+    "retrievedAt": "2026-11-15T07:58:18.484Z",
+    "bytes": 7574,
+    "sha256": "2e63cef3f22b9d40c8622857ee9340fad6f11811bae7c4e95e1194c6f4a69279"
+  },
+  "textures/pluto-charon-NEWHORIZONS_CHARON_MOSAIC-2048.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/pluto/charon_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=NEWHORIZONS_CHARON_MOSAIC&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=2048&height=1024&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:58:19.877Z",
+    "bytes": 1271705,
+    "sha256": "5e6c83f4f9c3be78b088fe6f8cc0629ee9b1e132725e941358e9e6123c3e6bd0"
+  },
+  "textures/wms-pluto-charon-capabilities.xml": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/pluto/charon_simp_cyl.map&service=WMS&request=GetCapabilities&version=1.1.1",
+    "retrievedAt": "2026-11-15T07:58:20.401Z",
+    "bytes": 7599,
+    "sha256": "22d439d1cd953ff55b7591d332851681e3e852bc3c0d0e82492d02d1244379dd"
+  },
+  "textures/PIA18437.jpg": {
+    "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18437/PIA18437.jpg",
+    "retrievedAt": "2026-11-15T07:58:21.780Z",
+    "bytes": 1848860,
+    "sha256": "303d5653875d507e8859a26d0afdedd0173c7d4e691f27c3266ca63d1aa4f97f"
+  },
+  "textures/saturn-mimas-CASSINI_MIMAS_MOSAIC-720.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/saturn/mimas_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=CASSINI_MIMAS_MOSAIC&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=720&height=360&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T07:58:22.742Z",
+    "bytes": 308769,
+    "sha256": "7034ed377a08378e69e132e80111af329504aff35120fafcae1abb052bd88e19"
+  },
+  "textures/PIA18437.html": {
+    "url": "https://photojournal.jpl.nasa.gov/catalog/PIA18437",
+    "retrievedAt": "2026-11-15T08:01:07.083Z",
+    "bytes": 271194,
+    "sha256": "aa3f0db45222a72d715050d9e30e5874ec510c3035f7db48a22ba234c4ef9907"
+  },
+  "textures/PIA18435.jpg": {
+    "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18435/PIA18435.jpg",
+    "retrievedAt": "2026-11-15T08:01:09.491Z",
+    "bytes": 18915876,
+    "sha256": "5b60d0161efd659f6d95281559ad4b30826fd02ee72944dbb3f8b7679f65ed4d"
+  },
+  "textures/saturn-enceladus-CASSINI-720.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/saturn/enceladus_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=CASSINI&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=720&height=360&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T08:01:10.681Z",
+    "bytes": 326583,
+    "sha256": "d7ca9d8e1b5c5fb563da4d0a0a1ab44f377f54958460c4c85d3b8d8d895f0cf9"
+  },
+  "textures/saturn-enceladus-CASSINI_100m-720.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/saturn/enceladus_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=CASSINI_100m&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=720&height=360&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T08:01:58.534Z",
+    "bytes": 318530,
+    "sha256": "58188df40e848014ec39ec1db814dea16b5b33266fe61e07d339104b3175556c"
+  },
+  "textures/PIA18435.html": {
+    "url": "https://photojournal.jpl.nasa.gov/catalog/PIA18435",
+    "retrievedAt": "2026-11-15T08:02:01.736Z",
+    "bytes": 271203,
+    "sha256": "7a4bfff6433d6902fa469dd4d5e457775ed0f17a6870b82c5c38d4353c9b83da"
+  },
+  "textures/PIA18439.jpg": {
+    "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18439/PIA18439.jpg",
+    "retrievedAt": "2026-11-15T08:02:03.826Z",
+    "bytes": 10809057,
+    "sha256": "aa3c249de2432699157638dae11c6f5c5e22c3dda94dd803af8666269f1a3da4"
+  },
+  "textures/saturn-tethys-CASSINI-720.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/saturn/tethys_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=CASSINI&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=720&height=360&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T08:02:04.728Z",
+    "bytes": 326897,
+    "sha256": "89146a39beb1ccb7160b9e7d9eb968b261110ecfc5a5661e68ffaf947d2c5cf0"
+  },
+  "textures/PIA18439.html": {
+    "url": "https://photojournal.jpl.nasa.gov/catalog/PIA18439",
+    "retrievedAt": "2026-11-15T08:02:07.594Z",
+    "bytes": 271807,
+    "sha256": "8347a1039a64810de4f24d6fff513df50ed0af2be0d69b3ffd3e6714326a561c"
+  },
+  "textures/PIA18434.jpg": {
+    "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18434/PIA18434.jpg",
+    "retrievedAt": "2026-11-15T08:02:09.855Z",
+    "bytes": 10255303,
+    "sha256": "5e885d0e3bac1e1ee36934063d5c9cdf609dc10ad44677cba31bc9e703b674ff"
+  },
+  "textures/saturn-dione-CASSINI_VOYAGER-720.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/saturn/dione_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=CASSINI_VOYAGER&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=720&height=360&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T08:02:10.723Z",
+    "bytes": 304385,
+    "sha256": "03f61ac528a257f8f194744a15d6b8941de678a677daa63511adb9761ce20e94"
+  },
+  "textures/PIA18434.html": {
+    "url": "https://photojournal.jpl.nasa.gov/catalog/PIA18434",
+    "retrievedAt": "2026-11-15T08:02:13.521Z",
+    "bytes": 271274,
+    "sha256": "d0fb3d827fecf7301c391a92bdc174f7f534c6df3df374982efd774c097e1724"
+  },
+  "textures/PIA18438.jpg": {
+    "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18438/PIA18438.jpg",
+    "retrievedAt": "2026-11-15T08:02:15.615Z",
+    "bytes": 10389170,
+    "sha256": "4a3f4c5cca6ec558a6dcd664ee818dd700df527fc07fe623d1c56d4e2ae81bc4"
+  },
+  "textures/saturn-rhea-CASSINI_VOYAGER-720.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/saturn/rhea_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=CASSINI_VOYAGER&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=720&height=360&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T08:02:16.476Z",
+    "bytes": 284952,
+    "sha256": "85633e45f76bb425e279c92ba8c418af979884655e21097c74904e8f103edaec"
+  },
+  "textures/PIA18438.html": {
+    "url": "https://photojournal.jpl.nasa.gov/catalog/PIA18438",
+    "retrievedAt": "2026-11-15T08:02:19.275Z",
+    "bytes": 270864,
+    "sha256": "d092d337036eebce60de5bff460c5819b7ec631c368a18e5076c6899d7dec106"
+  },
+  "textures/PIA18436.jpg": {
+    "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia18/pia18436/PIA18436.jpg",
+    "retrievedAt": "2026-11-15T08:02:21.472Z",
+    "bytes": 4989080,
+    "sha256": "6e0e1d17a50343d9176912d047392c4f7cd67c48bdb30789918a4ff24d9f683b"
+  },
+  "textures/saturn-iapetus-CASSINI_VOYAGER-720.png": {
+    "url": "https://planetarymaps.usgs.gov/cgi-bin/mapserv?map=/maps/saturn/iapetus_simp_cyl.map&service=WMS&version=1.1.1&request=GetMap&layers=CASSINI_VOYAGER&styles=&srs=EPSG:4326&bbox=-180,-90,180,90&width=720&height=360&format=image/png&transparent=TRUE",
+    "retrievedAt": "2026-11-15T08:02:22.574Z",
+    "bytes": 315766,
+    "sha256": "081acc68c9d14d24c2346acf8ed27e3a0749aa61fa783f0630b572981218cea4"
+  },
+  "textures/PIA18436.html": {
+    "url": "https://photojournal.jpl.nasa.gov/catalog/PIA18436",
+    "retrievedAt": "2026-11-15T08:02:25.357Z",
+    "bytes": 270384,
+    "sha256": "5c95f63a2291916ee523d23af2b354f18ec6e64ad65489c8182f7710d229d0ec"
+  },
+  "textures/Ceres_Dawn_FC_DLR_global_20ppd_Oct2015.tif": {
+    "url": "https://planetarymaps.usgs.gov/mosaic/Ceres_Dawn_FC_DLR_global_20ppd_Oct2015.tif",
+    "retrievedAt": "2026-11-15T08:02:39.450Z",
+    "bytes": 27280830,
+    "sha256": "920f65e7d0718c9f8d5e86783f35e0b466096251a8c1f2d01a7748a6d534c154"
+  },
+  "textures/opal-jupiter-2025-readme.txt": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle32/jupiter/hlsp_opal_hst_wfc3-uvis_jupiter-2025_all_v1_readme.txt",
+    "retrievedAt": "2026-11-15T08:02:40.882Z",
+    "bytes": 1733,
+    "sha256": "344f5c1bcae360edfc7b4f1183b9ed47f887cbbe7fa0518fdf577c915784fdad"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_jupiter-2025a_f395n-f502n-f631n_v1_globalmap.tif": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle32/jupiter/hlsp_opal_hst_wfc3-uvis_jupiter-2025a_f395n-f502n-f631n_v1_globalmap.tif",
+    "retrievedAt": "2026-11-15T08:02:46.199Z",
+    "bytes": 19444834,
+    "sha256": "52b6cc32639f699ff5614b169c4c2727fff98e7eb432aff7c718177191716e6c"
+  },
+  "textures/opal-saturn-2026-readme.txt": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/saturn/hlsp_opal_hst_wfc3-uvis_saturn-2026_all_v1_readme.txt",
+    "retrievedAt": "2026-11-15T08:02:46.987Z",
+    "bytes": 1737,
+    "sha256": "c2f819e8d5c3516062f601864bf5394439e05be92b48c96886b12e86ed7b6b56"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_saturn-2026a_f395n-f502n-f631n_v1_globalmap.tif": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/saturn/hlsp_opal_hst_wfc3-uvis_saturn-2026a_f395n-f502n-f631n_v1_globalmap.tif",
+    "retrievedAt": "2026-11-15T08:02:49.789Z",
+    "bytes": 4882016,
+    "sha256": "40299aea6fcbde8a6b69286f5dac6acaab2377b58f47d0c43f9d9a9220ae0ad1"
+  },
+  "textures/opal-uranus-2025-readme.txt": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/uranus/hlsp_opal_hst_wfc3-uvis_uranus-2025_all_v1_readme.txt",
+    "retrievedAt": "2026-11-15T08:02:50.156Z",
+    "bytes": 1640,
+    "sha256": "52cfb90ecff487fb9b821ce1cce8a680c9705c001fc217319bc5b8c8865d96da"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_uranus-2025a_f657n-f547m-f467m_v1_globalmap.tif": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/uranus/hlsp_opal_hst_wfc3-uvis_uranus-2025a_f657n-f547m-f467m_v1_globalmap.tif",
+    "retrievedAt": "2026-11-15T08:02:50.433Z",
+    "bytes": 787756,
+    "sha256": "854ba9d0b744c2d6e6b646d315847a3528b94b4f0b8970cc4285d71228e69c7b"
+  },
+  "textures/opal-neptune-2026-readme.txt": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/neptune/hlsp_opal_hst_wfc3-uvis_neptune-2026_all_v1_readme.txt",
+    "retrievedAt": "2026-11-15T08:02:50.718Z",
+    "bytes": 1532,
+    "sha256": "f97b4f9f57c8363419c7f59076ad6050341a2fdb21241420dbd3b9b495dd6101"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_neptune-2026a_f467m-f547m-f657n_v1_globalmap.tif": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/neptune/hlsp_opal_hst_wfc3-uvis_neptune-2026a_f467m-f547m-f657n_v1_globalmap.tif",
+    "retrievedAt": "2026-11-15T08:02:50.995Z",
+    "bytes": 789926,
+    "sha256": "6a4d8be60f3eb81dbf06d332e9cc4c19ba070931a16d59f30fbe63145003aeee"
+  },
+  "textures/VG_2801-PS1P01.LBL": {
+    "url": "https://pds-rings.seti.org/holdings/volumes/VG_28xx/VG_2801/EASYDATA/KM010/PS1P01.LBL",
+    "retrievedAt": "2026-11-15T08:03:58.580Z",
+    "bytes": 6585,
+    "sha256": "1cad40374a28977258c05532627187c90d3e168b2d338eff1b0d896394b58555"
+  },
+  "textures/VG_2801-PS1P01.TAB": {
+    "url": "https://pds-rings.seti.org/holdings/volumes/VG_28xx/VG_2801/EASYDATA/KM010/PS1P01.TAB",
+    "retrievedAt": "2026-11-15T08:04:41.551Z",
+    "bytes": 352550,
+    "sha256": "0f917e554786b81a103d125afaa40120e36b00089f7417069de138c1443e705d"
+  },
+  "validate/rot-199-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='199'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:41.671Z",
+    "bytes": 6791,
+    "sha256": "7e68013fe95a4f3a98fcbd1fa272ef0e076922effca694ce40e597c8f3865da3"
+  },
+  "validate/rot-199-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='199'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:42.028Z",
+    "bytes": 6791,
+    "sha256": "d5396d5ba28b9e05d868ac1a5caa10d71f4d8793b4fe39e2b6eb07cef887b587"
+  },
+  "validate/rot-199-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='199'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:42.321Z",
+    "bytes": 6791,
+    "sha256": "42bf742e869522335a6dd67e3315cef3ac184673868f9a52dfe0e3da3c97103e"
+  },
+  "validate/rot-301-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='301'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:42.634Z",
+    "bytes": 6797,
+    "sha256": "f46ab9de05aa1bd65f3226ee800091747dfa5faa3e9a0b1f7734bc9472574054"
+  },
+  "validate/rot-301-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='301'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:42.928Z",
+    "bytes": 6797,
+    "sha256": "9e91b500e8493012c775d1ef995ccb2db429602a61fcd0a251608893cd74762f"
+  },
+  "validate/rot-301-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='301'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:43.204Z",
+    "bytes": 6797,
+    "sha256": "a53529ed5d8e3a27cf93547f96ec602c7b4570d36839acfd0a4dbef4c492c4b2"
+  },
+  "validate/rot-499-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='499'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:43.469Z",
+    "bytes": 6792,
+    "sha256": "3e01b9b17b5aa7e7db1649190afa304b28c45b63d020943de52304b1e244e209"
+  },
+  "validate/rot-499-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='499'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:43.741Z",
+    "bytes": 6792,
+    "sha256": "6dd28107b3810304201a49b9d6560dc48a76879e00320d088ef366dc9d827355"
+  },
+  "validate/rot-499-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='499'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:44.010Z",
+    "bytes": 6792,
+    "sha256": "1d84c7cab20e9b910ceafb9742f017dafa1086df995ff740259b3299d1d22bb2"
+  },
+  "validate/rot-599-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='599'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:44.275Z",
+    "bytes": 7238,
+    "sha256": "0b6a97302da859184eca98a03739d2c5dcc44a6230fc65ddb8e8b14ac9490b05"
+  },
+  "validate/rot-599-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='599'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:44.553Z",
+    "bytes": 7238,
+    "sha256": "ceaff741b19496dd2de68eb70179fe3031e87754edddc3c73a23c5350afd93f7"
+  },
+  "validate/rot-599-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='599'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:44.842Z",
+    "bytes": 7238,
+    "sha256": "9def6dfd5db7d4104ab5d455ff23a91009b9d8830902d2f816c50b8e5b66410b"
+  },
+  "validate/rot-501-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='501'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:45.117Z",
+    "bytes": 6819,
+    "sha256": "d27d8a57ba98971a4780a1103529c33c8d5420a6d9f2a5e3b5074c74c9c505c6"
+  },
+  "validate/rot-501-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='501'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:45.393Z",
+    "bytes": 6819,
+    "sha256": "844068286a3c37e8f851f6c99a3fe1c2a6031da2903bb59425692cd8c9709ec0"
+  },
+  "validate/rot-501-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='501'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:45.660Z",
+    "bytes": 6819,
+    "sha256": "5ddeb87fb78629ed3a5c4bd08ffabcd0f37bef231dc51ff8e6d68625f8e9db33"
+  },
+  "validate/rot-504-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='504'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:45.958Z",
+    "bytes": 6819,
+    "sha256": "56d7a4addd849ace7fde66b859cc964cc5960f921df4133f339d299d81f9fc1b"
+  },
+  "validate/rot-504-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='504'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:46.235Z",
+    "bytes": 6819,
+    "sha256": "a1eefedb14c34e12431335579f48b837c312249d4c0179a044e9bcdf98749971"
+  },
+  "validate/rot-504-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='504'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:46.509Z",
+    "bytes": 6819,
+    "sha256": "238a0b385bb34f8a8fd96d28cf336538e880a6ee9087747bc10ec6b09b3f9e64"
+  },
+  "validate/rot-699-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='699'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:46.781Z",
+    "bytes": 7216,
+    "sha256": "7f4129a59a5e723c95c466886680d25408a7ec62ef5ead4efb9409e46aa54e71"
+  },
+  "validate/rot-699-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='699'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:47.062Z",
+    "bytes": 7216,
+    "sha256": "5e771077ea32dd198d2e3be8c9dbcbd256e9597c67b411db607c8dc88b54a2ec"
+  },
+  "validate/rot-699-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='699'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:47.375Z",
+    "bytes": 7216,
+    "sha256": "30aba21819b4061adc8851070b1105e3f977bd597c4aa4b568234b6941386282"
+  },
+  "validate/rot-608-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='608'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:47.644Z",
+    "bytes": 6796,
+    "sha256": "64810160c18d7927404884cfe9c49673a9438986c04de5c316f2cdfc5cb476cc"
+  },
+  "validate/rot-608-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='608'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:47.908Z",
+    "bytes": 6796,
+    "sha256": "e906f57bd6dbafaef8fb7462c158c91ed7a449cc4f076f66392a78882042ad5a"
+  },
+  "validate/rot-608-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='608'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:48.183Z",
+    "bytes": 6796,
+    "sha256": "59d3b0f164b9ceeb1aa5e5013b8f09e156a70311c374925eeac6425e1af8ef42"
+  },
+  "validate/rot-799-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='799'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:48.464Z",
+    "bytes": 7236,
+    "sha256": "e9282edbf53463c64310c4f72692691a25677aa46a2cf8b1a8858dcc8f21594b"
+  },
+  "validate/rot-799-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='799'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:48.739Z",
+    "bytes": 7236,
+    "sha256": "681e1130c457f963fecb59ef697baf12ff7b74ca51f8a99a130b5f052e231c10"
+  },
+  "validate/rot-799-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='799'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:49.003Z",
+    "bytes": 7236,
+    "sha256": "aa431892ece83040e611753ae1b321a857718d5224e2e4ce6ecf530cae8d67e8"
+  },
+  "validate/rot-899-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='899'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:49.301Z",
+    "bytes": 7238,
+    "sha256": "55fe2f78b2c50cef233dc141692c732f7be8d42090c5c034ee8441dccdec0f4a"
+  },
+  "validate/rot-899-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='899'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:49.568Z",
+    "bytes": 7238,
+    "sha256": "51da3c800bedf32d2dc8cd148715f3a42df09638b9499e0310f885a3fdfe8f99"
+  },
+  "validate/rot-899-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='899'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:49.848Z",
+    "bytes": 7238,
+    "sha256": "8d70acc1d87c17a0420584477b8f4bb22495a471652606b7ab78f9ef49a89dcd"
+  },
+  "validate/rot-801-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='801'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:50.129Z",
+    "bytes": 6823,
+    "sha256": "7ee209efc529c6a3537f66177afc2d85fab5054bd3088e0aa5f34edd7e78599b"
+  },
+  "validate/rot-801-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='801'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:50.408Z",
+    "bytes": 6823,
+    "sha256": "8e6935c18f3d950f7e909bf3fe7fd5d954e0b9d075faebe26018bd66e16670a3"
+  },
+  "validate/rot-801-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='801'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:50.710Z",
+    "bytes": 6823,
+    "sha256": "96ab59bac49f9099661e184c683403bfb82b91be847848368d436b116689c25f"
+  },
+  "validate/rot-999-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='999'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:51.035Z",
+    "bytes": 6811,
+    "sha256": "1bf37e68cdae300f93aae3fc67f34af124d64da67e10fe088d87f6e7a6a1a304"
+  },
+  "validate/rot-999-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='999'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:51.303Z",
+    "bytes": 6811,
+    "sha256": "dff59251d1e854da41dd35b304a14f99df5c301d7e8976f0a2817d106a313ef5"
+  },
+  "validate/rot-999-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='999'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:51.595Z",
+    "bytes": 6811,
+    "sha256": "12892f1dccc8470286015097bbfdb1b502ec0ae0c64d47c87c86177e6dfb10d2"
+  },
+  "validate/rot-901-2000-01-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='901'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2000-01-01'&STOP_TIME='2000-01-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:51.870Z",
+    "bytes": 6813,
+    "sha256": "0423871f47741f9b781f483e09e241d7793793134168a7c39c23eeb9fb6a53f8"
+  },
+  "validate/rot-901-2026-11-14.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='901'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2026-11-14'&STOP_TIME='2026-11-15'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:52.138Z",
+    "bytes": 6813,
+    "sha256": "998ee18db7fb31e2082f667af6aeee2d5d6f787a17b489b346853060349c2473"
+  },
+  "validate/rot-901-2045-06-01.txt": {
+    "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND='901'&OBJ_DATA='NO'&MAKE_EPHEM='YES'&EPHEM_TYPE='OBSERVER'&CENTER='500@399'&START_TIME='2045-06-01'&STOP_TIME='2045-06-02'&STEP_SIZE='2 d'&QUANTITIES='1,14,21'&ANG_FORMAT='DEG'&CSV_FORMAT='YES'&TIME_TYPE='TT'",
+    "retrievedAt": "2026-11-15T08:07:52.414Z",
+    "bytes": 6813,
+    "sha256": "bc67dec1726a656bd3ced9b890feb48e1a3d0b40abbc5b98409c928835384c78"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_jupiter-2025a_f631n_v1_globalmap.fits": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle32/jupiter/hlsp_opal_hst_wfc3-uvis_jupiter-2025a_f631n_v1_globalmap.fits",
+    "retrievedAt": "2026-11-15T08:17:10.226Z",
+    "bytes": 25925760,
+    "sha256": "376ebe3b3e25d1bf7a3968486c8952bd7e1a11e15504b74c4e9f6021e6f0a0bd"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_jupiter-2025a_f502n_v1_globalmap.fits": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle32/jupiter/hlsp_opal_hst_wfc3-uvis_jupiter-2025a_f502n_v1_globalmap.fits",
+    "retrievedAt": "2026-11-15T08:17:24.949Z",
+    "bytes": 25925760,
+    "sha256": "ad018dd9c1e11dd040fad11e5e6c00e680841643b2ae2e3934fa387af75c2ef4"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_jupiter-2025a_f395n_v1_globalmap.fits": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle32/jupiter/hlsp_opal_hst_wfc3-uvis_jupiter-2025a_f395n_v1_globalmap.fits",
+    "retrievedAt": "2026-11-15T08:17:43.835Z",
+    "bytes": 25925760,
+    "sha256": "7c524df5d3ebcadb202b2d8c63e59e0ae2ae555bf4eaf1c1c24d0d4d33b4687d"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_saturn-2026a_f631n_v1_globalmap.fits": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/saturn/hlsp_opal_hst_wfc3-uvis_saturn-2026a_f631n_v1_globalmap.fits",
+    "retrievedAt": "2026-11-15T08:17:50.428Z",
+    "bytes": 6485760,
+    "sha256": "294350a13de4f013ddf16ba0811de2d9302a511ab98941fa91f82d6f0da6db70"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_saturn-2026a_f502n_v1_globalmap.fits": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/saturn/hlsp_opal_hst_wfc3-uvis_saturn-2026a_f502n_v1_globalmap.fits",
+    "retrievedAt": "2026-11-15T08:17:51.976Z",
+    "bytes": 6485760,
+    "sha256": "fd89dbe5a6f0c7a6a0a7c69cb097828490d08f8f911310bfb20c37e1782913ae"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_saturn-2026a_f395n_v1_globalmap.fits": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/saturn/hlsp_opal_hst_wfc3-uvis_saturn-2026a_f395n_v1_globalmap.fits",
+    "retrievedAt": "2026-11-15T08:17:53.562Z",
+    "bytes": 6485760,
+    "sha256": "63790f086f3d7ddbb9af2f4162554c55552a28f75788c18c4403e9e0bfd9f580"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_uranus-2025a_f657n_v1_globalmap.fits": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/uranus/hlsp_opal_hst_wfc3-uvis_uranus-2025a_f657n_v1_globalmap.fits",
+    "retrievedAt": "2026-11-15T08:17:54.535Z",
+    "bytes": 1045440,
+    "sha256": "9c87909b3c40b3b9cce8a6a0feed834e6bc9ac786337f2b374553d25fed00f88"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_uranus-2025a_f547m_v1_globalmap.fits": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/uranus/hlsp_opal_hst_wfc3-uvis_uranus-2025a_f547m_v1_globalmap.fits",
+    "retrievedAt": "2026-11-15T08:17:55.036Z",
+    "bytes": 1045440,
+    "sha256": "3f3ee217b33d0d65a03a52099b341e89ba02e87d6274ac3f38bcca9e6de12471"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_uranus-2025a_f467m_v1_globalmap.fits": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/uranus/hlsp_opal_hst_wfc3-uvis_uranus-2025a_f467m_v1_globalmap.fits",
+    "retrievedAt": "2026-11-15T08:17:55.551Z",
+    "bytes": 1045440,
+    "sha256": "7c5276f9446d9517b8fea9a34b2edd6f4d620d9ab17bf0879766e07bde54c7e8"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_neptune-2026a_f657n_v1_globalmap.fits": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/neptune/hlsp_opal_hst_wfc3-uvis_neptune-2026a_f657n_v1_globalmap.fits",
+    "retrievedAt": "2026-11-15T08:17:55.948Z",
+    "bytes": 1045440,
+    "sha256": "a23dada9000bba139139bb141c033d7ced1d275dbc1930377759e214ef296418"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_neptune-2026a_f547m_v1_globalmap.fits": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/neptune/hlsp_opal_hst_wfc3-uvis_neptune-2026a_f547m_v1_globalmap.fits",
+    "retrievedAt": "2026-11-15T08:17:56.232Z",
+    "bytes": 1045440,
+    "sha256": "aa856b3833b0b3cdd1ba7e474c1c55eec6b28b57d65537141cd5e0be09a414a2"
+  },
+  "textures/hlsp_opal_hst_wfc3-uvis_neptune-2026a_f467m_v1_globalmap.fits": {
+    "url": "https://archive.stsci.edu/hlsps/opal/cycle33/neptune/hlsp_opal_hst_wfc3-uvis_neptune-2026a_f467m_v1_globalmap.fits",
+    "retrievedAt": "2026-11-15T08:17:56.784Z",
+    "bytes": 1045440,
+    "sha256": "ab81fe3510c351691b632cc1979c0f16dd2aa8f692ad98b9e2a2ba31b29789a5"
   }
 }
