@@ -177,7 +177,9 @@ React Router 8（framework 模式，`ssr: false`）、TypeScript 7、three.js 0.
 
 ## 部署（Netlify）
 
-`netlify.toml` 已設定好：build 指令 `npm run build`、發布目錄 `build/client`、SPA fallback 重導向（所有路徑回傳 `index.html`）。在 Netlify 連結此專案即可，不需額外設定。
+網址：https://cosmic-zoom.netlify.app 。Netlify 專案已連結 GitHub，推送到 `main` 分支就會自動建置與部署。
+
+`netlify.toml` 已設定好：build 指令 `npm run build`、發布目錄 `build/client`、SPA fallback 重導向（所有路徑回傳 `index.html`）。建置時不會重新擷取天文資料（資料檔已提交在儲存庫內）；要更新資料請在本機執行 `npm run data`，確認後提交推送。近地衛星的軌道根數另由 Netlify 排程函式每日自動更新（見上方「環繞地球的人造衛星」）。
 
 ## 已知限制
 
