@@ -12,6 +12,8 @@ import type { Region } from "~/lib/regions";
 import type { StarEntity } from "~/lib/stars";
 import { useUI } from "~/lib/store";
 import { saturnRing, textureInfo } from "~/scene/surfaces";
+import { type Craft, craftLoaded } from "~/lib/spacecraft";
+import { C_KM_S } from "~/lib/constants";
 
 /** 表面外觀的來源說明（貼圖、環、或為何沒有貼圖）。 */
 function SurfaceSource({ entity }: { entity: Entity }) {
@@ -187,8 +189,89 @@ function buildRows(e: Entity): { type: string; rows: Row[]; description?: string
       source: r.theoretical ? "程序化生成的示意粒子" : r.id === "stellar-neighborhood" ? "HYG Database v4.4" : "JPL Small-Body Database／JPL Solar System Dynamics",
     };
   }
+  if (e.kind === "spacecraft") {
+    const r = (e as Craft).rec;
+    const day = (iso: string) => iso.slice(0, 10);
+    return {
+      type: r.group === "earth" ? "人造衛星（環繞地球）" : "人造探測器",
+      rows: [
+        ["營運機構", r.operators.length ? r.operators.join("、") : null],
+        ["發射日期", r.launchDate, r.launchNote ?? undefined],
+        ["COSPAR 編號", r.cospar],
+        [
+          "星曆期間",
+          `${day(r.coverage.startIso)} 至 ${day(r.coverage.endIso)}`,
+          r.group === "earth"
+            ? "Horizons 提供的範圍；近地衛星受大氣阻力影響，預測只到約一兩個月後，需定期更新資料"
+            : "Horizons 提供的範圍，未來部分為預測軌道",
+        ],
+      ],
+      description: r.description ?? undefined,
+      source: `JPL Horizons ${r.group === "earth" ? "每日密切軌道根數" : "向量星曆"}（編號 ${r.horizonsId}${r.spkSource ? `，${r.spkSource}` : ""}）；名稱、發射日期、營運機構：Wikidata${r.wikidata ? `（${r.wikidata}）` : ""}`,
+    };
+  }
   const g = e as GalacticEntity;
   return { type: "銀河系結構（示意模型）", rows: [], description: g.description, source: "程序化生成的示意粒子" };
+}
+
+const CENTER_ZH: Record<string, string> = { sun: "太陽" };
+/** 地球 GM（km³/s²），取自 JPL。 */
+const GM_EARTH = earthRec.gm as number;
+
+/** 探測器的即時狀態：與太陽、地球的距離、光行時間、速度。 */
+function CraftLive({ craft }: { craft: Craft }) {
+  const [lines, setLines] = useState<string[]>([]);
+  useEffect(() => {
+    const update = () => {
+      if (!craftLoaded(craft)) {
+        setLines(["軌跡資料下載中…"]);
+        return;
+      }
+      const cov = craft.rec.coverage;
+      if (!craft.active) {
+        setLines([`目前時間不在星曆範圍內（${cov.startIso.slice(0, 10)} 至 ${cov.endIso.slice(0, 10)}），畫面上不顯示。`]);
+        return;
+      }
+      const earth = getEntity("earth")!;
+      if (craft.osc) {
+        // 地球衛星：高度、軌道週期、速度
+        const r = Math.hypot(craft.pos[0] - earth.pos[0], craft.pos[1] - earth.pos[1], craft.pos[2] - earth.pos[2]);
+        const R = earth.radiusKm ?? 6371;
+        const periodMin = (2 * Math.PI * Math.sqrt(craft.osc.a ** 3 / GM_EARTH)) / 60;
+        const speed = Math.hypot(craft.vel[0], craft.vel[1], craft.vel[2]);
+        const pr = craft.osc.a * (1 - craft.osc.e) - R;
+        const ap = craft.osc.a * (1 + craft.osc.e) - R;
+        setLines([
+          `距地表高度　${formatDistance(r - R)}`,
+          craft.osc.e > 0.05 ? `近地點 ${formatDistance(pr)}，遠地點 ${formatDistance(ap)}` : `軌道高度約 ${formatDistance((pr + ap) / 2)}`,
+          `繞地球一圈　${periodMin < 180 ? `${sig(periodMin, 3)} 分鐘` : `${sig(periodMin / 60, 3)} 小時`}`,
+          `相對地球速度　${sig(speed, 4)} km/s`,
+        ]);
+        return;
+      }
+      const dSun = Math.hypot(craft.pos[0], craft.pos[1], craft.pos[2]);
+      const dEarth = Math.hypot(craft.pos[0] - earth.pos[0], craft.pos[1] - earth.pos[1], craft.pos[2] - earth.pos[2]);
+      const lt = dEarth / C_KM_S;
+      const ltText = lt < 60 ? `${sig(lt, 3)} 秒` : lt < 3600 ? `${sig(lt / 60, 3)} 分鐘` : `${sig(lt / 3600, 3)} 小時`;
+      const center = craft.centerId === "sun" ? "太陽" : (CENTER_ZH[craft.centerId] ?? getEntity(craft.centerId)?.zh ?? craft.centerId);
+      const speed = Math.hypot(craft.vel[0], craft.vel[1], craft.vel[2]);
+      setLines([
+        `與太陽距離　${formatDistance(dSun)}`,
+        `與地球距離　${formatDistance(dEarth)}（無線電單程 ${ltText}）`,
+        `相對${center}速度　${sig(speed, 4)} km/s`,
+      ]);
+    };
+    update();
+    const id = window.setInterval(update, 250);
+    return () => window.clearInterval(id);
+  }, [craft]);
+  return (
+    <div className="flex flex-col gap-0.5 rounded-md bg-amber-300/10 px-2.5 py-1.5 text-[13px] tabular-nums text-amber-50">
+      {lines.map((l) => (
+        <span key={l.slice(0, 6)}>{l}</span>
+      ))}
+    </div>
+  );
 }
 
 interface SmallBodyStats {
@@ -289,6 +372,7 @@ export function InfoPanel() {
       <div className="thin-scroll flex flex-col gap-3 overflow-y-auto px-4 py-3">
         {info.description && <p className="text-[13px] leading-relaxed text-slate-200">{info.description}</p>}
         <LiveDistance entity={entity} />
+        {entity.kind === "spacecraft" && <CraftLive craft={entity as Craft} />}
         <Rows rows={info.rows} />
         {entity.kind === "region" && <RegionStats id={entity.id} />}
         {info.warn && <p className="text-[11px] leading-snug text-amber-300/90">{info.warn}</p>}
@@ -299,6 +383,11 @@ export function InfoPanel() {
         <button className="btn btn-primary flex-1 py-1.5" onClick={() => flyTo(entity.id)}>
           {isTarget ? "重新對準" : "飛往此處"}
         </button>
+        {entity.kind === "spacecraft" && (entity as Craft).rec.eyesId && (
+          <button className="btn flex-1 py-1.5" onClick={() => useUI.getState().openEyes(entity.id)} title="以 NASA Eyes on the Solar System 檢視這個探測器的 3D 模型">
+            在 NASA Eyes 檢視
+          </button>
+        )}
       </footer>
     </section>
   );

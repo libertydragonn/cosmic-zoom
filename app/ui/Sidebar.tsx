@@ -4,6 +4,7 @@ import solarSystem from "~/data/solar-system.json";
 import { getEntity } from "~/lib/bodies";
 import { galacticEntities } from "~/lib/galaxy";
 import { moonNameIndex, moonSystems } from "~/lib/moons";
+import { CRAFT_GROUPS, crafts } from "~/lib/spacecraft";
 import { type StarEntity, loadStars } from "~/lib/stars";
 import { useUI } from "~/lib/store";
 
@@ -183,13 +184,25 @@ export function Sidebar() {
             <Node id="kuiper-belt" zh="柯伊伯帶" en="Kuiper Belt" depth={2} />
             <Node id="scattered-disc" zh="離散盤" en="Scattered Disc" depth={2} />
             <Node id="oort-cloud" zh="奧爾特雲" en="Oort Cloud（理論模型）" depth={2} />
+            <Node zh="人造探測器" en="Spacecraft" depth={2} count={crafts.length}>
+              {CRAFT_GROUPS.map((g) => {
+                const list = crafts.filter((c) => c.rec.group === g.id);
+                return (
+                  <Node key={g.id} zh={g.zh} en={g.en} depth={3} count={list.length}>
+                    {list.map((c) => (
+                      <Node key={c.id} id={c.id} zh={c.zh} en={c.en} depth={4} />
+                    ))}
+                  </Node>
+                );
+              })}
+            </Node>
           </Node>
         </Node>
       </ul>
       <p className="border-t border-white/10 px-3 py-2 text-[11px] leading-snug text-slate-500">
         資料來源：NASA/JPL（Solar System Dynamics、Horizons、Small-Body Database）、HYG Database v4.4（CC BY-SA 4.0）、Wikidata。表面影像：USGS
         Astrogeology、NASA/JPL-Caltech/Space Science Institute（Cassini）、Hubble OPAL（NASA, ESA, A.A. Simon, M.H. Wong；CC BY 4.0）、PDS Rings Node（Voyager 2
-        土星環剖面）；自轉模型：IAU／NAIF。奧爾特雲與銀河系結構為示意模型。
+        土星環剖面）；自轉模型：IAU／NAIF；探測器軌跡：JPL Horizons。奧爾特雲與銀河系結構為示意模型。
       </p>
     </nav>
   );

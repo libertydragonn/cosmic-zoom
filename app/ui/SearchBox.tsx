@@ -22,8 +22,9 @@ const KIND_LABEL: Record<EntityKind, string> = {
   region: "區域",
   hygstar: "恆星",
   galactic: "銀河系",
+  spacecraft: "人造探測器",
 };
-const KIND_RANK: Record<EntityKind, number> = { sun: 0, planet: 1, dwarf: 2, galactic: 3, region: 3, moon: 4, hygstar: 5 };
+const KIND_RANK: Record<EntityKind, number> = { sun: 0, planet: 1, dwarf: 2, galactic: 3, region: 3, spacecraft: 3, moon: 4, hygstar: 5 };
 
 const norm = (s: string) => s.toLowerCase().normalize("NFKD").replace(/[̀-ͯ\s]/g, "");
 

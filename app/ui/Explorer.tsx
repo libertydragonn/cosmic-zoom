@@ -4,6 +4,7 @@ import Universe from "~/scene/Universe";
 import { engine } from "~/lib/engine";
 import { useUI } from "~/lib/store";
 import { ModeToggle, ScaleBar, TimeControls, ZoomButtons, useEngineSample } from "./Hud";
+import { EyesViewer } from "./EyesViewer";
 import { InfoPanel } from "./InfoPanel";
 import { SearchBox } from "./SearchBox";
 import { Sidebar } from "./Sidebar";
@@ -18,10 +19,12 @@ function Notices() {
   const moonSystems = useUI((s) => s.moonSystems);
   const failed = [
     datasets.stars === "error" ? "恆星" : null,
+    datasets.spacecraft === "error" ? "探測器" : null,
+    datasets.satellites === "error" ? "地球衛星" : null,
     datasets.smallbodies === "error" ? "小天體" : null,
     Object.values(moonSystems).includes("error") ? "衛星" : null,
   ].filter(Boolean);
-  const loading = datasets.stars === "loading" || datasets.smallbodies === "loading" || Object.values(moonSystems).includes("loading");
+  const loading = datasets.stars === "loading" || datasets.smallbodies === "loading" || datasets.spacecraft === "loading" || datasets.satellites === "loading" || Object.values(moonSystems).includes("loading");
   return (
     <div className="pointer-events-none flex flex-col items-center gap-1.5 text-center text-[12px] leading-snug">
       {zone === "oort" && (
@@ -182,6 +185,7 @@ export default function Explorer() {
           </div>
         </div>
       </div>
+      <EyesViewer />
     </main>
   );
 }

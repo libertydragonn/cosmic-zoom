@@ -1,0 +1,1755 @@
+{
+  "generatedBy": "scripts/fetch-spacecraft.mjs",
+  "retrieved": "2026-11-16",
+  "source": "JPL Horizons 向量星曆（黃道 J2000、ICRF、無光行差修正）；名稱與發射資料：Wikidata",
+  "segmentRule": "進入行星 1.5 倍希爾半徑內改以該行星為中心，離開 2 倍時改回日心",
+  "craft": [
+    {
+      "id": "voyager-1",
+      "group": "deep",
+      "horizonsId": "-31",
+      "horizonsName": "Voyager 1 (spacecraft) (-31)",
+      "spkSource": "Voyager_1_ST+refit2022_m",
+      "eyesId": "sc_voyager_1",
+      "en": "Voyager 1",
+      "zh": "航海家1號",
+      "zhLang": "zh-tw",
+      "aliases": [
+        "航行者1號",
+        "旅行者一號",
+        "旅行者1號",
+        "航行者一號",
+        "航海家一號",
+        "Mariner Jupiter/Saturn A",
+        "Outer Planets A",
+        "Mariner 77A",
+        "MJS 77A",
+        "Voyager 77-2",
+        "Voyager I",
+        "Voyager1"
+      ],
+      "wikidata": "Q48469",
+      "launchDate": "1977-09-05",
+      "launchNote": null,
+      "operators": [
+        "美國國家航空暨太空總署"
+      ],
+      "cospar": "1977-084A",
+      "description": "美國太空探測器",
+      "coverage": {
+        "start": 2443392.083615544,
+        "end": 2488069.4993055556,
+        "startIso": "1977-09-05T14:00:24.382Z",
+        "endIso": "2099-12-31T23:59:00.000Z"
+      },
+      "file": "data/spacecraft/voyager-1.bin",
+      "bytes": 2976,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2443392.083616,
+          "t1": 2443396.083616,
+          "n": 9,
+          "tOff": 0,
+          "pvOff": 72,
+          "rawSamples": 577
+        },
+        {
+          "center": "sun",
+          "t0": 2443396.083616,
+          "t1": 2443857.083616,
+          "n": 8,
+          "tOff": 288,
+          "pvOff": 352,
+          "rawSamples": 462
+        },
+        {
+          "center": "jupiter",
+          "t0": 2443857.083616,
+          "t1": 2444048.076671556,
+          "n": 28,
+          "tOff": 544,
+          "pvOff": 768,
+          "rawSamples": 19702
+        },
+        {
+          "center": "sun",
+          "t0": 2444048.083616,
+          "t1": 2444482.083616,
+          "n": 3,
+          "tOff": 1440,
+          "pvOff": 1464,
+          "rawSamples": 435
+        },
+        {
+          "center": "saturn",
+          "t0": 2444482.083616,
+          "t1": 2444656.075977111,
+          "n": 27,
+          "tOff": 1536,
+          "pvOff": 1752,
+          "rawSamples": 19325
+        },
+        {
+          "center": "sun",
+          "t0": 2444656.083616,
+          "t1": 2488069.083616,
+          "n": 18,
+          "tOff": 2400,
+          "pvOff": 2544,
+          "rawSamples": 43414
+        }
+      ]
+    },
+    {
+      "id": "voyager-2",
+      "group": "deep",
+      "horizonsId": "-32",
+      "horizonsName": "Voyager 2 (spacecraft) (-32)",
+      "spkSource": "Voyager_2_ST+refit2022_m",
+      "eyesId": "sc_voyager_2",
+      "en": "Voyager 2",
+      "zh": "航海家2號",
+      "zhLang": "zh-tw（依同系列 Voyager 1）",
+      "aliases": [
+        "旅行者2號",
+        "旅行者二號",
+        "Mariner Jupiter/Saturn B",
+        "Outer Planets B",
+        "Mariner 77B",
+        "MJS 77B",
+        "Voyager 77-3",
+        "Voyager II",
+        "Voyager2",
+        "航海家二號"
+      ],
+      "wikidata": "Q48475",
+      "launchDate": "1977-08-20",
+      "launchNote": null,
+      "operators": [
+        "美國國家航空暨太空總署"
+      ],
+      "cospar": "1977-076A",
+      "description": "1977年發射的探測器",
+      "coverage": {
+        "start": 2443376.148289155,
+        "end": 2488069.4993055556,
+        "startIso": "1977-08-20T15:33:32.183Z",
+        "endIso": "2099-12-31T23:59:00.000Z"
+      },
+      "file": "data/spacecraft/voyager-2.bin",
+      "bytes": 4672,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2443376.148289,
+          "t1": 2443380.148289,
+          "n": 9,
+          "tOff": 0,
+          "pvOff": 72,
+          "rawSamples": 577
+        },
+        {
+          "center": "sun",
+          "t0": 2443380.148289,
+          "t1": 2443955.148289,
+          "n": 9,
+          "tOff": 288,
+          "pvOff": 360,
+          "rawSamples": 576
+        },
+        {
+          "center": "jupiter",
+          "t0": 2443955.148289,
+          "t1": 2444215.144816778,
+          "n": 25,
+          "tOff": 576,
+          "pvOff": 776,
+          "rawSamples": 19781
+        },
+        {
+          "center": "sun",
+          "t0": 2444215.148289,
+          "t1": 2444737.148289,
+          "n": 3,
+          "tOff": 1376,
+          "pvOff": 1400,
+          "rawSamples": 523
+        },
+        {
+          "center": "saturn",
+          "t0": 2444737.148289,
+          "t1": 2444983.148289,
+          "n": 29,
+          "tOff": 1472,
+          "pvOff": 1704,
+          "rawSamples": 19752
+        },
+        {
+          "center": "sun",
+          "t0": 2444983.148289,
+          "t1": 2446372.148289,
+          "n": 3,
+          "tOff": 2400,
+          "pvOff": 2424,
+          "rawSamples": 1390
+        },
+        {
+          "center": "uranus",
+          "t0": 2446372.148289,
+          "t1": 2446565.144122333,
+          "n": 21,
+          "tOff": 2496,
+          "pvOff": 2664,
+          "rawSamples": 19908
+        },
+        {
+          "center": "sun",
+          "t0": 2446565.148289,
+          "t1": 2447643.148289,
+          "n": 2,
+          "tOff": 3168,
+          "pvOff": 3184,
+          "rawSamples": 1079
+        },
+        {
+          "center": "neptune",
+          "t0": 2447643.148289,
+          "t1": 2447924.148289,
+          "n": 30,
+          "tOff": 3232,
+          "pvOff": 3472,
+          "rawSamples": 20314
+        },
+        {
+          "center": "sun",
+          "t0": 2447924.148289,
+          "t1": 2488069.148289,
+          "n": 15,
+          "tOff": 4192,
+          "pvOff": 4312,
+          "rawSamples": 40146
+        }
+      ]
+    },
+    {
+      "id": "pioneer-10",
+      "group": "deep",
+      "horizonsId": "-23",
+      "horizonsName": "Pioneer 10 (spacecraft) (-23)",
+      "spkSource": "pioneer_10_merged",
+      "eyesId": "sc_pioneer_10",
+      "en": "Pioneer 10",
+      "zh": "先驅者10號",
+      "zhLang": "zh",
+      "aliases": [
+        "先鋒10號",
+        "先鋒十號",
+        "Pioneer F"
+      ],
+      "wikidata": "Q59103",
+      "launchDate": null,
+      "launchNote": "Wikidata 的發射日期 1973-03-03 與 Horizons 星曆起點 1972-03-03 不符，未採用",
+      "operators": [
+        "美國國家航空暨太空總署埃姆斯研究中心"
+      ],
+      "cospar": "1972-012A",
+      "description": null,
+      "coverage": {
+        "start": 2441379.5872938125,
+        "end": 2469807.50625,
+        "startIso": "1972-03-03T02:05:42.185Z",
+        "endIso": "2050-01-01T00:09:00.000Z"
+      },
+      "file": "data/spacecraft/pioneer-10.bin",
+      "bytes": 2176,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2441379.587294,
+          "t1": 2441383.587294,
+          "n": 10,
+          "tOff": 0,
+          "pvOff": 80,
+          "rawSamples": 577
+        },
+        {
+          "center": "sun",
+          "t0": 2441383.587294,
+          "t1": 2441922.587294,
+          "n": 9,
+          "tOff": 320,
+          "pvOff": 392,
+          "rawSamples": 540
+        },
+        {
+          "center": "jupiter",
+          "t0": 2441922.587294,
+          "t1": 2442155.581738445,
+          "n": 35,
+          "tOff": 608,
+          "pvOff": 888,
+          "rawSamples": 19805
+        },
+        {
+          "center": "sun",
+          "t0": 2442155.587294,
+          "t1": 2469806.587294,
+          "n": 14,
+          "tOff": 1728,
+          "pvOff": 1840,
+          "rawSamples": 27652
+        }
+      ]
+    },
+    {
+      "id": "pioneer-11",
+      "group": "deep",
+      "horizonsId": "-24",
+      "horizonsName": "Pioneer 11 (spacecraft) (-24)",
+      "spkSource": "pioneer_11_merged",
+      "eyesId": "sc_pioneer_11",
+      "en": "Pioneer 11",
+      "zh": "先驅者11號",
+      "zhLang": "zh",
+      "aliases": [
+        "先鋒11號",
+        "Pioneer G"
+      ],
+      "wikidata": "Q59113",
+      "launchDate": "1973-04-06",
+      "launchNote": null,
+      "operators": [
+        "美國國家航空暨太空總署埃姆斯研究中心"
+      ],
+      "cospar": "1973-019A",
+      "description": null,
+      "coverage": {
+        "start": 2441778.601900297,
+        "end": 2469807.50625,
+        "startIso": "1973-04-06T02:26:44.185Z",
+        "endIso": "2050-01-01T00:09:00.000Z"
+      },
+      "file": "data/spacecraft/pioneer-11.bin",
+      "bytes": 3776,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2441778.6019,
+          "t1": 2441782.6019,
+          "n": 10,
+          "tOff": 0,
+          "pvOff": 80,
+          "rawSamples": 577
+        },
+        {
+          "center": "sun",
+          "t0": 2441782.6019,
+          "t1": 2442290.6019,
+          "n": 9,
+          "tOff": 320,
+          "pvOff": 392,
+          "rawSamples": 509
+        },
+        {
+          "center": "jupiter",
+          "t0": 2442290.6019,
+          "t1": 2442513.6019,
+          "n": 39,
+          "tOff": 608,
+          "pvOff": 920,
+          "rawSamples": 20136
+        },
+        {
+          "center": "sun",
+          "t0": 2442513.6019,
+          "t1": 2443985.6019,
+          "n": 9,
+          "tOff": 1856,
+          "pvOff": 1928,
+          "rawSamples": 1473
+        },
+        {
+          "center": "saturn",
+          "t0": 2443985.6019,
+          "t1": 2444296.596344444,
+          "n": 38,
+          "tOff": 2144,
+          "pvOff": 2448,
+          "rawSamples": 20447
+        },
+        {
+          "center": "sun",
+          "t0": 2444296.6019,
+          "t1": 2469806.6019,
+          "n": 13,
+          "tOff": 3360,
+          "pvOff": 3464,
+          "rawSamples": 25511
+        }
+      ]
+    },
+    {
+      "id": "new-horizons",
+      "group": "deep",
+      "horizonsId": "-98",
+      "horizonsName": "New Horizons",
+      "spkSource": "NH_merged",
+      "eyesId": "sc_new_horizons",
+      "en": "New Horizons",
+      "zh": "新視野號",
+      "zhLang": "zh-hant",
+      "aliases": [
+        "New Frontiers 1"
+      ],
+      "wikidata": "Q48461",
+      "launchDate": "2006-01-19",
+      "launchNote": null,
+      "operators": [
+        "美國國家航空暨太空總署"
+      ],
+      "cospar": "2006-001A",
+      "description": "美國行星際無人太空船",
+      "coverage": {
+        "start": 2453755.3279899363,
+        "end": 2469807.4993055556,
+        "startIso": "2006-01-19T19:52:18.330Z",
+        "endIso": "2049-12-31T23:59:00.000Z"
+      },
+      "file": "data/spacecraft/new-horizons.bin",
+      "bytes": 1216,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2453755.32799,
+          "t1": 2453758.32799,
+          "n": 8,
+          "tOff": 0,
+          "pvOff": 64,
+          "rawSamples": 433
+        },
+        {
+          "center": "sun",
+          "t0": 2453758.32799,
+          "t1": 2454111.32799,
+          "n": 7,
+          "tOff": 256,
+          "pvOff": 312,
+          "rawSamples": 354
+        },
+        {
+          "center": "jupiter",
+          "t0": 2454111.32799,
+          "t1": 2454225.32799,
+          "n": 14,
+          "tOff": 480,
+          "pvOff": 592,
+          "rawSamples": 16417
+        },
+        {
+          "center": "sun",
+          "t0": 2454225.32799,
+          "t1": 2469807.32799,
+          "n": 9,
+          "tOff": 928,
+          "pvOff": 1000,
+          "rawSamples": 15583
+        }
+      ]
+    },
+    {
+      "id": "parker-solar-probe",
+      "group": "deep",
+      "horizonsId": "-96",
+      "horizonsName": "Parker",
+      "spkSource": "psp_merged",
+      "eyesId": "sc_parker_solar_probe",
+      "en": "Parker Solar Probe",
+      "zh": "帕克太陽探測器",
+      "zhLang": "zh",
+      "aliases": [
+        "NASA Solar Probe",
+        "Solar Probe Plus",
+        "Solar Probe+",
+        "PSP"
+      ],
+      "wikidata": "Q899091",
+      "launchDate": "2018-08-12",
+      "launchNote": null,
+      "operators": [
+        "約翰·霍普金斯大學應用物理實驗室"
+      ],
+      "cospar": "2018-065A",
+      "description": "美國繞日探測器",
+      "coverage": {
+        "start": 2458342.8454090636,
+        "end": 2462502.500106295,
+        "startIso": "2018-08-12T08:17:23.343Z",
+        "endIso": "2030-01-01T00:00:09.183Z"
+      },
+      "file": "data/spacecraft/parker-solar-probe.bin",
+      "bytes": 35936,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2458342.845409,
+          "t1": 2458345.845409,
+          "n": 8,
+          "tOff": 0,
+          "pvOff": 64,
+          "rawSamples": 433
+        },
+        {
+          "center": "sun",
+          "t0": 2458345.845409,
+          "t1": 2458394.845409,
+          "n": 4,
+          "tOff": 256,
+          "pvOff": 288,
+          "rawSamples": 50
+        },
+        {
+          "center": "venus",
+          "t0": 2458394.845409,
+          "t1": 2458396.845409,
+          "n": 10,
+          "tOff": 384,
+          "pvOff": 464,
+          "rawSamples": 330
+        },
+        {
+          "center": "sun",
+          "t0": 2458396.845409,
+          "t1": 2458843.845409,
+          "n": 61,
+          "tOff": 704,
+          "pvOff": 1192,
+          "rawSamples": 1300
+        },
+        {
+          "center": "venus",
+          "t0": 2458843.845409,
+          "t1": 2458845.845409,
+          "n": 12,
+          "tOff": 2656,
+          "pvOff": 2752,
+          "rawSamples": 330
+        },
+        {
+          "center": "sun",
+          "t0": 2458845.845409,
+          "t1": 2459041.845409,
+          "n": 42,
+          "tOff": 3040,
+          "pvOff": 3376,
+          "rawSamples": 765
+        },
+        {
+          "center": "venus",
+          "t0": 2459041.845409,
+          "t1": 2459042.845409,
+          "n": 2,
+          "tOff": 4384,
+          "pvOff": 4400,
+          "rawSamples": 145
+        },
+        {
+          "center": "sun",
+          "t0": 2459042.845409,
+          "t1": 2459265.845409,
+          "n": 46,
+          "tOff": 4448,
+          "pvOff": 4816,
+          "rawSamples": 792
+        },
+        {
+          "center": "venus",
+          "t0": 2459265.845409,
+          "t1": 2459267.845409,
+          "n": 12,
+          "tOff": 5920,
+          "pvOff": 6016,
+          "rawSamples": 329
+        },
+        {
+          "center": "sun",
+          "t0": 2459267.845409,
+          "t1": 2459503.845409,
+          "n": 51,
+          "tOff": 6304,
+          "pvOff": 6712,
+          "rawSamples": 805
+        },
+        {
+          "center": "venus",
+          "t0": 2459503.845409,
+          "t1": 2459505.845409,
+          "n": 11,
+          "tOff": 7936,
+          "pvOff": 8024,
+          "rawSamples": 330
+        },
+        {
+          "center": "sun",
+          "t0": 2459505.845409,
+          "t1": 2460177.845409,
+          "n": 170,
+          "tOff": 8288,
+          "pvOff": 9648,
+          "rawSamples": 2661
+        },
+        {
+          "center": "venus",
+          "t0": 2460177.845409,
+          "t1": 2460179.845409,
+          "n": 11,
+          "tOff": 13728,
+          "pvOff": 13816,
+          "rawSamples": 330
+        },
+        {
+          "center": "sun",
+          "t0": 2460179.845409,
+          "t1": 2460620.845409,
+          "n": 126,
+          "tOff": 14080,
+          "pvOff": 15088,
+          "rawSamples": 1862
+        },
+        {
+          "center": "venus",
+          "t0": 2460620.845409,
+          "t1": 2460622.845409,
+          "n": 13,
+          "tOff": 18112,
+          "pvOff": 18216,
+          "rawSamples": 330
+        },
+        {
+          "center": "sun",
+          "t0": 2460622.845409,
+          "t1": 2462501.845409,
+          "n": 544,
+          "tOff": 18528,
+          "pvOff": 22880,
+          "rawSamples": 7844
+        }
+      ]
+    },
+    {
+      "id": "cassini",
+      "group": "deep",
+      "horizonsId": "-82",
+      "horizonsName": "Cassini (spacecraft) (-82)",
+      "spkSource": "cassini_merge",
+      "eyesId": "sc_cassini",
+      "en": "Cassini",
+      "zh": "卡西尼號",
+      "zhLang": "zh",
+      "aliases": [
+        "Cassini spacecraft",
+        "Cassini probe",
+        "Cassini Orbiter"
+      ],
+      "wikidata": "Q2941291",
+      "launchDate": "1997-10-15",
+      "launchNote": null,
+      "operators": [
+        "噴氣推進實驗室"
+      ],
+      "cospar": "1997-061A",
+      "description": null,
+      "coverage": {
+        "start": 2450736.8945783842,
+        "end": 2458011.997916667,
+        "startIso": "1997-10-15T09:28:11.572Z",
+        "endIso": "2017-09-15T11:57:00.000Z"
+      },
+      "file": "data/spacecraft/cassini.bin",
+      "bytes": 216320,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2450736.894578,
+          "t1": 2450745.894578,
+          "n": 13,
+          "tOff": 0,
+          "pvOff": 104,
+          "rawSamples": 1297
+        },
+        {
+          "center": "sun",
+          "t0": 2450745.894578,
+          "t1": 2450927.894578,
+          "n": 10,
+          "tOff": 416,
+          "pvOff": 496,
+          "rawSamples": 183
+        },
+        {
+          "center": "venus",
+          "t0": 2450927.894578,
+          "t1": 2450934.894578,
+          "n": 24,
+          "tOff": 736,
+          "pvOff": 928,
+          "rawSamples": 1049
+        },
+        {
+          "center": "sun",
+          "t0": 2450934.894578,
+          "t1": 2451352.894578,
+          "n": 15,
+          "tOff": 1504,
+          "pvOff": 1624,
+          "rawSamples": 419
+        },
+        {
+          "center": "venus",
+          "t0": 2451352.894578,
+          "t1": 2451356.894578,
+          "n": 20,
+          "tOff": 1984,
+          "pvOff": 2144,
+          "rawSamples": 618
+        },
+        {
+          "center": "sun",
+          "t0": 2451356.894578,
+          "t1": 2451407.894578,
+          "n": 4,
+          "tOff": 2624,
+          "pvOff": 2656,
+          "rawSamples": 52
+        },
+        {
+          "center": "earth",
+          "t0": 2451407.894578,
+          "t1": 2451410.894578,
+          "n": 16,
+          "tOff": 2752,
+          "pvOff": 2880,
+          "rawSamples": 474
+        },
+        {
+          "center": "sun",
+          "t0": 2451410.894578,
+          "t1": 2451824.894578,
+          "n": 7,
+          "tOff": 3264,
+          "pvOff": 3320,
+          "rawSamples": 415
+        },
+        {
+          "center": "jupiter",
+          "t0": 2451824.894578,
+          "t1": 2452023.889022444,
+          "n": 11,
+          "tOff": 3488,
+          "pvOff": 3576,
+          "rawSamples": 20469
+        },
+        {
+          "center": "sun",
+          "t0": 2452023.894578,
+          "t1": 2452988.894578,
+          "n": 4,
+          "tOff": 3840,
+          "pvOff": 3872,
+          "rawSamples": 966
+        },
+        {
+          "center": "saturn",
+          "t0": 2452988.894578,
+          "t1": 2458011.895966889,
+          "n": 6636,
+          "tOff": 3968,
+          "pvOff": 57056,
+          "rawSamples": 67477
+        }
+      ]
+    },
+    {
+      "id": "juno",
+      "group": "deep",
+      "horizonsId": "-61",
+      "horizonsName": "Juno (spacecraft) (-61)",
+      "spkSource": "Juno_merged",
+      "eyesId": "sc_juno",
+      "en": "Juno",
+      "zh": "朱諾號",
+      "zhLang": "zh-hant",
+      "aliases": [],
+      "wikidata": "Q48546",
+      "launchDate": "2011-08-05",
+      "launchNote": null,
+      "operators": [
+        "噴氣推進實驗室"
+      ],
+      "cospar": "2011-040A",
+      "description": "美國宇航局用於研究木星的宇宙飛船",
+      "coverage": {
+        "start": 2455779.2223632312,
+        "end": 2462016.5680921515,
+        "startIso": "2011-08-05T17:20:12.183Z",
+        "endIso": "2028-09-02T01:38:03.161Z"
+      },
+      "file": "data/spacecraft/juno.bin",
+      "bytes": 130464,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2455779.222363,
+          "t1": 2455786.222363,
+          "n": 12,
+          "tOff": 0,
+          "pvOff": 96,
+          "rawSamples": 1009
+        },
+        {
+          "center": "sun",
+          "t0": 2455786.222363,
+          "t1": 2456573.222363,
+          "n": 19,
+          "tOff": 384,
+          "pvOff": 536,
+          "rawSamples": 788
+        },
+        {
+          "center": "earth",
+          "t0": 2456573.222363,
+          "t1": 2456579.222363,
+          "n": 20,
+          "tOff": 992,
+          "pvOff": 1152,
+          "rawSamples": 906
+        },
+        {
+          "center": "sun",
+          "t0": 2456579.222363,
+          "t1": 2457427.222363,
+          "n": 9,
+          "tOff": 1632,
+          "pvOff": 1704,
+          "rawSamples": 849
+        },
+        {
+          "center": "jupiter",
+          "t0": 2457427.222363,
+          "t1": 2462016.514029667,
+          "n": 4017,
+          "tOff": 1920,
+          "pvOff": 34056,
+          "rawSamples": 38287
+        }
+      ]
+    },
+    {
+      "id": "jwst",
+      "group": "deep",
+      "horizonsId": "-170",
+      "horizonsName": "Webb",
+      "spkSource": "JWST_merged",
+      "eyesId": "sc_jwst",
+      "en": "James Webb Space Telescope",
+      "zh": "詹姆斯·韋伯太空望遠鏡",
+      "zhLang": "zh-tw",
+      "aliases": [
+        "詹姆斯·韋伯空間望遠鏡",
+        "詹姆斯韋伯太空望遠鏡",
+        "詹姆斯·韋伯望遠鏡",
+        "詹姆斯·韋布空間望遠鏡",
+        "韋布空間望遠鏡",
+        "下一代空間望遠鏡",
+        "詹士韋伯太空望遠鏡",
+        "Webb Space Telescope",
+        "Webb Telescope"
+      ],
+      "wikidata": "Q186447",
+      "launchDate": "2021-12-25",
+      "launchNote": null,
+      "operators": [
+        "太空望遠鏡科學研究所",
+        "戈達德太空飛行中心"
+      ],
+      "cospar": "2021-130A",
+      "description": "太空望遠鏡",
+      "coverage": {
+        "start": 2459574.0431618486,
+        "end": 2463179.50010628,
+        "startIso": "2021-12-25T13:02:09.183Z",
+        "endIso": "2031-11-09T00:00:09.182Z"
+      },
+      "file": "data/spacecraft/jwst.bin",
+      "bytes": 12064,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2459574.043162,
+          "t1": 2463179.376495333,
+          "n": 377,
+          "tOff": 0,
+          "pvOff": 3016,
+          "rawSamples": 19969
+        }
+      ]
+    },
+    {
+      "id": "lucy",
+      "group": "deep",
+      "horizonsId": "-49",
+      "horizonsName": "Lucy (spacecraft) (-49)",
+      "spkSource": "Lucy_merged_DE430",
+      "eyesId": "sc_lucy",
+      "en": "Lucy",
+      "zh": "露西號",
+      "zhLang": "zh",
+      "aliases": [],
+      "wikidata": "Q21076293",
+      "launchDate": "2021-10-16",
+      "launchNote": null,
+      "operators": [
+        "美國國家航空暨太空總署",
+        "西南研究所"
+      ],
+      "cospar": "2021-093A",
+      "description": null,
+      "coverage": {
+        "start": 2459503.9403736503,
+        "end": 2463670.1952452026,
+        "startIso": "2021-10-16T10:34:08.283Z",
+        "endIso": "2033-03-13T16:41:09.185Z"
+      },
+      "file": "data/spacecraft/lucy.bin",
+      "bytes": 4576,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2459503.940374,
+          "t1": 2459510.940374,
+          "n": 11,
+          "tOff": 0,
+          "pvOff": 88,
+          "rawSamples": 1009
+        },
+        {
+          "center": "sun",
+          "t0": 2459510.940374,
+          "t1": 2459864.940374,
+          "n": 14,
+          "tOff": 352,
+          "pvOff": 464,
+          "rawSamples": 355
+        },
+        {
+          "center": "earth",
+          "t0": 2459864.940374,
+          "t1": 2459875.940374,
+          "n": 26,
+          "tOff": 800,
+          "pvOff": 1008,
+          "rawSamples": 1626
+        },
+        {
+          "center": "sun",
+          "t0": 2459875.940374,
+          "t1": 2460655.940374,
+          "n": 19,
+          "tOff": 1632,
+          "pvOff": 1784,
+          "rawSamples": 781
+        },
+        {
+          "center": "earth",
+          "t0": 2460655.940374,
+          "t1": 2460660.940374,
+          "n": 20,
+          "tOff": 2240,
+          "pvOff": 2400,
+          "rawSamples": 762
+        },
+        {
+          "center": "sun",
+          "t0": 2460660.940374,
+          "t1": 2462859.940374,
+          "n": 25,
+          "tOff": 2880,
+          "pvOff": 3080,
+          "rawSamples": 2200
+        },
+        {
+          "center": "earth",
+          "t0": 2462859.940374,
+          "t1": 2462864.940374,
+          "n": 19,
+          "tOff": 3680,
+          "pvOff": 3832,
+          "rawSamples": 761
+        },
+        {
+          "center": "sun",
+          "t0": 2462864.940374,
+          "t1": 2463669.940374,
+          "n": 9,
+          "tOff": 4288,
+          "pvOff": 4360,
+          "rawSamples": 806
+        }
+      ]
+    },
+    {
+      "id": "psyche",
+      "group": "deep",
+      "horizonsId": "-255",
+      "horizonsName": "Psyche (spacecraft) (-255)",
+      "spkSource": "psyche_merged",
+      "eyesId": "sc_psyche",
+      "en": "Psyche",
+      "zh": "靈神星軌道器",
+      "zhLang": "zh",
+      "aliases": [
+        "Discovery 14"
+      ],
+      "wikidata": "Q21079313",
+      "launchDate": "2023-10-13",
+      "launchNote": null,
+      "operators": [
+        "噴氣推進實驗室",
+        "亞利桑那州立大學"
+      ],
+      "cospar": "2023-157A",
+      "description": "行星探測器",
+      "coverage": {
+        "start": 2460231.1416335576,
+        "end": 2462192.4606706216,
+        "startIso": "2023-10-13T15:23:57.139Z",
+        "endIso": "2029-02-24T23:03:21.941Z"
+      },
+      "file": "data/spacecraft/psyche.bin",
+      "bytes": 1760,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2460231.141634,
+          "t1": 2460237.141634,
+          "n": 11,
+          "tOff": 0,
+          "pvOff": 88,
+          "rawSamples": 865
+        },
+        {
+          "center": "sun",
+          "t0": 2460237.141634,
+          "t1": 2461172.141634,
+          "n": 15,
+          "tOff": 352,
+          "pvOff": 472,
+          "rawSamples": 936
+        },
+        {
+          "center": "mars",
+          "t0": 2461172.141634,
+          "t1": 2461182.141634,
+          "n": 16,
+          "tOff": 832,
+          "pvOff": 960,
+          "rawSamples": 1482
+        },
+        {
+          "center": "sun",
+          "t0": 2461182.141634,
+          "t1": 2462192.141634,
+          "n": 13,
+          "tOff": 1344,
+          "pvOff": 1448,
+          "rawSamples": 1011
+        }
+      ]
+    },
+    {
+      "id": "europa-clipper",
+      "group": "deep",
+      "horizonsId": "-159",
+      "horizonsName": "Europa Clipper",
+      "spkSource": "Europa_Clipper_merged",
+      "eyesId": "sc_europa_clipper",
+      "en": "Europa Clipper",
+      "zh": "歐羅巴快船",
+      "zhLang": "zh-hant",
+      "aliases": [
+        "Europa Multiple-Flyby Mission"
+      ],
+      "wikidata": "Q15637513",
+      "launchDate": "2024-10-14",
+      "launchNote": null,
+      "operators": [
+        "噴氣推進實驗室"
+      ],
+      "cospar": "2024-182A",
+      "description": "衛星探測任務",
+      "coverage": {
+        "start": 2460598.1778207454,
+        "end": 2464208.6980672814,
+        "startIso": "2024-10-14T16:16:03.712Z",
+        "endIso": "2034-09-03T04:45:13.013Z"
+      },
+      "file": "data/spacecraft/europa-clipper.bin",
+      "bytes": 54144,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2460598.177821,
+          "t1": 2460604.177821,
+          "n": 23,
+          "tOff": 0,
+          "pvOff": 184,
+          "rawSamples": 906
+        },
+        {
+          "center": "sun",
+          "t0": 2460604.177821,
+          "t1": 2460735.177821,
+          "n": 6,
+          "tOff": 736,
+          "pvOff": 784,
+          "rawSamples": 132
+        },
+        {
+          "center": "mars",
+          "t0": 2460735.177821,
+          "t1": 2460739.177821,
+          "n": 14,
+          "tOff": 928,
+          "pvOff": 1040,
+          "rawSamples": 617
+        },
+        {
+          "center": "sun",
+          "t0": 2460739.177821,
+          "t1": 2461376.177821,
+          "n": 14,
+          "tOff": 1376,
+          "pvOff": 1488,
+          "rawSamples": 638
+        },
+        {
+          "center": "earth",
+          "t0": 2461376.177821,
+          "t1": 2461382.177821,
+          "n": 17,
+          "tOff": 1824,
+          "pvOff": 1960,
+          "rawSamples": 906
+        },
+        {
+          "center": "sun",
+          "t0": 2461382.177821,
+          "t1": 2462464.177821,
+          "n": 10,
+          "tOff": 2368,
+          "pvOff": 2448,
+          "rawSamples": 1083
+        },
+        {
+          "center": "jupiter",
+          "t0": 2462464.177821,
+          "t1": 2464208.665321,
+          "n": 1608,
+          "tOff": 2688,
+          "pvOff": 15552,
+          "rawSamples": 33882
+        }
+      ]
+    },
+    {
+      "id": "juice",
+      "group": "deep",
+      "horizonsId": "-28",
+      "horizonsName": "JUICE (spacecraft) (-28)",
+      "spkSource": "JUICE_merged",
+      "eyesId": "sc_juice",
+      "en": "Jupiter Icy Moons Explorer",
+      "zh": "木星冰月探測器",
+      "zhLang": "zh",
+      "aliases": [
+        "JUICE",
+        "Jupiter Icy Moon Explorer"
+      ],
+      "wikidata": "Q63350",
+      "launchDate": "2023-04-14",
+      "launchNote": null,
+      "operators": [
+        "歐洲太空總署"
+      ],
+      "cospar": "2023-053A",
+      "description": "探測任務",
+      "coverage": {
+        "start": 2460049.0308662336,
+        "end": 2463068.7693884387,
+        "startIso": "2023-04-14T12:44:26.842Z",
+        "endIso": "2031-07-21T06:27:55.161Z"
+      },
+      "file": "data/spacecraft/juice.bin",
+      "bytes": 5984,
+      "segments": [
+        {
+          "center": "earth",
+          "t0": 2460049.030866,
+          "t1": 2460062.030866,
+          "n": 15,
+          "tOff": 0,
+          "pvOff": 120,
+          "rawSamples": 1873
+        },
+        {
+          "center": "sun",
+          "t0": 2460062.030866,
+          "t1": 2460536.030866,
+          "n": 17,
+          "tOff": 480,
+          "pvOff": 616,
+          "rawSamples": 475
+        },
+        {
+          "center": "earth",
+          "t0": 2460536.030866,
+          "t1": 2460554.030866,
+          "n": 30,
+          "tOff": 1024,
+          "pvOff": 1264,
+          "rawSamples": 2633
+        },
+        {
+          "center": "sun",
+          "t0": 2460554.030866,
+          "t1": 2460917.030866,
+          "n": 18,
+          "tOff": 1984,
+          "pvOff": 2128,
+          "rawSamples": 364
+        },
+        {
+          "center": "venus",
+          "t0": 2460917.030866,
+          "t1": 2460922.030866,
+          "n": 19,
+          "tOff": 2560,
+          "pvOff": 2712,
+          "rawSamples": 757
+        },
+        {
+          "center": "sun",
+          "t0": 2460922.030866,
+          "t1": 2461310.030866,
+          "n": 12,
+          "tOff": 3168,
+          "pvOff": 3264,
+          "rawSamples": 389
+        },
+        {
+          "center": "earth",
+          "t0": 2461310.030866,
+          "t1": 2461316.030866,
+          "n": 16,
+          "tOff": 3552,
+          "pvOff": 3680,
+          "rawSamples": 906
+        },
+        {
+          "center": "sun",
+          "t0": 2461316.030866,
+          "t1": 2462152.030866,
+          "n": 20,
+          "tOff": 4064,
+          "pvOff": 4224,
+          "rawSamples": 837
+        },
+        {
+          "center": "earth",
+          "t0": 2462152.030866,
+          "t1": 2462158.030866,
+          "n": 17,
+          "tOff": 4704,
+          "pvOff": 4840,
+          "rawSamples": 905
+        },
+        {
+          "center": "sun",
+          "t0": 2462158.030866,
+          "t1": 2462929.030866,
+          "n": 9,
+          "tOff": 5248,
+          "pvOff": 5320,
+          "rawSamples": 772
+        },
+        {
+          "center": "jupiter",
+          "t0": 2462929.030866,
+          "t1": 2463068.766977111,
+          "n": 14,
+          "tOff": 5536,
+          "pvOff": 5648,
+          "rawSamples": 20123
+        }
+      ]
+    },
+    {
+      "id": "iss",
+      "group": "earth",
+      "horizonsId": "-125544",
+      "horizonsName": "International Space Station",
+      "spkSource": null,
+      "eyesId": "sc_iss",
+      "en": "International Space Station",
+      "zh": "國際太空站",
+      "zhLang": "zh-tw",
+      "aliases": [
+        "國際空間站",
+        "國際宇宙空間站",
+        "NA1SS",
+        "Station Alpha"
+      ],
+      "wikidata": "Q25271",
+      "launchDate": "1998-11-20",
+      "launchNote": null,
+      "operators": [
+        "美國國家航空暨太空總署",
+        "俄羅斯航太",
+        "歐洲太空總署",
+        "宇宙航空研究開發機構",
+        "加拿大太空局"
+      ],
+      "cospar": "1998-067A",
+      "description": "低地球軌道上的國際研究設施",
+      "coverage": {
+        "start": 2451137.286148,
+        "end": 2461389.286148,
+        "startIso": "1998-11-19T18:52:03.187Z",
+        "endIso": "2026-12-14T18:52:03.187Z"
+      },
+      "file": "data/spacecraft/iss.bin",
+      "bytes": 246072,
+      "segments": [],
+      "elements": {
+        "t0": 2451137.286148,
+        "stepDays": 1,
+        "n": 10253,
+        "center": "earth",
+        "frame": "ICRF 赤道面"
+      }
+    },
+    {
+      "id": "tiangong",
+      "group": "earth",
+      "horizonsId": "-148274",
+      "horizonsName": "Tiangong",
+      "spkSource": null,
+      "eyesId": null,
+      "en": "Tiangong space station",
+      "zh": "天宮空間站",
+      "zhLang": "zh-hant",
+      "aliases": [
+        "TG",
+        "中國空間站",
+        "天宮號太空站",
+        "中國太空站",
+        "天宮號空間站",
+        "CSS",
+        "China Space Station",
+        "Tiangong"
+      ],
+      "wikidata": "Q5100935",
+      "launchDate": "2021-04-29",
+      "launchNote": null,
+      "operators": [
+        "國家航天局"
+      ],
+      "cospar": null,
+      "description": "低地軌道空間站",
+      "coverage": {
+        "start": 2459333.384303,
+        "end": 2461389.384303,
+        "startIso": "2021-04-28T21:13:23.779Z",
+        "endIso": "2026-12-14T21:13:23.779Z"
+      },
+      "file": "data/spacecraft/tiangong.bin",
+      "bytes": 49368,
+      "segments": [],
+      "elements": {
+        "t0": 2459333.384303,
+        "stepDays": 1,
+        "n": 2057,
+        "center": "earth",
+        "frame": "ICRF 赤道面"
+      }
+    },
+    {
+      "id": "hubble",
+      "group": "earth",
+      "horizonsId": "-48",
+      "horizonsName": "Hubble Space Telescope",
+      "spkSource": null,
+      "eyesId": "sc_hubble_space_telescope",
+      "en": "Hubble Space Telescope",
+      "zh": "哈伯太空望遠鏡",
+      "zhLang": "zh-tw",
+      "aliases": [
+        "哈勃空間望遠鏡",
+        "哈勃太空望遠鏡",
+        "哈勃望遠鏡",
+        "哈勃天文望遠鏡",
+        "哈柏太空望遠鏡",
+        "哈伯望遠鏡",
+        "“哈勃”空間望遠鏡",
+        "Large Space Telescope"
+      ],
+      "wikidata": "Q2513",
+      "launchDate": "1990-04-24",
+      "launchNote": null,
+      "operators": [
+        "戈達德太空飛行中心",
+        "太空望遠鏡科學研究所"
+      ],
+      "cospar": "1990-037B",
+      "description": "在地球軌道運行的望遠鏡",
+      "coverage": {
+        "start": 2448006.585186,
+        "end": 2461428.585186,
+        "startIso": "1990-04-25T02:02:40.070Z",
+        "endIso": "2027-01-23T02:02:40.070Z"
+      },
+      "file": "data/spacecraft/hubble.bin",
+      "bytes": 322152,
+      "segments": [],
+      "elements": {
+        "t0": 2448006.585186,
+        "stepDays": 1,
+        "n": 13423,
+        "center": "earth",
+        "frame": "ICRF 赤道面"
+      }
+    },
+    {
+      "id": "chandra",
+      "group": "earth",
+      "horizonsId": "-151",
+      "horizonsName": "Chandra X-ray Observatory",
+      "spkSource": null,
+      "eyesId": "sc_chandra",
+      "en": "Chandra X-ray Observatory",
+      "zh": "錢德拉X射線天文臺",
+      "zhLang": "zh-hant",
+      "aliases": [
+        "AXAF",
+        "CXO",
+        "Advanced X-ray Astrophysics Facility"
+      ],
+      "wikidata": "Q49002",
+      "launchDate": "1999-07-23",
+      "launchNote": null,
+      "operators": [
+        "史密松天體物理臺",
+        "馬歇爾太空飛行中心"
+      ],
+      "cospar": "1999-040B",
+      "description": null,
+      "coverage": {
+        "start": 2451397.813937,
+        "end": 2461523.813937,
+        "startIso": "1999-08-07T07:32:04.156Z",
+        "endIso": "2027-04-28T07:32:04.156Z"
+      },
+      "file": "data/spacecraft/chandra.bin",
+      "bytes": 243048,
+      "segments": [],
+      "elements": {
+        "t0": 2451397.813937,
+        "stepDays": 1,
+        "n": 10127,
+        "center": "earth",
+        "frame": "ICRF 赤道面"
+      }
+    },
+    {
+      "id": "tess",
+      "group": "earth",
+      "horizonsId": "-95",
+      "horizonsName": "Transiting Exoplanet Survey Satellite",
+      "spkSource": null,
+      "eyesId": "sc_tess",
+      "en": "Transiting Exoplanet Survey Satellite",
+      "zh": "凌日系外行星巡天衛星",
+      "zhLang": "zh",
+      "aliases": [
+        "凌日系外行星勘測衛星",
+        "系外行星掩星任務衛星"
+      ],
+      "wikidata": "Q1323537",
+      "launchDate": "2018-04-18",
+      "launchNote": null,
+      "operators": [
+        "麻省理工學院"
+      ],
+      "cospar": "2018-038A",
+      "description": "太空望遠鏡",
+      "coverage": {
+        "start": 2458227.484489,
+        "end": 2461894.484489,
+        "startIso": "2018-04-18T23:37:39.849Z",
+        "endIso": "2028-05-02T23:37:39.849Z"
+      },
+      "file": "data/spacecraft/tess.bin",
+      "bytes": 88032,
+      "segments": [],
+      "elements": {
+        "t0": 2458227.484489,
+        "stepDays": 1,
+        "n": 3668,
+        "center": "earth",
+        "frame": "ICRF 赤道面"
+      }
+    },
+    {
+      "id": "nustar",
+      "group": "earth",
+      "horizonsId": "-138358",
+      "horizonsName": "Nuclear Spectroscopic Telescope Array",
+      "spkSource": null,
+      "eyesId": "sc_nustar",
+      "en": "Nuclear Spectroscopic Telescope Array",
+      "zh": "核光譜望遠鏡陣列",
+      "zhLang": "zh",
+      "aliases": [],
+      "wikidata": "Q163922",
+      "launchDate": "2012-06-13",
+      "launchNote": null,
+      "operators": [
+        "柏克萊加州大學"
+      ],
+      "cospar": "2012-031A",
+      "description": null,
+      "coverage": {
+        "start": 2456091.748016,
+        "end": 2461389.748016,
+        "startIso": "2012-06-13T05:57:08.582Z",
+        "endIso": "2026-12-15T05:57:08.582Z"
+      },
+      "file": "data/spacecraft/nustar.bin",
+      "bytes": 127176,
+      "segments": [],
+      "elements": {
+        "t0": 2456091.748016,
+        "stepDays": 1,
+        "n": 5299,
+        "center": "earth",
+        "frame": "ICRF 赤道面"
+      }
+    },
+    {
+      "id": "sdo",
+      "group": "earth",
+      "horizonsId": "-136395",
+      "horizonsName": "Solar Dynamics Observatory",
+      "spkSource": null,
+      "eyesId": "sc_sdo",
+      "en": "Solar Dynamics Observatory",
+      "zh": "太陽動力學天文臺",
+      "zhLang": "zh-tw",
+      "aliases": [
+        "太陽動力天文臺",
+        "Solar Dynamics Observatory",
+        "SDO",
+        "2010-005A"
+      ],
+      "wikidata": "Q382494",
+      "launchDate": "2010-02-11",
+      "launchNote": null,
+      "operators": [
+        "戈達德太空飛行中心"
+      ],
+      "cospar": "2010-005A",
+      "description": null,
+      "coverage": {
+        "start": 2455238.711087,
+        "end": 2461394.711087,
+        "startIso": "2010-02-11T05:03:57.916Z",
+        "endIso": "2026-12-20T05:03:57.916Z"
+      },
+      "file": "data/spacecraft/sdo.bin",
+      "bytes": 147768,
+      "segments": [],
+      "elements": {
+        "t0": 2455238.711087,
+        "stepDays": 1,
+        "n": 6157,
+        "center": "earth",
+        "frame": "ICRF 赤道面"
+      }
+    },
+    {
+      "id": "terra",
+      "group": "earth",
+      "horizonsId": "-125994",
+      "horizonsName": "Terra",
+      "spkSource": null,
+      "eyesId": "sc_terra",
+      "en": "Terra",
+      "zh": "特拉衛星",
+      "zhLang": "zh",
+      "aliases": [
+        "Terra衛星",
+        "Terra彗星",
+        "妥拉衛星",
+        "EOS AM-1"
+      ],
+      "wikidata": "Q584697",
+      "launchDate": "1999-12-18",
+      "launchNote": null,
+      "operators": [
+        "美國國家航空暨太空總署"
+      ],
+      "cospar": "1999-068A",
+      "description": null,
+      "coverage": {
+        "start": 2451530.836665,
+        "end": 2461388.836665,
+        "startIso": "1999-12-18T08:04:47.855Z",
+        "endIso": "2026-12-14T08:04:47.855Z"
+      },
+      "file": "data/spacecraft/terra.bin",
+      "bytes": 236616,
+      "segments": [],
+      "elements": {
+        "t0": 2451530.836665,
+        "stepDays": 1,
+        "n": 9859,
+        "center": "earth",
+        "frame": "ICRF 赤道面"
+      }
+    },
+    {
+      "id": "aqua",
+      "group": "earth",
+      "horizonsId": "-127424",
+      "horizonsName": "Aqua",
+      "spkSource": null,
+      "eyesId": "sc_aqua",
+      "en": "Aqua",
+      "zh": "阿卡衛星",
+      "zhLang": "zh-hant",
+      "aliases": [
+        "水 (人造衛星)",
+        "海洋觀測衛星",
+        "Aqua衛星",
+        "EOS PM-1",
+        "EOS-Aqua"
+      ],
+      "wikidata": "Q17397",
+      "launchDate": "2002-05-04",
+      "launchNote": null,
+      "operators": [
+        "美國國家航空暨太空總署"
+      ],
+      "cospar": "2002-022A",
+      "description": null,
+      "coverage": {
+        "start": 2452398.455989,
+        "end": 2461389.455989,
+        "startIso": "2002-05-03T22:56:37.449Z",
+        "endIso": "2026-12-14T22:56:37.449Z"
+      },
+      "file": "data/spacecraft/aqua.bin",
+      "bytes": 215808,
+      "segments": [],
+      "elements": {
+        "t0": 2452398.455989,
+        "stepDays": 1,
+        "n": 8992,
+        "center": "earth",
+        "frame": "ICRF 赤道面"
+      }
+    },
+    {
+      "id": "aura",
+      "group": "earth",
+      "horizonsId": "-128376",
+      "horizonsName": "Aura",
+      "spkSource": null,
+      "eyesId": "sc_aura",
+      "en": "Aura",
+      "zh": null,
+      "zhLang": null,
+      "aliases": [
+        "EOS CH-1",
+        "EOS Chem-1",
+        "EOS Chemistry-1",
+        "EOS-Aura",
+        "Aura satellite",
+        "AURA"
+      ],
+      "wikidata": "Q23649",
+      "launchDate": "2004-07-15",
+      "launchNote": null,
+      "operators": [
+        "美國國家航空暨太空總署"
+      ],
+      "cospar": "2004-026A",
+      "description": null,
+      "coverage": {
+        "start": 2453201.460819,
+        "end": 2461389.460819,
+        "startIso": "2004-07-14T23:03:34.761Z",
+        "endIso": "2026-12-14T23:03:34.761Z"
+      },
+      "file": "data/spacecraft/aura.bin",
+      "bytes": 196536,
+      "segments": [],
+      "elements": {
+        "t0": 2453201.460819,
+        "stepDays": 1,
+        "n": 8189,
+        "center": "earth",
+        "frame": "ICRF 赤道面"
+      }
+    },
+    {
+      "id": "goes-16",
+      "group": "earth",
+      "horizonsId": "-141866",
+      "horizonsName": "GOES-16",
+      "spkSource": null,
+      "eyesId": null,
+      "en": "GOES-16",
+      "zh": "GOES-R衛星",
+      "zhLang": "zh",
+      "aliases": [
+        "GOES-R",
+        "Geostationary Operational Environmental Satellite-R"
+      ],
+      "wikidata": "Q5514055",
+      "launchDate": "2016-11-19",
+      "launchNote": null,
+      "operators": [
+        "美國國家海洋暨大氣總署"
+      ],
+      "cospar": "2016-071A",
+      "description": null,
+      "coverage": {
+        "start": 2457712.201033,
+        "end": 2461389.201033,
+        "startIso": "2016-11-19T16:49:29.251Z",
+        "endIso": "2026-12-14T16:49:29.251Z"
+      },
+      "file": "data/spacecraft/goes-16.bin",
+      "bytes": 88272,
+      "segments": [],
+      "elements": {
+        "t0": 2457712.201033,
+        "stepDays": 1,
+        "n": 3678,
+        "center": "earth",
+        "frame": "ICRF 赤道面"
+      }
+    }
+  ]
+}

@@ -29,14 +29,23 @@ export async function fetchCached(name, url, { binary = false, headers = {}, met
     return binary ? readFile(file) : readFile(file, "utf8");
   }
   let lastErr;
-  for (let attempt = 0; attempt < 4; attempt++) {
+  let wait = 0;
+  for (let attempt = 0; attempt < 6; attempt++) {
     try {
+      if (wait) await new Promise((r) => setTimeout(r, wait));
       const res = await fetch(url, {
         method,
         body,
         headers: { "User-Agent": USER_AGENT, ...headers },
         redirect: "follow",
       });
+      if (res.status === 429) {
+        // 被限流：依 Retry-After（秒）或逐次加長等待後重試
+        const after = Number(res.headers.get("retry-after"));
+        wait = Number.isFinite(after) && after > 0 ? after * 1000 : 10000 * (attempt + 1);
+        throw new Error(`HTTP 429 Too Many Requests（${Math.round(wait / 1000)} 秒後重試）`);
+      }
+      wait = 1500 * (attempt + 1);
       if (!res.ok) throw new Error(`HTTP ${res.status} ${res.statusText}`);
       const buf = Buffer.from(await res.arrayBuffer());
       await mkdir(dirname(file), { recursive: true });
@@ -52,7 +61,7 @@ export async function fetchCached(name, url, { binary = false, headers = {}, met
       return binary ? buf : buf.toString("utf8");
     } catch (err) {
       lastErr = err;
-      await new Promise((r) => setTimeout(r, 1500 * (attempt + 1)));
+      wait ||= 1500 * (attempt + 1);
     }
   }
   throw new Error(`下載失敗 ${url}: ${lastErr?.message}`);

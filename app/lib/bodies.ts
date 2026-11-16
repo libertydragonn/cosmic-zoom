@@ -11,7 +11,8 @@ export type EntityKind =
   | "moon"
   | "region"
   | "hygstar"
-  | "galactic";
+  | "galactic"
+  | "spacecraft";
 
 export interface Entity {
   id: string;
@@ -274,6 +275,31 @@ for (const d of solarSystem.dwarfPlanets) {
 
 // ---------- 位置更新 ----------
 
+/** 天體位置更新後要接著執行的工作（例如依行星位置計算探測器位置）。 */
+const afterUpdate: ((jd: number) => void)[] = [];
+export function onBodiesUpdated(fn: (jd: number) => void): void {
+  afterUpdate.push(fn);
+}
+
+/**
+ * 任意時刻某個「繞太陽」天體的日心位置（不改動目前狀態）。用來把探測器過去飛掠時
+ * 以行星為中心的軌跡，換算到當時行星所在的位置。
+ */
+const scratchEl = newElements();
+const scratchP = new Float64Array(3);
+const scratchQ = new Float64Array(3);
+export function heliocentricAt(id: string, jd: number, out: Float64Array | number[]): boolean {
+  const b = bodyById.get(id);
+  if (!b || !b.orbit || b.parentId !== "sun") return false;
+  b.orbit(jd, scratchEl);
+  orbitBasis(scratchEl, b.frame, scratchP, scratchQ);
+  const E = solveKepler(scratchEl.M, scratchEl.e);
+  const x = scratchEl.a * (Math.cos(E) - scratchEl.e);
+  const y = scratchEl.a * Math.sqrt(1 - scratchEl.e * scratchEl.e) * Math.sin(E);
+  for (let k = 0; k < 3; k++) out[k] = x * scratchP[k] + y * scratchQ[k];
+  return true;
+}
+
 /** 更新所有太陽系天體在 jd 時刻的日心位置（母天體必須排在前面）。 */
 export function updateBodies(jd: number): void {
   for (let k = 0; k < bodies.length; k++) {
@@ -297,4 +323,5 @@ export function updateBodies(jd: number): void {
     b.pos[1] = py + x * b.P[1] + y * b.Q[1];
     b.pos[2] = pz + x * b.P[2] + y * b.Q[2];
   }
+  for (let k = 0; k < afterUpdate.length; k++) afterUpdate[k](jd);
 }

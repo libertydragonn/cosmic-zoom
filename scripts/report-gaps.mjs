@@ -104,6 +104,31 @@ out("- 土星環：透明度與明暗由 Voyager 2 掩星的法向光學深度�
 out("- 巨行星的雲帶與大氣特徵會隨時間漂移，Hubble OPAL 地圖只代表觀測當時的樣貌。");
 out();
 
+const craft = await readJson(join(APP_DATA, "spacecraft.json"));
+out("## 人造探測器");
+out();
+const deepN = craft.craft.filter((c) => c.group !== "earth").length;
+const earthSats = craft.craft.filter((c) => c.group === "earth");
+out(`深空探測 ${deepN} 個（JPL Horizons 與 NASA Eyes on the Solar System 都有的探測器），環繞地球的人造衛星 ${earthSats.length} 個（JPL Horizons 有星曆者）。`);
+out();
+out("近地衛星的 Horizons 星曆只預測到約一兩個月後，到期後畫面上不再顯示，需重新擷取資料：");
+out();
+for (const c of earthSats) out(`- ${c.zh ?? c.en}：到 ${c.coverage.endIso.slice(0, 10)}${c.eyesId ? "" : "（NASA Eyes 沒有這顆衛星，無 Eyes 連結）"}`);
+out();
+for (const c of craft.craft) {
+  const notes = [];
+  if (!c.wikidata) notes.push("Wikidata 找不到相符條目，中文名與發射資料從缺");
+  if (c.launchNote) notes.push(c.launchNote);
+  if (c.zhLang?.includes("依同系列")) notes.push("Wikidata 沒有臺灣用語標籤，中文名比照同系列探測器的 zh-tw 標籤統一，Wikidata 原名保留為搜尋別名");
+  else if (c.zhLang && c.zhLang !== "zh-tw") notes.push(`中文名取自 ${c.zhLang} 標籤並轉為繁體（Wikidata 沒有臺灣用語標籤）`);
+  if (!c.operators.length) notes.push("營運機構無資料");
+  if (!c.cospar) notes.push("COSPAR 編號無資料");
+  if (notes.length) out(`- **${c.zh ?? c.en}**：${notes.join("；")}`);
+}
+out("- 歐洲的太陽軌道器（Solar Orbiter）、BepiColombo 不在 NASA Eyes 的探測器清單內（BepiColombo 也查不到 Horizons 名稱），未收錄。");
+out("- Horizons 範圍以外的時間不顯示探測器；範圍內的未來部分是任務團隊的預測軌道。");
+out();
+
 out("## 銀河系");
 out();
 out("旋臂、核球、銀暈皆為程序化生成的示意模型，參數為美術設定（見 `app/lib/galaxy.ts`），不是觀測資料。太陽到銀心的距離採用專案需求指定的約 2.6 萬光年；太陽相對銀河盤面的高度未取得資料，設為 0。");

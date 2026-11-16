@@ -1,6 +1,7 @@
 // 畫面下方的常駐資訊：比例尺、時間控制、顯示模式切換。
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getEntity, planetElementsOutOfRange } from "~/lib/bodies";
+import { CRAFT_GROUPS, crafts } from "~/lib/spacecraft";
 import { engine } from "~/lib/engine";
 import { formatDistance, formatJd, formatJdShort, scaleBar } from "~/lib/format";
 import { SPEEDS, useUI } from "~/lib/store";
@@ -117,6 +118,126 @@ export function ModeToggle() {
         </button>
       </div>
       {!enlarged && <div className="max-w-44 px-1 pb-0.5 text-[11px] leading-tight text-slate-400">真實比例下，行星與衛星遠看時小到看不見，需拉近才會出現。</div>}
+      <CraftPicker />
+    </div>
+  );
+}
+
+/** 人造探測器：總開關、要顯示哪些、軌跡顯示方式。 */
+function CraftPicker() {
+  const show = useUI((s) => s.showSpacecraft);
+  const hidden = useUI((s) => s.hiddenCraft);
+  const trailMode = useUI((s) => s.trailMode);
+  const { setShowSpacecraft, setCraftVisible, setHiddenCraft, setTrailMode } = useUI.getState();
+  const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const visibleCount = crafts.length - crafts.filter((c) => hidden.includes(c.id)).length;
+
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: PointerEvent) => {
+      if (!rootRef.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("pointerdown", onDown);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("pointerdown", onDown);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div ref={rootRef} className="relative">
+      <button
+        className={`btn flex w-full items-center justify-center gap-1 ${show && visibleCount ? "btn-on" : ""}`}
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        aria-haspopup="dialog"
+      >
+        人造探測器
+        <span className="tabular-nums text-[11px] opacity-80">{show ? `${visibleCount}/${crafts.length}` : "隱藏"}</span>
+        <span aria-hidden className="text-[9px] opacity-70">
+          {open ? "▼" : "▲"}
+        </span>
+      </button>
+      {open && (
+        <div
+          className="panel absolute right-0 bottom-full mb-2 flex max-h-[min(60dvh,30rem)] w-64 flex-col gap-2 p-2.5 text-xs"
+          role="dialog"
+          aria-label="選擇要顯示的人造探測器"
+        >
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-[13px] font-medium text-slate-100">人造探測器</span>
+            <button className={`btn ${show ? "btn-on" : ""}`} onClick={() => setShowSpacecraft(!show)} aria-pressed={show}>
+              {show ? "顯示中" : "已隱藏"}
+            </button>
+          </div>
+          <div className={`flex flex-col gap-2 ${show ? "" : "pointer-events-none opacity-40"}`}>
+            <div className="flex items-center gap-1" role="group" aria-label="軌跡顯示方式">
+              <span className="mr-1 text-slate-400">軌跡</span>
+              <button className={`btn flex-1 ${trailMode === "selected" ? "btn-on" : ""}`} onClick={() => setTrailMode("selected")} aria-pressed={trailMode === "selected"}>
+                僅選取的
+              </button>
+              <button className={`btn flex-1 ${trailMode === "all" ? "btn-on" : ""}`} onClick={() => setTrailMode("all")} aria-pressed={trailMode === "all"}>
+                全部
+              </button>
+            </div>
+            {trailMode === "selected" && <p className="text-[11px] leading-snug text-slate-500">點選畫面上的探測器，才會畫出它的軌跡。</p>}
+            <div className="flex items-center gap-1">
+              <button className="btn flex-1" onClick={() => setHiddenCraft([])}>
+                全選
+              </button>
+              <button className="btn flex-1" onClick={() => setHiddenCraft(crafts.map((c) => c.id))}>
+                全不選
+              </button>
+            </div>
+            <div className="thin-scroll -mr-1 flex max-h-[38dvh] flex-col gap-1.5 overflow-y-auto pr-1">
+              {CRAFT_GROUPS.map((grp) => {
+                const list = crafts.filter((c) => c.rec.group === grp.id);
+                const allOn = list.every((c) => !hidden.includes(c.id));
+                return (
+                  <section key={grp.id} aria-label={grp.zh}>
+                    <div className="flex items-center justify-between px-1 pb-0.5 text-[11px] text-slate-400">
+                      <span>
+                        {grp.zh}（{list.length}）
+                      </span>
+                      <button
+                        className="text-sky-300 hover:text-sky-200"
+                        onClick={() =>
+                          setHiddenCraft(
+                            allOn
+                              ? [...new Set([...hidden, ...list.map((c) => c.id)])]
+                              : hidden.filter((id) => !list.some((c) => c.id === id)),
+                          )
+                        }
+                      >
+                        {allOn ? "整組隱藏" : "整組顯示"}
+                      </button>
+                    </div>
+                    <ul className="flex flex-col">
+                      {list.map((c) => {
+                        const checked = !hidden.includes(c.id);
+                        const [r, g, b] = c.color.map((v) => Math.round(v * 255));
+                        return (
+                          <li key={c.id}>
+                            <label className="flex cursor-pointer items-center gap-2 rounded px-1 py-1 hover:bg-white/5">
+                              <input type="checkbox" className="accent-sky-400" checked={checked} onChange={(e) => setCraftVisible(c.id, e.target.checked)} />
+                              <span className="h-2 w-2 shrink-0 rounded-full" style={{ background: `rgb(${r},${g},${b})` }} />
+                              <span className="min-w-0 flex-1 truncate text-slate-100">{c.zh}</span>
+                              <span className="max-w-24 shrink truncate text-[10px] text-slate-500">{c.en}</span>
+                            </label>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </section>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

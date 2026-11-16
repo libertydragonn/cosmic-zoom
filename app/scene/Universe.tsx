@@ -13,6 +13,7 @@ import { BodiesLayer } from "./BodiesLayer";
 import { GalaxyLayer } from "./GalaxyLayer";
 import { OrbitsLayer } from "./OrbitsLayer";
 import { SmallBodiesLayer } from "./SmallBodiesLayer";
+import { SpacecraftLayer } from "./SpacecraftLayer";
 import { StarsLayer } from "./StarsLayer";
 import { mountLabels, pickAt, updateLabels } from "./labels";
 
@@ -111,6 +112,7 @@ function Stage() {
       <scene ref={(s) => void (scenes.current[3] = s)}>
         <BodiesLayer />
         <OrbitsLayer kinds={["moon"]} unitKm={1} />
+        <SpacecraftLayer />
       </scene>
     </>
   );
@@ -220,11 +222,14 @@ export default function Universe() {
   // 解析度倍率：從裝置像素比起跳（上限 2），幀率不足時自動調降、恢復後再調回
   const maxDpr = typeof window === "undefined" ? 1 : Math.min(window.devicePixelRatio || 1, 2);
   const [dpr, setDpr] = useState(maxDpr);
+  // 開啟 NASA Eyes 檢視時暫停本頁的 3D 繪製，避免兩個 WebGL 畫面同時運作
+  const eyesOpen = useUI((s) => s.eyesCraftId !== null);
 
   return (
     <div ref={wrapRef} className="absolute inset-0 touch-none select-none overflow-hidden">
       <Canvas
         flat
+        frameloop={eyesOpen ? "never" : "always"}
         dpr={dpr}
         gl={{ antialias: true, logarithmicDepthBuffer: true, powerPreference: "high-performance" }}
         camera={{ fov: FOV, near: 0.01, far: 1e14, position: [0, 0, 0] }}
