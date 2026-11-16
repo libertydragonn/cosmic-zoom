@@ -12,6 +12,7 @@
     "preview": "node scripts/preview.mjs build/client 4173"
   },
   "dependencies": {
+    "@netlify/blobs": "^11.1.9",
     "@react-router/node": "^8.5.1",
     "@react-three/drei": "^10.7.9",
     "@react-three/fiber": "^9.8.2",
@@ -23,6 +24,7 @@
     "zustand": "^5.1.0"
   },
   "devDependencies": {
+    "@netlify/functions": "^6.1.1",
     "@react-router/dev": "^8.5.1",
     "@tailwindcss/vite": "^4.3.5",
     "@types/node": "^24.19.2",

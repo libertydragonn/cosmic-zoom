@@ -73,7 +73,7 @@ Jupiter/Callirrhoe、Jupiter/Themisto、Jupiter/Megaclite、Jupiter/Taygete、Ju
 
 深空探測 13 個（JPL Horizons 與 NASA Eyes on the Solar System 都有的探測器），環繞地球的人造衛星 11 個（JPL Horizons 有星曆者）。
 
-近地衛星的 Horizons 星曆只預測到約一兩個月後，到期後畫面上不再顯示，需重新擷取資料：
+近地衛星的 Horizons 星曆只預測到約一兩個月後。網站內建資料停在下列日期，之後由 Netlify 排程函式每日自動延長（`netlify/functions/refresh-satellites.mts`）；若自動更新失敗，衛星會在該日期後從畫面上消失：
 
 - 國際太空站：到 2026-12-14
 - 天宮空間站：到 2026-12-14（NASA Eyes 沒有這顆衛星，無 Eyes 連結）

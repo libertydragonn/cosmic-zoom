@@ -111,7 +111,7 @@ const deepN = craft.craft.filter((c) => c.group !== "earth").length;
 const earthSats = craft.craft.filter((c) => c.group === "earth");
 out(`深空探測 ${deepN} 個（JPL Horizons 與 NASA Eyes on the Solar System 都有的探測器），環繞地球的人造衛星 ${earthSats.length} 個（JPL Horizons 有星曆者）。`);
 out();
-out("近地衛星的 Horizons 星曆只預測到約一兩個月後，到期後畫面上不再顯示，需重新擷取資料：");
+out("近地衛星的 Horizons 星曆只預測到約一兩個月後。網站內建資料停在下列日期，之後由 Netlify 排程函式每日自動延長（`netlify/functions/refresh-satellites.mts`）；若自動更新失敗，衛星會在該日期後從畫面上消失：");
 out();
 for (const c of earthSats) out(`- ${c.zh ?? c.en}：到 ${c.coverage.endIso.slice(0, 10)}${c.eyesId ? "" : "（NASA Eyes 沒有這顆衛星，無 Eyes 連結）"}`);
 out();

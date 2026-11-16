@@ -51,6 +51,8 @@ export interface CraftRecord {
   segments: SegmentMeta[];
   /** 地球衛星：自 t0 起每 stepDays 日一組，每組 a(km)、e、i、Ω、ω、M（弧度，ICRF 赤道面）。 */
   elements?: { t0: number; stepDays: number; n: number; center: string };
+  /** 地球衛星：最近一次由 Netlify 排程自動更新的時間（ISO）；沒有時為 null／undefined。 */
+  liveUpdatedAt?: string | null;
 }
 
 interface Segment {
@@ -356,6 +358,51 @@ function buildTrail(c: Craft): void {
 // ---------- 載入 ----------
 
 const loading: Partial<Record<CraftGroup, Promise<void>>> = {};
+
+/** 自動更新的近地衛星資料最近一次更新時間（ISO）；沒有取得時為 null。 */
+export let liveElementsUpdatedAt: string | null = null;
+
+function base64ToFloat32(s: string): Float32Array {
+  const bin = atob(s);
+  const bytes = new Uint8Array(bin.length);
+  for (let k = 0; k < bin.length; k++) bytes[k] = bin.charCodeAt(k);
+  return new Float32Array(bytes.buffer);
+}
+
+/**
+ * 取得 Netlify 排程函式每日向 Horizons 更新的近地衛星根數，接在內建資料後面（逐日對齊、覆蓋重疊部分），
+ * 並延長星曆範圍。取不到（本機開發、函式或 Horizons 暫時失敗）時沿用內建資料，不影響顯示。
+ */
+async function mergeLiveElements(base: string): Promise<void> {
+  try {
+    const res = await fetch(`${base}.netlify/functions/satellites`, { signal: AbortSignal.timeout(15000) });
+    if (!res.ok || !res.headers.get("content-type")?.includes("application/json")) return;
+    const live = (await res.json()) as { updatedAt?: string; sats?: Record<string, { t0: number; n: number; el: string; fetchedAt?: string }> };
+    for (const c of crafts) {
+      const l = live.sats?.[c.id];
+      const meta = c.rec.elements;
+      if (!l || !meta || !c.orb) continue;
+      const k0 = Math.round((l.t0 - meta.t0) / meta.stepDays);
+      // 必須與內建資料的取樣日對齊，且中間不能有空缺
+      if (k0 < 0 || k0 > meta.n || Math.abs(l.t0 - (meta.t0 + k0 * meta.stepDays)) > 1e-5) continue;
+      const add = base64ToFloat32(l.el);
+      if (add.length !== l.n * 6) continue;
+      const n = Math.max(meta.n, k0 + l.n);
+      const merged = new Float32Array(n * 6);
+      merged.set(c.orb.subarray(0, Math.min(meta.n, k0) * 6));
+      merged.set(add, k0 * 6);
+      c.orb = merged;
+      meta.n = n;
+      const end = meta.t0 + (n - 1) * meta.stepDays;
+      c.rec.coverage.end = end;
+      c.rec.coverage.endIso = new Date((end - 2440587.5) * 86400000).toISOString();
+      c.rec.liveUpdatedAt = l.fetchedAt ?? live.updatedAt ?? null;
+    }
+    liveElementsUpdatedAt = live.updatedAt ?? null;
+  } catch {
+    // 沿用內建資料
+  }
+}
 export function groupLoaded(group: CraftGroup): boolean {
   return crafts.every((c) => c.rec.group !== group || craftLoaded(c));
 }
@@ -386,7 +433,9 @@ export function loadSpacecraft(group: CraftGroup, onState?: (s: "loading" | "rea
         }));
         buildTrail(c);
       }),
-  ).then(
+  )
+    .then(() => (group === "earth" ? mergeLiveElements(base) : undefined))
+    .then(
     () => onState?.("ready"),
     (err) => {
       delete loading[group];

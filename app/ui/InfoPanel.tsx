@@ -202,7 +202,9 @@ function buildRows(e: Entity): { type: string; rows: Row[]; description?: string
           "星曆期間",
           `${day(r.coverage.startIso)} 至 ${day(r.coverage.endIso)}`,
           r.group === "earth"
-            ? "Horizons 提供的範圍；近地衛星受大氣阻力影響，預測只到約一兩個月後，需定期更新資料"
+            ? r.liveUpdatedAt
+              ? `Horizons 的預測範圍；每日自動更新，最近一次 ${r.liveUpdatedAt.slice(0, 16).replace("T", " ")} UTC`
+              : "Horizons 提供的範圍；近地衛星受大氣阻力影響，預測只到約一兩個月後"
             : "Horizons 提供的範圍，未來部分為預測軌道",
         ],
       ],
