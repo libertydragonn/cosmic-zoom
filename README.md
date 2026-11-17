@@ -1,9 +1,28 @@
-# 天體尺度探索
+# 天體尺度探索（Cosmic Zoom）
 
-可連續縮放的 3D 天體地圖：從單一衛星、行星系、太陽系、鄰近恆星，一路縮放到整個銀河系。
-純前端 SPA，建置結果是靜態檔案。
+在瀏覽器裡，從一顆衛星的表面一路連續縮放到整個銀河系的 3D 天體地圖。行星、衛星、小天體和人造探測器都依真實軌道即時運行，所有數值都取自 NASA／JPL 等公開資料。
 
-線上版：https://cosmic-zoom.netlify.app
+**線上體驗：https://cosmic-zoom.netlify.app**（桌面與手機皆可，不需安裝）
+
+> An interactive 3D map of the universe (Traditional Chinese UI). Zoom continuously from a moon's surface out to the whole Milky Way. Planets, 169 moons, ~20,000 small bodies and 24 spacecraft move along their real orbits, and every value comes from NASA/JPL and other cited public sources.
+
+## 特色
+
+- **跨越 15 個數量級的連續縮放**：相機距離從 10 公里到 20 萬光年，用滾輪或雙指一路縮放，不用切換頁面。比例尺會自動在公里、AU、光年之間切換。
+- **會動的太陽系**：8 大行星、9 顆矮行星與候選、169 顆有正式名稱的衛星，以及約兩萬顆小行星與海王星外天體，都依軌道根數即時運行。時間可以暫停、加速到每秒 10 年、倒轉，或回到現在。
+- **真實的表面影像**：23 個天體使用 NASA、USGS、Hubble OPAL 的全球影像，並依 IAU 自轉模型即時轉動，所以月球永遠以正面朝向地球。土星環的透明度由 Voyager 2 的掩星資料算出。
+- **人造探測器**：收錄 13 個深空探測器的完整飛行軌跡，包括航海家 1、2 號、新視野號、帕克太陽探測器、韋伯太空望遠鏡等。另有國際太空站、哈伯太空望遠鏡等 11 顆環繞地球的人造衛星，軌道每天自動更新。多數探測器可以一鍵切換到 NASA Eyes on the Solar System 觀看。
+- **鄰近恆星與銀河系**：11,389 顆肉眼可見或 25 秒差距以內的恆星（HYG 資料庫），外圍是銀河系的示意模型。
+- **搜尋與導覽**：輸入中文或英文名稱即可飛往任一天體，也可以依「銀河系 → 太陽系 → 行星 → 衛星」的階層瀏覽。
+
+## 資料原則
+
+- 所有天文數值都由 `scripts/` 下的腳本從公開來源擷取，沒有憑記憶或估計填寫。每個來源檔的網址、擷取時間與 SHA-256 都記錄在 `data/sources.json`。
+- 取不到的資料在介面上顯示為「無資料」，並完整列在 [DATA_GAPS.md](DATA_GAPS.md)。
+- 銀河系的旋臂結構與奧爾特雲沒有可用的觀測資料，畫面上的是示意模型，詳見下方「資料處理說明」。
+- `npm run validate` 會把專案的位置計算與 JPL Horizons 星曆比對，結果見「軌道驗證」。
+
+技術上是純前端 SPA（React Router、three.js、@react-three/fiber），建置結果是靜態檔案。
 
 ## 快速開始
 
@@ -186,7 +205,7 @@ React Router 8（framework 模式，`ssr: false`）、TypeScript 7、three.js 0.
 - 沒有畫出陰影（行星與環互相投下的影子、衛星投在行星上的影子）。土星環的透明度與明暗由掩星光學深度以單次散射近似計算，顏色與整體亮度是顯示用設定。
 - 巨行星的雲帶會隨時間漂移，貼圖只代表 Hubble 觀測當時的樣貌。
 - 位置是由軌道根數推算的近似值，不是星曆級精度；時間以 UTC 當作 TDB 使用（兩者相差約一分鐘）。
-- 效能只在開發機與瀏覽器的手機尺寸模擬下測過，沒有在實體手機上驗證。
+- 效能主要在開發機與瀏覽器的手機尺寸模擬下測試，實體手機只做過少量測試。
 - 恆星是以 float32 存放的點，所以飛往恆星時最近只能拉到約 0.02 光年。
 
 ## 專案結構
