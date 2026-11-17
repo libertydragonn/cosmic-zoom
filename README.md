@@ -2,8 +2,6 @@
 
 在瀏覽器裡，從一顆衛星的表面一路連續縮放到整個銀河系的 3D 天體地圖。行星、衛星、小天體和人造探測器都依真實軌道即時運行，所有數值都取自 NASA／JPL 等公開資料。
 
-**線上體驗：https://cosmic-zoom.netlify.app**（桌面與手機皆可，不需安裝）
-
 > An interactive 3D map of the universe (Traditional Chinese UI). Zoom continuously from a moon's surface out to the whole Milky Way. Planets, 169 moons, ~20,000 small bodies and 24 spacecraft move along their real orbits, and every value comes from NASA/JPL and other cited public sources.
 
 ## 特色
